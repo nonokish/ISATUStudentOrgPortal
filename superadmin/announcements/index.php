@@ -54,6 +54,16 @@
                 </ul>
               </div>
             </li>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="../advisers" class="waves-effect">
+                    <span class="sv-slim"> AL </span>
+                    <span class="sv-normal">Advisers List</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i> Organizations<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>

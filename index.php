@@ -64,7 +64,7 @@
           </div>
           <div class="modal-footer">
             <div class="mx-auto">
-              <button type="button" class="btn login-btn">LOGIN</button>
+              <button type="button" class="btn login-btn px-5">LOGIN</button>
             </div>
           </div>
         </div>

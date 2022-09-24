@@ -6,15 +6,15 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>ISAT-U Student's Organization Online Portal - Super Admin</title>
   <!-- MDB icon -->
-  <link rel="icon" href="../img/ISATULogo.png" type="image/x-icon">
+  <link rel="icon" href="../../../img/ISATULogo.png" type="image/x-icon">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="../css/mdb2.min.css">
+  <link rel="stylesheet" href="../../../css/mdb2.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/style.css">
   <!-- Your custom styles media query (optional) -->
 
   <!-- Font Styles -->
@@ -23,6 +23,9 @@
 </head>
 
 <body class="fixed-sn">
+
+  <!-- Modals -->
+
   <!--Double navigation-->
   <header>
     <!-- Sidebar navigation -->
@@ -31,23 +34,23 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
           </div>
         </li>
         <!--/. Logo -->
         <!-- Side navigation links -->
         <li>
           <ul class="collapsible collapsible-accordion">
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active" href="#"><i class="fas fa-desktop"></i> Dashboard</a>
+          	<li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="../"><i class="fas fa-desktop"></i> Dashboard</a>
             </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-bullhorn"></i> Announcements<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="announcements" class="waves-effect">
+                  <li><a href="../announcements" class="waves-effect">
                     <span class="sv-slim"> PA </span>
                     <span class="sv-normal">Post Announcement</span></a>
                   </li>
-                  <li><a href="./announcements/history" class="waves-effect">
+                  <li><a href="../announcements/history" class="waves-effect">
                     <span class="sv-slim"> AH </span>
                     <span class="sv-normal">Announcements History</span></a>
                   </li>
@@ -57,21 +60,21 @@
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="./advisers" class="waves-effect">
+                  <li><a href="../../advisers" class="waves-effect">
                     <span class="sv-slim"> AL </span>
                     <span class="sv-normal">Advisers List</span></a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i> Organizations<i class="fas fa-angle-down rotate-icon"></i></a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-users"></i> Organizations<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="./organizations" class="waves-effect">
+                  <li><a href="../" class="waves-effect">
                     <span class="sv-slim"> OL </span>
                     <span class="sv-normal">Organizations List</span></a>
                   </li>
-                  <li><a href="./organizations/add_organization" class="waves-effect">
+                  <li><a href="#" class="waves-effect">
                     <span class="sv-slim"> AO </span>
                     <span class="sv-normal">Add Organization</span></a>
                   </li>
@@ -129,100 +132,63 @@
   <!--Main Layout-->
   <main class="main mx-5">
     <div class="container-fluid dashboard-container mt-2 p-0">
-      <h2 class="page-title mb-4">Dashboard</h2>
-      <div class="row mb-1">
-      	<div class="col-md-3 mb-4">
-      		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">New Organizations</h5>
-     			 <div class="dashboard-stat">
-     			 	<i class="fas fa-user-plus"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
-     			 </div>
-    			</div>
-      	</div>
-
-      	<div class="col-md-3 mb-4">
-      		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">Organizations</h5>
-     			 <div class="dashboard-stat">
-     			 	<i class="fas fa-users"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
-     			 </div>
-    			</div>
-      	</div>
-
-      	<div class="col-md-3 mb-4">
-      		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">Announcements</h5>
-     			 <div class="dashboard-stat">
-     			 	<i class="fas fa-bullhorn"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
-     			 </div>
-    			</div>
-      	</div>
-
-      	<div class="col-md-3 mb-4">
-      		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">Files</h5>
-     			 <div class="dashboard-stat">
-     			 	<i class="fas fa-copy"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
-     			 </div>
-    			</div>
-      	</div>
-      </div>
+      <h2 class="page-title mb-4">Add Organization</h2>
 
       <div class="row mb-5">
         <div class="col-md-12">
           <div class="card p-4">
-            <h5 class="mb-4 font-weight-bold">Organizations<a class="font-weight-normal float-right view-all-link" style="font-size: 14px;" href="organizations/">View all</a></h5>
+            <form class="text-center form-row" action="../../actions/add-announcement.php" method="POST">
+                <input type="text" name="val" value="SA" hidden/>
 
-            <input class="form-control mb-4" id="dbOrgsSearch" type="text" placeholder="Type something to search list items">
+                <div class="col-12 mb-4">
+                  <label class="float-left mb-1 field-label">Organization Name</label>
+                  <input type="text" class="form-control" id="orgName" name="orgName" placeholder="Enter Organization Name..." required>
+                </div>
 
-              <table class="table table-hover dashboard-table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Date Joined</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Adviser</th>
-                    <th scope="col">Date Created</th>
-                  </tr>
-                </thead>
-                <tbody id="dbOrgsTable">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Organization Name</td>
-                    <td>Adviser Name</td>
-                    <td>11/01/19</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Organization Name</td>
-                    <td>Adviser Name</td>
-                    <td>11/01/19</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Organization Name</td>
-                    <td>Adviser Name</td>
-                    <td>11/01/19</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Organization Name</td>
-                    <td>Adviser Name</td>
-                    <td>11/01/19</td>
-                  </tr>
-                </tbody>
-              </table>
+                <div class="col-6 mb-4">
+                  <label class="float-left mb-1 field-label">Classification</label>
+                  <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
+                    <option selected disabled>Select Classification</option>
+                    <option value="0">Major</option>
+                    <option value="1">Minor</option>
+                    <option value="2">Special Interest or Advocacy Clubs</option>
+                    <option value="3">New Organizations</option>
+                  </select>
+                </div>
+
+                <div class="col-6 mb-4">
+                  <label class="float-left mb-1 field-label">Adviser</label>
+                  <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
+                    <option selected disabled>Select Adviser</option>
+                    <option value="0">Sample Name</option>
+                    <option value="1">Sample Name</option>
+                    <option value="2">Sample Name</option>
+                    <option value="3">Sample Name</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="float-left mb-1 field-label">Date Joined</label>
+                  <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
+                </div>
+                <div class="col-md-6">
+                  <label class="float-left mb-1 field-label">Date Created</label>
+                  <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
+                </div>
+                
+                <div class="button-container mx-auto mt-3">
+                  <button type="button" class="btn close-btn">Clear</button>
+                  <button type="button" class="btn save-btn">Save Changes</button>
+                </div>
+
+                
+
+            </form>
+              
            </div>
         </div>
       </div>
+      
       
     </div>
   </main>
@@ -230,13 +196,13 @@
 
 
 <!-- jQuery -->
-  <script type="text/javascript" src="../js/jquery2.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery2.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <script type="text/javascript" src="../../../js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="../js/bootstrap2.min.js"></script>
+  <script type="text/javascript" src="../../../js/bootstrap2.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="../js/mdb2.min.js"></script>
+  <script type="text/javascript" src="../../../js/mdb2.min.js"></script>
 
   <script type="text/javascript">
   	$(document).ready(function() {
@@ -256,15 +222,12 @@
   </script>
 
   <script type="text/javascript">
-    $(document).ready(function(){
-      $("#dbOrgsSearch").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#dbOrgsTable tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
+    $('.datepicker').pickadate({
+      weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      showMonthsShort: true,
+      })
   </script>
   
+
 </body>
 </html>

@@ -45,8 +45,14 @@
               <input type="text" id="" class="form-control mb-4" value="Sample Organization">
             </div>
             <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Classification</label>
-              <input type="text" id="" class="form-control mb-4" value="Sample Classification">
+            <label class="float-left mb-1 field-label">Classification</label>
+              <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
+                <option disabled>Select Classification</option>
+                <option selected value="0">Major</option>
+                <option value="1">Minor</option>
+                <option value="2">Special Interest or Advocacy Clubs</option>
+                <option value="3">New Organizations</option>
+              </select>
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Adviser</label>
@@ -81,7 +87,7 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header modal-header-fill mb-2">
-            <h5 class="modal-title font-weight-bold" id="membersListModal">Members List </h5>
+            <h5 class="modal-title" id="membersListModal">Members List </h5>
             <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -181,6 +187,16 @@
                   <li><a href="../announcements/history" class="waves-effect">
                     <span class="sv-slim"> AH </span>
                     <span class="sv-normal">Announcements History</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="../advisers" class="waves-effect">
+                    <span class="sv-slim"> AL </span>
+                    <span class="sv-normal">Advisers List</span></a>
                   </li>
                 </ul>
               </div>
@@ -303,7 +319,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
@@ -312,7 +331,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
@@ -321,7 +343,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
