@@ -81,7 +81,7 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header modal-header-fill mb-2">
-            <h5 class="modal-title font-weight-bold" id="membersListModal">Members List </h5>
+            <h5 class="modal-title" id="membersListModal">Members List </h5>
             <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -303,7 +303,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
@@ -312,7 +315,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
@@ -321,7 +327,10 @@
                     <td>Sample Classification</td>
                     <td>Adviser Name</td>
                     <td>11/01/19</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a></td>
+                    <td>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
