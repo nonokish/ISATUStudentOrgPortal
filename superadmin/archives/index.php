@@ -26,6 +26,42 @@
 
   <!-- Modals -->
 
+  <!-- Delete Alert Modal -->
+  <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content px-3 py-4">
+        <div class="modal-body text-center">
+          <h5 style="font-weight: 500;">Confirm Delete?</h5>
+        </div>
+        <div class="modal-footer" style="border: none!important;">
+          <div class="mx-auto">
+            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#viewImageModal" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Image Modal -->
+  <div class="modal fade" id="viewImageModal" tabindex="-1" role="dialog" aria-labelledby="viewImageModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body pb-0">
+           <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
+          <a>
+            <div class="mask waves-effect waves-light rgba-white-slight"></div>
+          </a>
+        </div>
+        <div class="modal-footer" style="border: none!important;">
+          <a class="delete-link py-1 px-3" data-toggle="modal" data-target="#deleteAlert" data-dismiss="modal">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Adviser Details Modal -->
   <div class="modal fade" id="adviserDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
     aria-hidden="true">
@@ -60,16 +96,12 @@
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Phone Number</label>
-              <input type="text" id="" class="form-control mb-4" value="09123456789">
+              <input type="text" id="" class="form-control mb-4" value="09123456789" disabled>
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Date Joined</label>
               <input type="text" id="" class="form-control mb-4" value="23 September, 2022">
             </div>
-            <div class="col-md-6">
-                  <label class="float-left mb-1 field-label">Date Created</label>
-                  <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
-                </div>
           </div>
           <div class="mx-auto text-center mt-2">
             <a class="delete-btn">Delete Adviser</a>
@@ -116,14 +148,14 @@
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="../advisers" class="waves-effect">
                     <span class="sv-slim"> AL </span>
                     <span class="sv-normal">Advisers List</span></a>
                   </li>
-                  <li><a href="./add_adviser" class="waves-effect">
+                  <li><a href="../advisers/add_adviser" class="waves-effect">
                     <span class="sv-slim"> AA </span>
                     <span class="sv-normal">Add Adviser</span></a>
                   </li>
@@ -144,7 +176,7 @@
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="../archives"><i class="fas fa-copy"></i> Archives</a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active" href="../archives"><i class="fas fa-copy"></i> Archives</a>
             </li>
             
             <li class="sidenav-link-item"><a id="toggle" class="waves-effect"><i class="sv-slim-icon fas fa-angle-double-left"></i>Minimize menu</a>
@@ -187,79 +219,136 @@
   <!--Main Layout-->
   <main class="main mx-5">
     <div class="container-fluid dashboard-container mt-2 p-0">
-      <h2 class="page-title mb-4">Advisers List</h2>
+      <h2 class="page-title mb-4">Archives</h2>
 
       <div class="row mb-5">
         <div class="col-md-12">
           <div class="card p-4">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item nav-item-archives">
+                <a class="nav-link active" id="documents-tab" data-toggle="tab" href="#documents" role="tab" aria-controls="documents"
+                  aria-selected="true">Documents</a>
+              </li>
+              <li class="nav-item nav-item-archives">
+                <a class="nav-link" id="media-tab" data-toggle="tab" href="#media" role="tab" aria-controls="media"
+                  aria-selected="false">Media Files</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                <div class="archives-filter-search">
+                  <select class="browser-default custom-select w-25 mr-3">
+                    <option value="0" selected>By Date</option>
+                    <option value="1">By Title</option>
+                  </select>
+                  <input class="form-control w-75 mb-4" id="dbDocumentsSearch" type="text" placeholder="Type something to search list items">
+                </div>
 
-            <div class="organizations-filter-search">
-              <select class="browser-default custom-select w-25 mr-3">
-                <option value="0" selected>By Date</option>
-                <option value="1">By Title</option>
-              </select>
-              <input class="form-control w-75 mb-4" id="dbAdvisersSearch" type="text" placeholder="Type something to search list items">
-            </div>
-
-              <table class="table">
+                <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Date Joined</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Organization</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone Number</th>
+                    <th scope="col">Document Name</th>
+                    <th scope="col">Date Uploaded</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody id="dbAdvisersTable">
+                <tbody id="dbDocumentsTable">
                   <tr>
                     <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
-                    <td>09123456789</td>
+                    <td>Sample Document</td>
+                    <td>11/01/19</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
+                      <a class="delete-link py-1 px-3" data-toggle="modal" data-target="#deleteAlert">Delete</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
-                    <td>09123456789</td>
+                    <td>Sample Document</td>
+                    <td>11/01/19</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
+                      <a class="delete-link py-1 px-3" data-toggle="modal" data-target="#deleteAlert">Delete</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
-                    <td>09123456789</td>
+                    <td>Sample Document</td>
+                    <td>11/01/19</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
+                      <a class="delete-link py-1 px-3" data-toggle="modal" data-target="#deleteAlert">Delete</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
-                    <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
-                    <td>09123456789</td>
+                    <td>Sample Document</td>
+                    <td>11/01/19</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
+                      <a class="delete-link py-1 px-3" data-toggle="modal" data-target="#">Delete</a>
                     </td>
                   </tr>
                 </tbody>
               </table>
+              </div>
+              <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
+                <div class="row">
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-4">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
            </div>
         </div>
       </div>
@@ -298,9 +387,9 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#dbOrgsSearch").on("keyup", function() {
+      $("#dbDocumentsSearch").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#dbOrgsTable tr").filter(function() {
+        $("#dbDocumentsTable tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
@@ -309,9 +398,9 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#dbAdvisersSearch").on("keyup", function() {
+      $("#dbArchivesName").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#dbAdvisersTable tr").filter(function() {
+        $("#dbArchivesTable tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });

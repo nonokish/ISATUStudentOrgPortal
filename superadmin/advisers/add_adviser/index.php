@@ -41,7 +41,7 @@
         <!-- Side navigation links -->
         <li>
           <ul class="collapsible collapsible-accordion">
-          	<li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="../"><i class="fas fa-desktop"></i> Dashboard</a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="../"><i class="fas fa-desktop"></i> Dashboard</a>
             </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-bullhorn"></i> Announcements<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
@@ -57,28 +57,28 @@
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-user-tie"></i> Advisers<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="../../advisers" class="waves-effect">
+                  <li><a href="../" class="waves-effect">
                     <span class="sv-slim"> AL </span>
                     <span class="sv-normal">Advisers List</span></a>
                   </li>
-                  <li><a href="../../advisers/add_adviser" class="waves-effect">
+                  <li><a href="#" class="waves-effect">
                     <span class="sv-slim"> AA </span>
                     <span class="sv-normal">Add Adviser</span></a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-users"></i> Organizations<i class="fas fa-angle-down rotate-icon"></i></a>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i> Organizations<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="../" class="waves-effect">
                     <span class="sv-slim"> OL </span>
                     <span class="sv-normal">Organizations List</span></a>
                   </li>
-                  <li><a href="#" class="waves-effect">
+                  <li><a href="../../organizations/add_organization" class="waves-effect">
                     <span class="sv-slim"> AO </span>
                     <span class="sv-normal">Add Organization</span></a>
                   </li>
@@ -128,7 +128,7 @@
   <!--Main Layout-->
   <main class="main mx-5">
     <div class="container-fluid dashboard-container mt-2 p-0">
-      <h2 class="page-title mb-4">Add Organization</h2>
+      <h2 class="page-title mb-4">Add Adviser</h2>
 
       <div class="row mb-5">
         <div class="col-md-12">
@@ -137,30 +137,29 @@
                 <input type="text" name="val" value="SA" hidden/>
 
                 <div class="col-12 mb-4">
-                  <label class="float-left mb-1 field-label">Organization Name</label>
-                  <input type="text" class="form-control" id="orgName" name="orgName" placeholder="Enter Organization Name" required>
+                  <label class="float-left mb-1 field-label">Adviser Name</label>
+                  <input type="text" class="form-control" id="orgName" name="orgName" placeholder="Enter Adviser Name" required>
                 </div>
 
                 <div class="col-6 mb-4">
-                  <label class="float-left mb-1 field-label">Classification</label>
+                  <label class="float-left mb-1 field-label">Organization</label>
                   <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                    <option selected disabled>Select Classification</option>
-                    <option value="0">Major</option>
-                    <option value="1">Minor</option>
-                    <option value="2">Special Interest or Advocacy Clubs</option>
-                    <option value="3">New Organizations</option>
+                    <option selected disabled>Select Organization</option>
+                    <option value="0">Organization Name</option>
+                    <option value="1">Organization Name</option>
+                    <option value="2">Organization Name</option>
+                    <option value="3">Organization Name</option>
                   </select>
                 </div>
 
-                <div class="col-6 mb-4">
-                  <label class="float-left mb-1 field-label">Adviser</label>
-                  <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                    <option selected disabled>Select Adviser</option>
-                    <option value="0">Sample Name</option>
-                    <option value="1">Sample Name</option>
-                    <option value="2">Sample Name</option>
-                    <option value="3">Sample Name</option>
-                  </select>
+                <div class="col-3 mb-4">
+                  <label class="float-left mb-1 field-label">Email</label>
+                  <input type="text" class="form-control" id="" name="" placeholder="Enter Email" required>
+                </div>
+
+                <div class="col-md-3 px-2">
+                  <label class="float-left mb-1 field-label">Phone Number</label>
+                  <input type="text" id="" class="form-control mb-4" value="09123456789">
                 </div>
 
                 <div class="col-md-6">
@@ -201,7 +200,7 @@
   <script type="text/javascript" src="../../../js/mdb2.min.js"></script>
 
   <script type="text/javascript">
-  	$(document).ready(function() {
+    $(document).ready(function() {
 
   // SideNav Initialization
   $(".button-collapse").sideNav();
@@ -209,10 +208,10 @@
   </script>
 
   <script type="text/javascript">
-  	$(document).ready(function() {
-	// SideNav Button Initialization
-	$(".button-collapse").sideNav({
-		slim: true,
+    $(document).ready(function() {
+  // SideNav Button Initialization
+  $(".button-collapse").sideNav({
+    slim: true,
     });
     });
   </script>

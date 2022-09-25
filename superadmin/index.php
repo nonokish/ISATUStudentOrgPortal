@@ -61,6 +61,10 @@
                     <span class="sv-slim"> AL </span>
                     <span class="sv-normal">Advisers List</span></a>
                   </li>
+                  <li><a href="./advisers/add_adviser" class="waves-effect">
+                    <span class="sv-slim"> AA </span>
+                    <span class="sv-normal">Add Adviser</span></a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -78,15 +82,7 @@
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="far fa-copy"></i> Files<i class="fas fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="./files" class="waves-effect">
-                    <span class="sv-slim"> FM </span>
-                    <span class="sv-normal">File Manager</span></a>
-                  </li>
-                </ul>
-              </div>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="./archives"><i class="fas fa-copy"></i> Archives</a>
             </li>
             
             <li class="sidenav-link-item"><a id="toggle" class="waves-effect"><i class="sv-slim-icon fas fa-angle-double-left"></i>Minimize menu</a>

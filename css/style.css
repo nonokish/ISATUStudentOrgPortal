@@ -449,6 +449,14 @@ display: block;
 	display: flex;
 }
 
+.advisers-filter-search{
+	display: flex;
+}
+
+.archives-filter-search{
+	display: flex;
+}
+
 .organizations-filter-search{
 	display: flex;
 }
@@ -458,6 +466,14 @@ display: block;
 	font-weight: 400;
 	color: #003366!important;
 	background-color: #f9ce00;
+	border-radius: 5px;
+}
+
+.delete-link{
+	font-size: 12px;
+	font-weight: 400;
+	color: white!important;
+	background-color: #ff3547!important;
 	border-radius: 5px;
 }
 
@@ -510,4 +526,19 @@ display: block;
 
 .login-field{
 	height: 40px!important;
+}
+
+.nav-item-archives a{
+	color: #003366!important;
+	font-size: 20px;
+}
+
+.nav-link.active{
+	color: #003366!important;
+	font-weight: 500;
+}
+
+.alert-btn{
+	border-radius: 5px!important;
+	font-size: 14px!important;
 }
