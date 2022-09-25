@@ -234,8 +234,13 @@
                   aria-selected="false">Media Files</a>
               </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content pt-3" id="myTabContent">
               <div class="tab-pane fade show active" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+
+                <div class="add-btn-container text-right mb-3">
+                  <button class="btn add-btn py-2 px-3"><i class="fas fa-plus mr-2"></i>Add Document</button>
+                </div>
+
                 <div class="archives-filter-search">
                   <select class="browser-default custom-select w-25 mr-3">
                     <option value="0" selected>By Date</option>
@@ -294,6 +299,9 @@
               </table>
               </div>
               <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
+                <div class="add-btn-container text-right mb-3">
+                  <button class="btn add-btn py-2 px-3"><i class="fas fa-plus mr-2"></i>Upload Media</button>
+                </div>
                 <div class="row">
                   <div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
@@ -305,7 +313,7 @@
                   </div>
                   <div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
-                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(6).webp" class="img-fluid" alt="Sample image with waves effect.">
                       <a>
                       <div class="mask waves-effect rgba-white-slight"></div>
                       </a>
@@ -313,15 +321,7 @@
                   </div>
                   <div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
-                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
-                      <a>
-                      <div class="mask waves-effect rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 px-2 mb-3">
-                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
-                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(8).webp" class="img-fluid" alt="Sample image with waves effect.">
                       <a>
                       <div class="mask waves-effect rgba-white-slight"></div>
                       </a>
@@ -330,18 +330,32 @@
                   <div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
                       <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
+                      <a>
+                      <div class="mask waves-effect rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-4 px-2 mb-3">
+                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
+                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(2).webp" class="img-fluid" alt="Sample image with waves effect.">
                       <a>
                       <div class="mask waves-effect rgba-white-slight"></div>
                       </a>
                     </div>
                   </div>
                   <div class="col-md-4 px-2 mb-4">
-                    <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
-                      <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).webp" class="img-fluid" alt="Sample image with waves effect.">
-                      <a>
-                      <div class="mask waves-effect rgba-white-slight"></div>
-                      </a>
-                    </div>
+                    <video width="100%" height="100%" controls>
+                      <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4">
+                      <source src="movie.ogg" type="video/ogg">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="col-md-4 px-2 mb-4">
+                    <video width="100%" height="100%" controls>
+                      <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4">
+                      <source src="movie.ogg" type="video/ogg">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
 
                 </div>
