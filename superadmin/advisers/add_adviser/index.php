@@ -136,9 +136,19 @@
             <form class="text-center form-row" action="../../actions/add-announcement.php" method="POST">
                 <input type="text" name="val" value="SA" hidden/>
 
-                <div class="col-12 mb-4">
-                  <label class="float-left mb-1 field-label">Adviser Name</label>
-                  <input type="text" class="form-control" id="orgName" name="orgName" placeholder="Enter Adviser Name" required>
+                <div class="col-5 mb-4">
+                  <label class="float-left mb-1 field-label">First Name</label>
+                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter First Name" required>
+                </div>
+
+                <div class="col-5 mb-4">
+                  <label class="float-left mb-1 field-label">Last Name</label>
+                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter Last Name" required>
+                </div>
+
+                <div class="col-2 mb-4">
+                  <label class="float-left mb-1 field-label">Middle Initial</label>
+                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter Middle Initial" required>
                 </div>
 
                 <div class="col-6 mb-4">
