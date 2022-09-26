@@ -34,7 +34,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -133,7 +133,7 @@
       <div class="row mb-5">
         <div class="col-md-12">
           <div class="card p-4">
-            <form class="text-center form-row" action="../../actions/add-announcement.php" method="POST">
+            <form class="text-center form-row" action="./php/addOrganization.php" method="POST">
                 <input type="text" name="val" value="SA" hidden/>
 
                 <div class="col-12 mb-4">
@@ -144,37 +144,27 @@
                 <div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Classification</label>
                   <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                    <option selected disabled>Select Classification</option>
-                    <option value="0">Major</option>
-                    <option value="1">Minor</option>
-                    <option value="2">Special Interest or Advocacy Clubs</option>
-                    <option value="3">New Organizations</option>
                   </select>
                 </div>
 
                 <div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Adviser</label>
-                  <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                    <option selected disabled>Select Adviser</option>
-                    <option value="0">Sample Name</option>
-                    <option value="1">Sample Name</option>
-                    <option value="2">Sample Name</option>
-                    <option value="3">Sample Name</option>
+                  <select class="browser-default custom-select" id="adviserlist" name="adviserlist" required>
                   </select>
                 </div>
 
                 <div class="col-md-6">
                   <label class="float-left mb-1 field-label">Date Joined</label>
-                  <input type="date" id="" class="form-control datepicker mb-4" placeholder="Select Date">
+                  <input type="date" id="joined_date" class="form-control datepicker mb-4" name="joined_date" placeholder="Select Date">
                 </div>
                 <div class="col-md-6">
                   <label class="float-left mb-1 field-label">Date Created</label>
-                  <input type="date" id="" class="form-control datepicker mb-4" placeholder="Select Date">
+                  <input type="date" id="date_created" class="form-control datepicker mb-4" name="date_created" placeholder="Select Date">
                 </div>
                 
                 <div class="button-container mx-auto mt-3">
                   <button type="button" class="btn close-btn">Clear</button>
-                  <button type="button" class="btn save-btn">Save Changes</button>
+                  <button type="submit" class="btn save-btn">Save Changes</button>
                 </div>
 
                 
@@ -223,7 +213,11 @@
       showMonthsShort: true,
       })
   </script>
-  
 
+  <script type="text/javascript">
+    $('#adviserlist').load("php/dropdownListAdvisers.php");
+    $('#orgClassification').load("php/dropdownListOrgClassification.php");
+  </script>
+  
 </body>
 </html>

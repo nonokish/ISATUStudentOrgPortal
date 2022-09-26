@@ -1,3 +1,8 @@
+<?php
+require_once "../../db.php";
+require_once "./php/session.php";
+require_once "./php/getOrganizationDetails.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +36,9 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
+              <?php echo $orgName;?>
+            </span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -142,7 +149,9 @@
       			<h5 class="card-title mb-4">Members</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-users"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php echo $orgTotalMember;?>
+            </span>
      			 </div>
     			</div>
       	</div>
@@ -175,7 +184,10 @@
 
             <input class="form-control mb-4" id="dbMembersSearch" type="text" placeholder="Type something to search list items">
 
-      			<table class="table table-hover dashboard-table">
+            <!-- Organization Member Table -->
+            <div id="getOrganizationMemberGrid"></div>
+
+      			<!--<table class="table table-hover dashboard-table">
       				<thead>
       				  <tr>
       				    <th scope="col">#</th>
@@ -220,7 +232,7 @@
       				    <td>09123456789</td>
       				  </tr>
       				</tbody>
-				    </table>
+				    </table>-->
 			   </div>
       	</div>
       </div>
@@ -264,6 +276,17 @@
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
+    });
+  </script>
+
+  <!--Organization Member Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getOrganizationMemberGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getOrganizationMemberGrid").append(response);
+      }
     });
   </script>
   

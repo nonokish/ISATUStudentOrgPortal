@@ -168,7 +168,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -283,7 +283,8 @@
               <input class="form-control w-50 mb-4" id="dbOrgsSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <table class="table">
+              <div id="getOrganizationDetailsGrid"></div>
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -345,7 +346,7 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -409,6 +410,17 @@
       weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       showMonthsShort: true,
       })
+  </script>
+
+  <!--Organization Details Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getOrganizationDetailsGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getOrganizationDetailsGrid").append(response);
+      }
+    });
   </script>
   
 

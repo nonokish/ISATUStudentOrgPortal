@@ -33,42 +33,47 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header modal-header-fill mb-2">
-            <h5 class="modal-title login-modal-title" id="loginModal">Login</h5>
-            <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body py-4 px-5">
-            <div class="input-group mb-4">
-              <span class="input-group-text border-0" id="search-addon"><i class="fas fa-envelope" style="font-size: 24px; color:#003366;"></i></span>
-              <input
-                type="text"
-                class="form-control rounded login-field"
-                placeholder="Email"
-                aria-label="Email"
-                aria-describedby=""
-              />
+          <form class="" method="POST" action="./login.php">
+            <div class="modal-header modal-header-fill mb-2">
+              <h5 class="modal-title login-modal-title" id="loginModal">Login</h5>
+              <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body py-4 px-5">
+              <div class="input-group mb-4">
+                <span class="input-group-text border-0" id="search-addon"><i class="fas fa-envelope" style="font-size: 24px; color:#003366;"></i></span>
+                <input
+                  type="text"
+                  class="form-control rounded login-field"
+                  placeholder="Email"
+                  aria-label="Email"
+                  aria-describedby=""
+                  id="loginEmail"
+                  name="loginEmail"
+                />
+              </div>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text border-0" id="search-addon"><i class="fas fa-unlock" style="font-size: 24px; color:#003366;"></i></span>
-              <input
-                type="password"
-                class="form-control rounded login-field"
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby=""
-              />
-            </div> 
-          </div>
-          <div class="modal-footer">
-            <div class="mx-auto">
-              <button type="button" class="btn login-btn px-5">LOGIN</button>
+              <div class="input-group mb-3">
+                <span class="input-group-text border-0" id="search-addon"><i class="fas fa-unlock" style="font-size: 24px; color:#003366;"></i></span>
+                <input
+                  type="password"
+                  class="form-control rounded login-field"
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-describedby=""
+                  id="loginPassword"
+                  name="loginPassword"
+                />
+              </div> 
             </div>
-          </div>
-        </div>
-
+            <div class="modal-footer">
+              <div class="mx-auto">
+                <button type="submit" class="btn login-btn px-5">LOGIN</button>
+              </div>
+            </div>
+          <!--</div>-->
+          </form>
           
         </div>
       </div>
