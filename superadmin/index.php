@@ -159,7 +159,7 @@
 
       	<div class="col-md-3 mb-4">
       		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">Files</h5>
+      			<h5 class="card-title mb-4">Docs & Files</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-copy"></i>
      			 	<span class="float-right" style="color: #f7CA18;">00</span>

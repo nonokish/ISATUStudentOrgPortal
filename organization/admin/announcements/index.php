@@ -31,14 +31,16 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
+            Organization Name
+            </span></a>
           </div>
         </li>
         <!--/. Logo -->
         <!-- Side navigation links -->
         <li>
           <ul class="collapsible collapsible-accordion">
-          	<li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r" href="../"><i class="fas fa-desktop"></i> Dashboard</a>
+            <li class="sidenav-link-item"><a href="../" class="collapsible-header waves-effect arrow-r"><i class="fas fa-desktop"></i> Dashboard</a>
             </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-bullhorn"></i> Announcements<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
@@ -47,19 +49,9 @@
                     <span class="sv-slim"> PA </span>
                     <span class="sv-normal">Post Announcement</span></a>
                   </li>
-                  <li><a href="./announcements/history" class="waves-effect">
+                  <li><a href="./history" class="waves-effect">
                     <span class="sv-slim"> AH </span>
                     <span class="sv-normal">Announcements History</span></a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="far fa-copy"></i> Files<i class="fas fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="./files" class="waves-effect">
-                    <span class="sv-slim"> FM </span>
-                    <span class="sv-normal">File Manager</span></a>
                   </li>
                 </ul>
               </div>
@@ -67,22 +59,20 @@
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i> Members<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="./members" class="waves-effect">
+                  <li><a href="../members" class="waves-effect">
                     <span class="sv-slim"> ML </span>
                     <span class="sv-normal">Members List</span></a>
+                  </li>
+                  <li><a href="../members/add_member" class="waves-effect">
+                    <span class="sv-slim"> AM </span>
+                    <span class="sv-normal">Add Member</span></a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-cog"></i> Settings<i class="fas fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="./settings" class="waves-effect">
-                    <span class="sv-slim"> OD </span>
-                    <span class="sv-normal">Organization Details</span></a>
-                  </li>
-                </ul>
-              </div>
+            <li class="sidenav-link-item"><a href="../archives" class="collapsible-header waves-effect arrow-r"><i class="fas fa-copy"></i> Archives</a>
+            </li>
+            <li class="sidenav-link-item"><a href="../settings" class="collapsible-header waves-effect arrow-r"><i class="fas fa-cog"></i> Settings</a>
             </li>
             
             <li class="sidenav-link-item"><a id="toggle" class="waves-effect"><i class="sv-slim-icon fas fa-angle-double-left"></i>Minimize menu</a>
@@ -134,7 +124,7 @@
               <p class="h5 mb-4 font-weight-normal text-left">Fill out announcement details</p>
 
               <label class="float-left mb-1 field-label">Announcement Title</label>
-              <input type="text" id="" class="form-control mb-4" placeholder="Enter Announcement Title...">
+              <input type="text" id="" class="form-control mb-4" placeholder="Enter Announcement Title">
 
               <label class="float-left mb-1 field-label">Publish Date</label>
                 <input placeholder="Select Date" type="date" id="" class="form-control datepicker mb-4">

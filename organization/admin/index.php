@@ -61,16 +61,6 @@ require_once "./php/getOrganizationDetails.php";
                 </ul>
               </div>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="far fa-copy"></i> Files<i class="fas fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="./files" class="waves-effect">
-                    <span class="sv-slim"> FM </span>
-                    <span class="sv-normal">File Manager</span></a>
-                  </li>
-                </ul>
-              </div>
-            </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i> Members<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
@@ -78,18 +68,16 @@ require_once "./php/getOrganizationDetails.php";
                     <span class="sv-slim"> ML </span>
                     <span class="sv-normal">Members List</span></a>
                   </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-cog"></i> Settings<i class="fas fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="./settings" class="waves-effect">
-                    <span class="sv-slim"> OD </span>
-                    <span class="sv-normal">Organization Details</span></a>
+                  <li><a href="./members" class="waves-effect">
+                    <span class="sv-slim"> AM </span>
+                    <span class="sv-normal">Add Member</span></a>
                   </li>
                 </ul>
               </div>
+            </li>
+            <li class="sidenav-link-item"><a href="./archives" class="collapsible-header waves-effect arrow-r"><i class="fas fa-copy"></i> Archives</a>
+            </li>
+            <li class="sidenav-link-item"><a href="./settings" class="collapsible-header waves-effect arrow-r"><i class="fas fa-cog"></i> Settings</a>
             </li>
             
             <li class="sidenav-link-item"><a id="toggle" class="waves-effect"><i class="sv-slim-icon fas fa-angle-double-left"></i>Minimize menu</a>
@@ -168,7 +156,7 @@ require_once "./php/getOrganizationDetails.php";
 
       	<div class="col-md-3 mb-4">
       		<div class="card dashboard-stat-card card-body">
-      			<h5 class="card-title mb-4">Files</h5>
+      			<h5 class="card-title mb-4">Docs & Files</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-copy"></i>
      			 	<span class="float-right" style="color: #f7CA18;">00</span>
@@ -179,7 +167,7 @@ require_once "./php/getOrganizationDetails.php";
 
       <div class="row">
       	<div class="col-md-12">
-      		<div class="card p-3">
+      		<div class="card p-4">
       			<h5 class="mb-4 font-weight-bold">Members<a class="font-weight-normal view-all-link float-right" style="font-size: 14px;" href="members/">View all</a></h5>
 
             <input class="form-control mb-4" id="dbMembersSearch" type="text" placeholder="Type something to search list items">
