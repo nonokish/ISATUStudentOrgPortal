@@ -1,3 +1,7 @@
+<?php
+require_once "../../../db.php";
+require_once "./php/session.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +30,13 @@
 
   <!-- Modals -->
 
-  <!-- Adviser Details Modal -->
-  <div class="modal fade" id="adviserDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
+  <!-- Member Details Modal -->
+  <div class="modal fade" id="memberDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header modal-header-fill mb-2">
-          <h5 class="modal-title" id="">Adviser Details</h5>
+          <h5 class="modal-title" id="">Member Details</h5>
   
           <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -42,21 +46,19 @@
           <div class="row">
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Name</label>
-              <input type="text" id="" class="form-control mb-4" value="Adviser Name">
+              <input type="text" id="" class="form-control mb-4" value="Member Name">
             </div>
             <div class="col-md-6 px-2">
-            <label class="float-left mb-1 field-label">Organization</label>
-              <select class="browser-default custom-select" id="orgClassification" name="" required>
-                <option disabled>Select Organization</option>
-                <option selected value="0">Organization Name</option>
-                <option value="1">Organization Name</option>
-                <option value="2">Organization Name</option>
-                <option value="3">Organization Name</option>
-              </select>
+              <label class="float-left mb-1 field-label">Department</label>
+              <input type="text" id="" class="form-control mb-4" value="09123456789">
+            </div>
+            <div class="col-md-6 px-2">
+              <label class="float-left mb-1 field-label">Course & Year</label>
+              <input type="text" id="" class="form-control mb-4" value="09123456789">
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Email</label>
-              <input type="text" id="" class="form-control mb-4" value="adviser@gmail.com">
+              <input type="text" id="" class="form-control mb-4" value="member@gmail.com">
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Phone Number</label>
@@ -165,7 +167,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -191,13 +193,16 @@
               <input class="form-control w-75 mb-4" id="dbAdvisersSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <table class="table">
+              <!-- Member Table -->
+              <div id="getMembersDetailsGrid"></div>
+
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Date Joined</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Organization</th>
+                    <th scope="col">Course & Year</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Action</th>
@@ -207,12 +212,12 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>Member Name</td>
+                    <td>BSIT-1</td>
+                    <td>member@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
@@ -220,10 +225,10 @@
                     <td>11/26/22</td>
                     <td>Adviser Name</td>
                     <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>member@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
@@ -231,10 +236,10 @@
                     <td>11/26/22</td>
                     <td>Adviser Name</td>
                     <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>member@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
@@ -242,14 +247,14 @@
                     <td>11/26/22</td>
                     <td>Adviser Name</td>
                     <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>member@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -313,6 +318,17 @@
       weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       showMonthsShort: true,
       })
+  </script>
+
+  <!-- Member Details Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getMembersDetailsGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getMembersDetailsGrid").append(response);
+      }
+    });
   </script>
   
 
