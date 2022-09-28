@@ -159,7 +159,7 @@
               </div>
               <div class="col-md-6 px-2">
                 <label class="float-left mb-1 field-label">Adviser</label>
-                <input type="text" id="" class="form-control mb-4" value="Adviser Name">
+                <input type="text" id="" class="form-control mb-4" value="Adviser Name" disabled>
               </div>
               <div class="col-md-6 px-2">
                 <label class="float-left mb-1 field-label">Date Joined</label>

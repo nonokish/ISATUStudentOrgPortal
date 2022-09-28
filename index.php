@@ -151,13 +151,13 @@
             <!-- Right links -->
             <ul class="navbar-nav mb-2 mb-lg-0 main-navbar-right">
               <li class="nav-item px-2">
-                <a class="nav-link p-3 active" aria-current="page" href="#">Home</a>
+                <a class="nav-link nav p-3 active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link p-3" href="#">About Us</a>
+                <a class="nav-link nav p-3" href="#about">About Us</a>
               </li>
               <li class="nav-item ps-2">
-                <a class="nav-link p-3" href="#">Announcements</a
+                <a class="nav-link nav p-3" href="#announcements">Announcements</a
                 >
               </li>
             </ul>
@@ -169,6 +169,7 @@
       </nav>
     <!-- Main Navbar -->
 
+    <div class="hero-section-container">
     <!-- Carousel wrapper -->
     <div id="carouselMaterialStyle" class="carousel slide carousel-fade intro-carousel" data-mdb-ride="carousel">
         <!-- Indicators -->
@@ -186,7 +187,7 @@
             <img src="img/isatbldg.jpg" class="d-block w-100"
               alt="Sunset Over the City" />
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);"></div>
-            <div class="carousel-caption d-none d-md-block carousel-intro-caption">
+            <div class="carousel-caption d-none d-md-block carousel-intro-caption hero">
               <h5 class="carousel-title">ISAT-U Student's Organization</h5>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
@@ -227,9 +228,10 @@
         </button>
       </div>
     <!-- Carousel wrapper -->
+    </div>
 
     <div class="about-us-section-container">
-      <section class="container-fluid about-us-section px-5">
+      <section class="container-fluid about-us-section px-5" id="about">
         <div class="row">
           <div class="col-md-4">
             <div class="about-us-title mb-3">
@@ -254,11 +256,11 @@
       </section>
     </div>
 
-    <section class="container-fluid announcements-section px-5 mb-5">
+    <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
       <div class="section-title-container d-flex mb-5">
         <div class="section-title me-4">
           <div>Announcements</div>
-          <a class="section-title-see-all" href="#">See all</a>
+          <a class="section-title-see-all" href="">See all</a>
         </div>
         <div class="section-title-divider flex-grow-1"></div>
       </div>
@@ -494,13 +496,20 @@
     <!-- End your project here-->
 
     <!-- MDB -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery2.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap2.min.js"></script>
     <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/mdb2.min.js"></script>
+
+    <script type="text/javascript">
+      
+    </script>
 
   </body>
 </html>

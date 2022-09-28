@@ -29,8 +29,6 @@ body{
 
 .main-navbar{
 	background-color: #003366;
-	padding-top: 1%!important;
-	padding-bottom: 1%!important;
 }
 
 .main-navbar-title{
@@ -117,7 +115,7 @@ body{
 .section-title-see-all{
 	font-size: 14px!important;
 	font-weight: 500;
-	color: #f9ce00;
+	color: #003366;;
 	padding: 0%!important;
 }
 
@@ -556,4 +554,15 @@ display: block;
 .add-btn:hover{
 	background-color: #f9ce00;
 	border-color: #f9ce00!important;
+}
+
+:root {
+  --header-size: 220px; /* use a css variable to ease up maintenance */
+}
+
+:target:before {
+    content: '';
+    display: block;
+    height: var(--header-size);
+    margin-top: calc(var(--header-size) * -1);
 }
