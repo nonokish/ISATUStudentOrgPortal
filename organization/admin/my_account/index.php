@@ -26,6 +26,24 @@
 
   <!-- Modals -->
 
+  <!-- Delete Alert Modal -->
+  <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content px-3 py-4">
+        <div class="modal-body text-center">
+          <h5 style="font-weight: 500;">Confirm Delete?</h5>
+        </div>
+        <div class="modal-footer" style="border: none!important;">
+          <div class="mx-auto">
+            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#viewImageModal" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Switch Organization Modal -->
   <div class="modal fade" id="switchOrgModal" tabindex="-1" role="dialog" aria-labelledby=""
       aria-hidden="true">
@@ -53,24 +71,6 @@
            
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Delete Alert Modal -->
-  <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content px-3 py-4">
-        <div class="modal-body text-center">
-          <h5 style="font-weight: 500;">Confirm Delete?</h5>
-        </div>
-        <div class="modal-footer" style="border: none!important;">
-          <div class="mx-auto">
-            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#viewImageModal" data-dismiss="modal">No</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@
             </li>
             <li class="sidenav-link-item"><a href="../archives" class="collapsible-header waves-effect arrow-r"><i class="fas fa-copy"></i> Archives</a>
             </li>
-            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r active"><i class="fas fa-cog"></i> Settings</a>
+           <li class="sidenav-link-item"><a href="../settings" class="collapsible-header waves-effect arrow-r"><i class="fas fa-cog"></i> Settings</a>
             </li>
             
             <li class="sidenav-link-item"><a id="toggle" class="waves-effect"><i class="sv-slim-icon fas fa-angle-double-left"></i>Minimize menu</a>
@@ -155,7 +155,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
-            <a class="dropdown-item" href="../my_account">My Account</a>
+            <a class="dropdown-item" href="#">My Account</a>
             <a class="dropdown-item" href="../php/logout.php">Logout</a>
           </div>
         </li>
@@ -168,47 +168,81 @@
   <!--Main Layout-->
   <main class="main mx-5">
     <div class="container-fluid dashboard-container mt-2 p-0">
-      <h2 class="page-title mb-4">Settings</h2>
+      <h2 class="page-title mb-4">My Account</h2>
 
       <div class="row mb-5">
-        <div class="col-md-12">
+        <div class="col-md-7">
           <div class="card p-4">
-           
+           <div class="col-md-12 mb-4" style="border-bottom: 1px solid lightgray;">
+              <div class="pb-2 text-center" style="font-size: 20px;">Personal Information</div>
+            </div>
             <form class="form-row" method="POST">
-              <div class="col-md-12 px-2">
-                <label class="float-left mb-1 field-label">Organization</label>
-                <input type="text" id="" class="form-control mb-4" value="Sample Organization">
+              <div class="col-md-5 px-2">
+                <label class="float-left mb-1 field-label">Last Name</label>
+                <input type="text" id="" class="form-control mb-4" value="Sample Name">
+              </div>
+              <div class="col-md-5 px-2">
+                <label class="float-left mb-1 field-label">First Name</label>
+                <input type="text" id="" class="form-control mb-4" value="Sample Name">
+              </div>
+              <div class="col-md-2 px-2">
+                <label class="float-left mb-1 field-label">M.I</label>
+                <input type="text" id="" class="form-control mb-4" value="S">
               </div>
               <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Classification</label>
-                <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                  <option disabled>Select Classification</option>
-                  <option selected value="0">Major</option>
-                  <option value="1">Minor</option>
-                  <option value="2">Special Interest or Advocacy Clubs</option>
-                  <option value="3">New Organizations</option>
-                </select>
+                <label class="float-left mb-1 field-label">Department</label>
+                <input type="text" id="" class="form-control mb-4" value="Department Name">
               </div>
               <div class="col-md-6 px-2">
-                <label class="float-left mb-1 field-label">Adviser</label>
-                <input type="text" id="" class="form-control mb-4" value="Adviser Name" disabled>
+                <label class="float-left mb-1 field-label">Course & Year</label>
+                <input type="text" id="" class="form-control mb-4" value="BSIT-1">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Email</label>
+                <input type="text" id="" class="form-control mb-4" value="sample@gmail.com">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Phone Number</label>
+                <input type="text" id="" class="form-control mb-4" value="09123456789">
               </div>
               <div class="col-md-6 px-2">
                 <label class="float-left mb-1 field-label">Date Joined</label>
                 <input type="text" id="" class="form-control mb-4" value="23 September, 2022" disabled>
               </div>
-              <div class="col-md-6 px-2">
-                <label class="float-left mb-1 field-label">Date Created</label>
-                <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
-              </div>
 
-              <div class="button-container mx-auto mt-3">
-                <button type="button" class="btn close-btn">Clear</button>
-                <button type="submit" class="btn save-btn">Update</button>
+              <div class="col-md-12 text-center">
+                <div class="button-container mx-auto mt-3">
+                  <button type="button" class="btn close-btn">Clear</button>
+                  <button type="submit" class="btn save-btn">Update</button>
+                </div>
               </div>
 
             </form>
            </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card p-4">
+           
+           <div class="col-md-12 mb-4" style="border-bottom: 1px solid lightgray;">
+            <div class="pb-2 text-center" style="font-size: 20px;">Account Settings</div>
+          </div>
+          <form class="form-row" method="POST">
+            <div class="col-md-12 px-2">
+              <label class="float-left mb-1 field-label">Password</label>
+              <input type="text" id="" class="form-control mb-4" value="password">
+            </div>
+            <div class="col-md-12 px-2">
+              <label class="float-left mb-1 field-label">Confirm Password</label>
+              <input type="text" id="" class="form-control mb-4" value="password">
+            </div>
+
+            <div class="button-container mx-auto mt-3">
+              <button type="button" class="btn close-btn">Clear</button>
+              <button type="submit" class="btn save-btn">Update</button>
+            </div>
+
+          </form>
+          </div>
         </div>
       </div>
       
@@ -228,7 +262,7 @@
   <script type="text/javascript" src="../../../js/mdb2.min.js"></script>
 
   <script type="text/javascript">
-  	$(document).ready(function() {
+    $(document).ready(function() {
 
   // SideNav Initialization
   $(".button-collapse").sideNav();
@@ -236,10 +270,10 @@
   </script>
 
   <script type="text/javascript">
-  	$(document).ready(function() {
-	// SideNav Button Initialization
-	$(".button-collapse").sideNav({
-		slim: true,
+    $(document).ready(function() {
+  // SideNav Button Initialization
+  $(".button-collapse").sideNav({
+    slim: true,
 });
 });
   </script>

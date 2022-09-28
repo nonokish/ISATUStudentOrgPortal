@@ -26,6 +26,37 @@
 
   <!-- Modals -->
 
+  <!-- Switch Organization Modal -->
+  <div class="modal fade" id="switchOrgModal" tabindex="-1" role="dialog" aria-labelledby=""
+      aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="">
+          <div class="modal-header modal-header-fill mb-2">
+            <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
+            <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body py-4 px-5">
+            
+            <label style="font-weight: 500!important">Your organizations:</label>
+            <select class="browser-default custom-select select-organization mb-5">
+              <option value="1">Organization Name</option>
+              <option value="2">Organization Name</option>
+              <option value="3">Organization Name</option>
+            </select>
+
+            <div class="mx-auto text-center">
+              <button type="submit" class="btn login-btn px-5">Select</button>
+            </div>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Delete Alert Modal -->
   <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
     aria-hidden="true">
@@ -196,8 +227,9 @@
             <i class="fas fa-user-circle" style="font-size: 24px;"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
+            <a class="dropdown-item" href="../my_account">My Account</a>
+            <a class="dropdown-item" href="../php/logout.php">Logout</a>
           </div>
         </li>
       </ul>

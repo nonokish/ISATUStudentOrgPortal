@@ -26,6 +26,37 @@
 
   <!-- Modals -->
 
+  <!-- Switch Organization Modal -->
+  <div class="modal fade" id="switchOrgModal" tabindex="-1" role="dialog" aria-labelledby=""
+      aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="">
+          <div class="modal-header modal-header-fill mb-2">
+            <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
+            <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body py-4 px-5">
+            
+            <label style="font-weight: 500!important">Your organizations:</label>
+            <select class="browser-default custom-select select-organization mb-5">
+              <option value="1">Organization Name</option>
+              <option value="2">Organization Name</option>
+              <option value="3">Organization Name</option>
+            </select>
+
+            <div class="mx-auto text-center">
+              <button type="submit" class="btn login-btn px-5">Select</button>
+            </div>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
   <!--Double navigation-->
   <header>
     <!-- Sidebar navigation -->
@@ -105,8 +136,9 @@
             <i class="fas fa-user-circle" style="font-size: 24px;"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="php/logout.php">Logout</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
+            <a class="dropdown-item" href="../../my_account">My Account</a>
+            <a class="dropdown-item" href="../php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -131,13 +163,13 @@
                 </div>
 
                 <div class="col-5 mb-4">
-                  <label class="float-left mb-1 field-label">First Name</label>
-                  <input type="text" class="form-control" id="memberFirstName" name="memberFirstName" placeholder="Enter First Name" required>
+                  <label class="float-left mb-1 field-label">Last Name</label>
+                  <input type="text" class="form-control" id="memberLastName" name="memberLastName" placeholder="Enter Last Name" required>
                 </div>
 
                 <div class="col-5 mb-4">
-                  <label class="float-left mb-1 field-label">Last Name</label>
-                  <input type="text" class="form-control" id="memberLastName" name="memberLastName" placeholder="Enter Last Name" required>
+                  <label class="float-left mb-1 field-label">First Name</label>
+                  <input type="text" class="form-control" id="memberFirstName" name="memberFirstName" placeholder="Enter First Name" required>
                 </div>
 
                 <div class="col-2 mb-4">
@@ -165,15 +197,20 @@
                   <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Phone Number">
                 </div>
 
-                <div class="col-6 mb-2">
-                  <label class="float-left mb-1 field-label">Designation</label>
-                  <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                    <option selected disabled>Select Designation</option>
-                    <option value="0">Designation Name</option>
-                    <option value="1">Designation Name</option>
-                    <option value="2">Designation Name</option>
-                    <option value="3">Designation Name</option>
+                <div class="col-6 mb-4">
+                  <label class="float-left mb-1 field-label">Organization</label>
+                  <select class="browser-default custom-select" id="" name="orgClassification" required>
+                    <option selected disabled>Select Organization</option>
+                    <option value="0">Organization Name</option>
+                    <option value="1">Organization Name</option>
+                    <option value="2">Organization Name</option>
+                    <option value="3">Organization Name</option>
                   </select>
+                </div>
+
+                <div class="col-md-6 px-2">
+                  <label class="float-left mb-1 field-label">Designation <span style="font-size: 12px!important; color: #727272;">(Leave blank if none)</span></label>
+                  <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Designation">
                 </div>
 
                 <div class="col-md-6 mb-2">

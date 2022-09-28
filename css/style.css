@@ -566,3 +566,7 @@ display: block;
     height: var(--header-size);
     margin-top: calc(var(--header-size) * -1);
 }
+
+.select-organization{
+	font-size: 20px!important;
+}

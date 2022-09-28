@@ -30,13 +30,44 @@ require_once "./php/session.php";
 
   <!-- Modals -->
 
-  <!-- Adviser Details Modal -->
-  <div class="modal fade" id="adviserDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
+  <!-- Switch Organization Modal -->
+  <div class="modal fade" id="switchOrgModal" tabindex="-1" role="dialog" aria-labelledby=""
+      aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="">
+          <div class="modal-header modal-header-fill mb-2">
+            <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
+            <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body py-4 px-5">
+            
+            <label style="font-weight: 500!important">Your organizations:</label>
+            <select class="browser-default custom-select select-organization mb-5">
+              <option value="1">Organization Name</option>
+              <option value="2">Organization Name</option>
+              <option value="3">Organization Name</option>
+            </select>
+
+            <div class="mx-auto text-center">
+              <button type="submit" class="btn login-btn px-5">Select</button>
+            </div>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Member Details Modal -->
+  <div class="modal fade" id="memberDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header modal-header-fill mb-2">
-          <h5 class="modal-title" id="">Adviser Details</h5>
+          <h5 class="modal-title" id="">Member Details</h5>
   
           <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -46,37 +77,35 @@ require_once "./php/session.php";
           <div class="row">
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Name</label>
-              <input type="text" id="" class="form-control mb-4" value="Adviser Name">
+              <input type="text" id="" class="form-control mb-4" value="Member Name">
             </div>
             <div class="col-md-6 px-2">
-            <label class="float-left mb-1 field-label">Organization</label>
-              <select class="browser-default custom-select" id="orgClassification" name="" required>
-                <option disabled>Select Organization</option>
-                <option selected value="0">Organization Name</option>
-                <option value="1">Organization Name</option>
-                <option value="2">Organization Name</option>
-                <option value="3">Organization Name</option>
-              </select>
+              <label class="float-left mb-1 field-label">Department</label>
+              <input type="text" id="" class="form-control mb-4" value="Department Name">
+            </div>
+            <div class="col-md-6 px-2">
+              <label class="float-left mb-1 field-label">Course & Year</label>
+              <input type="text" id="" class="form-control mb-4" value="Course & Year">
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Email</label>
-              <input type="text" id="" class="form-control mb-4" value="adviser@gmail.com">
+              <input type="text" id="" class="form-control mb-4" value="member@gmail.com">
             </div>
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Phone Number</label>
               <input type="text" id="" class="form-control mb-4" value="09123456789">
             </div>
             <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Date Joined</label>
-              <input type="text" id="" class="form-control mb-4" value="23 September, 2022">
+              <label class="float-left mb-1 field-label">Designation</label>
+              <input type="text" id="" class="form-control mb-4" value="Designation Name">
             </div>
-            <div class="col-md-6">
-                  <label class="float-left mb-1 field-label">Date Created</label>
-                  <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
-                </div>
+            <div class="col-md-6 px-2">
+              <label class="float-left mb-1 field-label">Date Joined</label>
+              <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
+            </div>
           </div>
           <div class="mx-auto text-center mt-2">
-            <a class="delete-btn">Delete Adviser</a>
+            <a class="delete-btn">Delete Member</a>
           </div>
         </div>
         <div class="modal-footer">
@@ -168,8 +197,9 @@ require_once "./php/session.php";
             <i class="fas fa-user-circle" style="font-size: 24px;"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="php/logout.php">Logout</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
+            <a class="dropdown-item" href="../my_account">My Account</a>
+            <a class="dropdown-item" href="../php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -192,71 +222,68 @@ require_once "./php/session.php";
                 <option value="0" selected>By Date</option>
                 <option value="1">By Title</option>
               </select>
-              <input class="form-control w-75 mb-4" id="dbAdvisersSearch" type="text" placeholder="Type something to search list items">
+              <input class="form-control w-75 mb-4" id="dbMembersSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <!-- Member Table -->
-              <div id="getMembersDetailsGrid"></div>
-
-              <!--<table class="table">
+              <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Date Joined</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Organization</th>
+                    <th scope="col">Course & Year</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody id="dbAdvisersTable">
+                <tbody id="dbMembersTable">
                   <tr>
                     <th scope="row">1</th>
                     <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>Member Name</td>
+                    <td>BSIT-1</td>
+                    <td>sample@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
                     <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>Member Name</td>
+                    <td>BSIT-1</td>
+                    <td>sample@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
                     <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>Member Name</td>
+                    <td>BSIT-1</td>
+                    <td>sample@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">1</th>
                     <td>11/26/22</td>
-                    <td>Adviser Name</td>
-                    <td>Organization Name</td>
-                    <td>adviser@gmail.com</td>
+                    <td>Member Name</td>
+                    <td>BSIT-1</td>
+                    <td>sample@gmail.com</td>
                     <td>09123456789</td>
                     <td>
-                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#adviserDetailsModal">See Details</a>
+                      <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#memberDetailsModal">See Details</a>
                     </td>
                   </tr>
                 </tbody>
-              </table>-->
+              </table>
            </div>
         </div>
       </div>
@@ -306,9 +333,9 @@ require_once "./php/session.php";
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#dbAdvisersSearch").on("keyup", function() {
+      $("#dbMembersSearch").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#dbAdvisersTable tr").filter(function() {
+        $("#dbMembersTable tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });

@@ -141,13 +141,13 @@
                 </div>
 
                 <div class="col-5 mb-4">
-                  <label class="float-left mb-1 field-label">First Name</label>
-                  <input type="text" class="form-control" id="advFirstName" name="advFirstName" placeholder="Enter First Name" required>
+                  <label class="float-left mb-1 field-label">Last Name</label>
+                  <input type="text" class="form-control" id="advLastName" name="advLastName" placeholder="Enter Last Name" required>
                 </div>
 
                 <div class="col-5 mb-4">
-                  <label class="float-left mb-1 field-label">Last Name</label>
-                  <input type="text" class="form-control" id="advLastName" name="advLastName" placeholder="Enter Last Name" required>
+                  <label class="float-left mb-1 field-label">First Name</label>
+                  <input type="text" class="form-control" id="advFirstName" name="advFirstName" placeholder="Enter First Name" required>
                 </div>
 
                 <div class="col-2 mb-4">
