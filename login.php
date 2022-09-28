@@ -19,7 +19,7 @@ else
 {
     $_SESSION['user_id'] = $user_data['id'];
     $_SESSION['user_firstName'] = $user_data['first_name'];
-    $_SESSION['user_middleName'] = $user_data['middle_name'];
+    $_SESSION['user_middleInitial'] = $user_data['middle_initial'];
     $_SESSION['user_lastName'] = $user_data['last_name'];
     $_SESSION['user_email'] = $user_data['email'];
     $_SESSION['user_type'] = $user_data['user_type_id'];
