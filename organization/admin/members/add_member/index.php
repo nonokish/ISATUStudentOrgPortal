@@ -106,7 +106,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -123,7 +123,7 @@
       <div class="row mb-5">
         <div class="col-md-12">
           <div class="card p-4">
-            <form class="form-row" action="../../actions/add-announcement.php" method="POST">
+            <form class="form-row" action="./php/addMember.php" method="POST">
                 <input type="text" name="val" value="SA" hidden/>
 
                 <div class="col-md-12 mb-4" style="border-bottom: 1px solid lightgray;">
@@ -132,37 +132,37 @@
 
                 <div class="col-5 mb-4">
                   <label class="float-left mb-1 field-label">First Name</label>
-                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter First Name" required>
+                  <input type="text" class="form-control" id="memberFirstName" name="memberFirstName" placeholder="Enter First Name" required>
                 </div>
 
                 <div class="col-5 mb-4">
                   <label class="float-left mb-1 field-label">Last Name</label>
-                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter Last Name" required>
+                  <input type="text" class="form-control" id="memberLastName" name="memberLastName" placeholder="Enter Last Name" required>
                 </div>
 
                 <div class="col-2 mb-4">
                   <label class="float-left mb-1 field-label">Middle Initial</label>
-                  <input type="text" class="form-control" id="" name="orgName" placeholder="Enter Middle Initial" required>
+                  <input type="text" class="form-control" id="memberMiddleInitial" name="memberMiddleInitial" placeholder="Enter Middle Initial" required>
                 </div>
 
                 <div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Department</label>
-                  <input type="text" class="form-control" id="" name="" placeholder="Enter Department" required>
+                  <input type="text" class="form-control" id="memberDepartment" name="memberDepartment" placeholder="Enter Department" required>
                 </div>
 
                 <div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Course & Year</label>
-                  <input type="text" class="form-control" id="" name="" placeholder="Enter Course & Year" required>
+                  <input type="text" class="form-control" id="memberCourseYear" name="memberCourseYear" placeholder="Enter Course & Year" required>
                 </div>
 
                 <div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Email</label>
-                  <input type="text" class="form-control" id="" name="" placeholder="Enter Email" required>
+                  <input type="text" class="form-control" id="memberEmail" name="memberEmail" placeholder="Enter Email" required>
                 </div>
 
                 <div class="col-md-6 px-2">
                   <label class="float-left mb-1 field-label">Phone Number</label>
-                  <input type="text" id="" class="form-control mb-4" placeholder="Enter Phone Number">
+                  <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Phone Number">
                 </div>
 
                 <div class="col-6 mb-2">
@@ -178,7 +178,7 @@
 
                 <div class="col-md-6 mb-2">
                   <label class="float-left mb-1 field-label">Date Joined</label>
-                  <input type="date" id="" class="form-control datepicker mb-4" placeholder="Select Date">
+                  <input type="date" id="memberDateJoined" name="memberDateJoined" class="form-control datepicker mb-4" placeholder="Select Date">
                 </div>
 
                 <div class="col-md-12 mb-4" style="border-bottom: 1px solid lightgray;">
@@ -187,12 +187,12 @@
 
                 <div class="col-md-6 mb-5">
                   <label class="float-left mb-1 field-label">Password</label>
-                  <input type="password" id="" class="form-control" placeholder="Set Password" />
+                  <input type="password" id="memberPassword" name="memberPassword" class="form-control" placeholder="Set Password" />
                 </div>
 
                 <div class="col-md-6 mb-5">
                   <label class="float-left mb-1 field-label">Confirm Password</label>
-                  <input type="password" id="" class="form-control" placeholder="Confirm Password" />
+                  <input type="password" id="memberConfirmPassword" name="memberConfirmPassword" class="form-control" placeholder="Confirm Password" />
                 </div>
                 
                 <div class="button-container mx-auto mt-3">
