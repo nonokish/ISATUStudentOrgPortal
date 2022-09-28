@@ -3,8 +3,6 @@ require_once '../../../db.php';
 ?>
 <?php  
     $organization_id = $_SESSION['org_id'];
-    $org_array = $_SESSION['org_array'];
-    $user_org_array = $_SESSION['user_org_array'];
     echo "<script>console.log('organization_id: " . $organization_id . "' );</script>";
 
     echo'
@@ -20,7 +18,7 @@ require_once '../../../db.php';
       			</thead>
       		<tbody id="dbMembersTable">
     ';
-    $sql = "SELECT uo.date_joined as user_date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as student_name, u.course_year as course_year, u.email as user_email, u.contact as user_contact FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE o.id IN ($org_array)";
+    $sql = "SELECT uo.date_joined as user_date_joined, CONCAT(u.first_name, ' ', u.middle_name, ' ', u.last_name) as student_name, CONCAT(u.course, '-', u.year) as course_year, u.email as user_email, u.contact as user_contact FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE o.id = '$organization_id'";
     $result = mysqli_query($conn, $sql);
     
     if(mysqli_num_rows($result) > 0){

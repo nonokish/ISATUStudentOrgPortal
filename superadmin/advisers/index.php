@@ -175,7 +175,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="php/logout.php">Logout</a>
+            <a class="dropdown-item" href="#">Logout</a>
           </div>
         </li>
       </ul>
@@ -201,10 +201,7 @@
               <input class="form-control w-75 mb-4" id="dbAdvisersSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <!-- Adviser Table -->
-              <div id="getAdviserDetailsGrid"></div>
-
-              <!--<table class="table">
+              <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -262,7 +259,7 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>-->
+              </table>
            </div>
         </div>
       </div>
@@ -326,17 +323,6 @@
       weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       showMonthsShort: true,
       })
-  </script>
-
-  <!--Organization Member Grid -->
-  <script type="text/javascript">
-    $.ajax({
-      url: "php/getAdviserDetailsGrid.php",
-      type: "GET",
-      success: function(response){
-        $("#getAdviserDetailsGrid").append(response);
-      }
-    });
   </script>
   
 

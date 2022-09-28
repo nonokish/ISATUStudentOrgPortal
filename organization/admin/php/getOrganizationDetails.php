@@ -2,7 +2,7 @@
 require_once '../../db.php';
 
 if (!isset($_SESSION['user_id'])){
-        header('location:../../');
+        header('location:../../../');
     }else{
         $userId = $_SESSION['user_id'];
         $sql = "SELECT * FROM user_organization WHERE user_id = '$userId'";

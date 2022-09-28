@@ -1,7 +1,3 @@
-<?php
-require_once "../../../db.php";
-require_once "./php/session.php";
-?>
 <!DOCTYPE html>
 <html>
 <head>

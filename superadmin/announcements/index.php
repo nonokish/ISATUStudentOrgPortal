@@ -112,7 +112,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="php/logout.php">Logout</a>
+            <a class="dropdown-item" href="#">Logout</a>
           </div>
         </li>
       </ul>
