@@ -1,6 +1,5 @@
 <?php
 require_once "../../../db.php";
-require_once "./php/session.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -199,7 +198,7 @@ require_once "./php/session.php";
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
             <a class="dropdown-item" href="../my_account">My Account</a>
-            <a class="dropdown-item" href="../php/logout.php">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -225,7 +224,9 @@ require_once "./php/session.php";
               <input class="form-control w-75 mb-4" id="dbMembersSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <table class="table">
+              <!-- Member Table -->
+              <div id="getMembersDetailsGrid"></div>
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -283,7 +284,7 @@ require_once "./php/session.php";
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>

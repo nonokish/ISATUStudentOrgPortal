@@ -5,7 +5,8 @@ if (!isset($_SESSION['user_id'])){
         header('location:../../');
     }else{
         $userId = $_SESSION['user_id'];
-        $sql = "SELECT * FROM user_organization WHERE user_id = '$userId'";
+        $session_org_id = $_SESSION['org_id'];
+        $sql = "SELECT * FROM user_organization WHERE user_id = '$userId' and organization_id = '$session_org_id'";
         $result = mysqli_query($conn,$sql);
         
         $user_org_data = mysqli_fetch_array($result);
@@ -40,12 +41,12 @@ if (!isset($_SESSION['user_id'])){
 
                     $orgTotalMember = $_SESSION['org_total_member'];
                 }
-                $_SESSION['org_id'] = $org_data['id'];
+                //$_SESSION['org_id'] = $org_data['id'];
                 $_SESSION['org_name'] = $org_data['name'];
                 $_SESSION['org_date_created'] = $org_data['org_date_created'];
                 $_SESSION['created_by'] = $org_data['created_by'];
                 
-                $orgId = $_SESSION['org_id'];
+                $orgId = $session_org_id;
                 $orgName = $_SESSION['org_name'];
                 $orgDateCreated = $_SESSION['org_date_created'];
                 $createdBy = $_SESSION['created_by'];

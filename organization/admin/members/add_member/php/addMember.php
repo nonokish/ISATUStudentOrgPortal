@@ -1,7 +1,8 @@
 <?php
     require_once '../../../../../db.php';
 
-    $userId = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
+    $org_id = $_SESSION['org_id'];
 
     $memberFirstName = mysqli_real_escape_string($conn, trim($_POST['memberFirstName']));
     $memberLastName = mysqli_real_escape_string($conn, trim($_POST['memberLastName']));
@@ -10,15 +11,22 @@
     $memberCourseYear = mysqli_real_escape_string($conn, trim($_POST['memberCourseYear']));
     $memberEmail = mysqli_real_escape_string($conn, trim($_POST['memberEmail']));
     $memberContact = mysqli_real_escape_string($conn, trim($_POST['memberContact']));
+    $memberDesignation = mysqli_real_escape_string($conn, trim($_POST['memberDesignation']));
     $memberDateJoined = mysqli_real_escape_string($conn, trim($_POST['memberDateJoined']));
     $memberPassword = mysqli_real_escape_string($conn, trim($_POST['memberPassword']));
+
+    if($memberDesignation){
+        $user_type_id = 3;
+    } else {
+        $user_type_id = 1;
+    }
         
-    $addMemberSql = "INSERT INTO user (user_type_id,first_name,last_name,middle_initial,email,contact,password,created_by,course_year,department) VALUES (1,'$memberFirstName','$memberLastName','$memberMiddleInitial','$memberEmail','$memberContact',PASSWORD('$memberPassword'),'$userId','$memberCourseYear','$memberDepartment')";
+    $addMemberSql = "INSERT INTO user (user_type_id,first_name,last_name,middle_initial,email,contact,designation,password,created_by,course_year,department) VALUES ('$user_type_id','$memberFirstName','$memberLastName','$memberMiddleInitial','$memberEmail','$memberContact','$memberDesignation',PASSWORD('$memberPassword'),'$user_id','$memberCourseYear','$memberDepartment')";
 
     $addMemberResult = mysqli_query($conn, $addMemberSql);
     $memberId = $conn->insert_id;
     if($addMemberResult){
-        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$memberId',1,'$memberDateJoined','$userId')";
+        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$memberId','$org_id','$memberDateJoined','$user_id')";
         $addMemberOrgResult = mysqli_query($conn, $addMemberOrgSql);
 
         if($addMemberOrgResult){

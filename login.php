@@ -26,8 +26,10 @@ else
 
     if($user_data['user_type_id'] == 5){
         header("location:./superadmin?success=true");
-    }else{
+    }else if($user_data['user_type_id'] == 3 || $user_data['user_type_id'] == 4){
         header("location:./organization/admin?success=true");
+    }else{
+        header("location:./organization/member?success=true");
     }
 }
 

@@ -264,8 +264,9 @@
         </div>
         <div class="section-title-divider flex-grow-1"></div>
       </div>
-      <div class="row announcements-grid">
-        <div class="col-md-4 px-3">
+      <!-- Announcement History Table -->
+      <div class="row announcements-grid" id="getHomePageAnnouncementHistoryCard">
+        <!--<div class="col-md-4 px-3">
           <div class="card announcements-card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
               <img src="img/mel.jpg" class="img-fluid"/>
@@ -360,7 +361,7 @@
               <a href="#!" class="btn btn-read-more">Read More</a>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>
 
@@ -509,6 +510,17 @@
 
     <script type="text/javascript">
       
+    </script>
+
+    <!-- Announcement History Card -->
+    <script type="text/javascript">
+      $.ajax({
+        url: "php/getHomePageAnnouncementHistoryCard.php",
+        type: "GET",
+        success: function(response){
+          $("#getHomePageAnnouncementHistoryCard").append(response);
+        }
+      });
     </script>
 
   </body>

@@ -36,7 +36,7 @@ require_once "./php/getOrganizationDetails.php";
       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="">
+        <form class="" action="./php/updateOrganizationIdSession.php" method="POST">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
             <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -46,10 +46,7 @@ require_once "./php/getOrganizationDetails.php";
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5">
-              <option value="1">Organization Name</option>
-              <option value="2">Organization Name</option>
-              <option value="3">Organization Name</option>
+            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -143,7 +140,7 @@ require_once "./php/getOrganizationDetails.php";
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
             <a class="dropdown-item" href="./my_account">My Account</a>
-            <a class="dropdown-item" href="../php/logout.php">Logout</a>
+            <a class="dropdown-item" href="./php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -311,6 +308,10 @@ require_once "./php/getOrganizationDetails.php";
         $("#getOrganizationMemberGrid").append(response);
       }
     });
+  </script>
+
+  <script type="text/javascript">
+    $('#orgList').load("php/changeOrganizationDropdownList.php");
   </script>
   
 </body>

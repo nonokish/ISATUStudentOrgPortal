@@ -197,7 +197,7 @@
                   <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Phone Number">
                 </div>
 
-                <div class="col-6 mb-4">
+                <!--<div class="col-6 mb-4">
                   <label class="float-left mb-1 field-label">Organization</label>
                   <select class="browser-default custom-select" id="" name="orgClassification" required>
                     <option selected disabled>Select Organization</option>
@@ -206,11 +206,11 @@
                     <option value="2">Organization Name</option>
                     <option value="3">Organization Name</option>
                   </select>
-                </div>
+                </div>-->
 
                 <div class="col-md-6 px-2">
                   <label class="float-left mb-1 field-label">Designation <span style="font-size: 12px!important; color: #727272;">(Leave blank if none)</span></label>
-                  <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Designation">
+                  <input type="text" id="memberDesignation" name="memberDesignation" class="form-control mb-4" placeholder="Enter Designation">
                 </div>
 
                 <div class="col-md-6 mb-2">

@@ -1,3 +1,6 @@
+<?php
+  require_once '../../../../db.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,17 +42,17 @@
         </div>
         <div class="modal-body py-4 px-5">
           <label class="float-left mb-1 field-label">Announcement Title</label>
-          <input type="text" id="" class="form-control mb-4" value="Sample Title" disabled>
+          <input type="text" id="ann_title_detail" class="form-control mb-4" value="Sample Title" disabled>
 
           <label class="float-left mb-1 field-label">Publish Date</label>
-          <input type="text" id="" class="form-control mb-4" value="23 September, 2022" disabled>
+          <input type="text" id="ann_pub_date_detail" class="form-control mb-4" value="23 September, 2022" disabled>
 
           <label class="float-left mb-1 field-label">Organization</label>
-          <input type="text" id="" class="form-control mb-4" value="Sample Organization" disabled>
+          <input type="text" id="ann_org_detail" class="form-control mb-4" value="Sample Organization" disabled>
 
           <div class="form-group mb-4">
             <label class="float-left mb-1 field-label">Content</label>
-            <textarea class="form-control rounded-0" id="" rows="3" value="Some quick example text to build on the card title and make up the bulk of the card's content." disabled></textarea>
+            <textarea class="form-control rounded-0" id="ann_content_detail" rows="3" value="Some quick example text to build on the card title and make up the bulk of the card's content." disabled></textarea>
           </div>
 
           <div class="form-group mb-3">
@@ -59,16 +62,14 @@
                 <label class="field-sub-label">Display Image</label>
               </div>
               <div class="announcement-images mb-4">
-                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
+                <img src="" alt="thumbnail" id="ann_display_img_detail" class="img-thumbnail mb-1" style="width: 150px">
               </div>
 
               <div class="mb-2">
                 <label class="field-sub-label">Article Images</label>
               </div>
               <div class="announcement-images">
-                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
-                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
-                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
+                <img src="" alt="thumbnail" id="ann_article_img_detail" class="img-thumbnail mb-1" style="width: 150px">
               </div>
               
             </div>
@@ -164,7 +165,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -190,7 +191,10 @@
               <input class="form-control w-75 mb-4" id="dbOrgsSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <table class="table">
+              <!-- Announcement History Table -->
+              <div id="getAnnouncementHistoryGrid"></div>
+
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -230,7 +234,7 @@
                     <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -276,6 +280,42 @@
       });
     });
   </script>
+
+  <!--Announcement History Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getAnnouncementHistoryGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getAnnouncementHistoryGrid").append(response);
+      }
+    });
+  </script>
+
+  <!--Announcement History Modal -->
+  <script type="text/javascript">
+    function getAnnouncementHistoryModal(id){
+      $.ajax({
+        url:"php/getAnnouncementHistoryModalDetails.php",
+        type: "POST",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          var res = response.split(',')
+          //$("#editResultsModalHBS").modal("show");
+          $("#ann_title_detail").val(res[0]);
+          $("#ann_pub_date_detail").val(res[1]);
+          $("#ann_org_detail").val(res[2]);
+          $("#ann_content_detail").val(res[3]);
+          console.log("res", res);
+          $("#ann_display_img_detail").attr("src",'../announcement_uploads/'+res[4]);
+          $("#ann_article_img_detail").attr("src",'../announcement_uploads/'+res[5]);
+        }
+      });
+    }
+  </script>
+
   
 </body>
 </html>
