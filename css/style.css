@@ -50,6 +50,12 @@ body{
 	border-radius: 5px;
 }
 
+.main-navbar-right a.active{
+	font-size: 18px;
+	background-color: #f9ce00!important;
+	border-radius: 5px;
+}
+
 .main-navbar-section{
 	width: 100vw;
 	max-width: 1440px;
@@ -142,6 +148,7 @@ body{
 .announcements-card{
 	border-radius: 10px;
 	margin-bottom: 7%;
+	height: 480px;
 }
 
 .announcements-date-author{
@@ -348,6 +355,18 @@ display: block;
 
 .card-title{
 	font-weight: 500!important;
+	overflow: hidden;
+  	text-overflow: ellipsis; 
+  	color: #333;
+  	white-space: nowrap; 
+}
+
+.card-content{
+	width: 100%;
+	height: auto;
+  	overflow: hidden;
+  	white-space: normal;
+  	text-overflow: ellipsis;
 }
 
 .view-all-link{
@@ -569,4 +588,52 @@ display: block;
 
 .select-organization{
 	font-size: 20px!important;
+}
+
+.multiline {
+  display: block;
+  display: -webkit-box;
+  margin: 0 auto;
+  color: #4f4f4f;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.subhero-image{
+	width: 100vw;
+	height: 45vh;
+	object-fit: cover;
+}
+
+.subhero-title{
+	font-size: 52px;
+	font-weight: bold;
+}
+
+.breadcrumbs-link{
+	font-size: 18px;
+}
+
+.breadcrumbs-link.active{
+	text-decoration: underline;
+	color: #003366!important;
+}
+
+.full-announcement-img{
+	height: 550px!important;
+	width: 1000px!important;
+}
+
+.full-announcement-img img{
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+}
+
+.full-announcement-content{
+	width: 60%;
 }

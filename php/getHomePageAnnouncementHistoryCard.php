@@ -15,7 +15,7 @@ require_once '../db.php';
             $ann_content = $row['ann_content'];
             echo '
                 <div class="col-md-4 px-3">
-                    <div class="card announcements-card">
+                    <div class="card d-flex align-content-stretch announcements-card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                         <img src="organization/admin/announcements/announcement_uploads/'.$display_image.'" class="img-fluid"/>
                         <a href="#!">
@@ -23,10 +23,13 @@ require_once '../db.php';
                         </a>
                         </div>
                         <div class="card-body">
-                        <div class="announcements-date-author mb-3"><label id="card_pub_date">'.$publish_date.'</label><span class="mx-2">/</span><label id="card_org">'.$org_name.'</label></div>
-                        <h5 class="card-title">'.$ann_title.'</h5>
-                        <p class="card-text">'.$ann_content.'</p>
-                        <a href="#!" class="btn btn-read-more">Read More</a>
+                        <div class="announcements-date-author mb-2"><label id="card_pub_date">'.$publish_date.'</label><span class="mx-2">/</span><label id="card_org">'.$org_name.'</label></div>
+                        <h5 class="card-title mb-2">'.$ann_title.'</h5>
+                        <p class="card-text multiline mb-3" title="multiline text with ellipsis">'.$ann_content.'</p>
+                     
+                         <a href="./announcements/announcement_details" class="btn btn-read-more">Read More</a>
+                
+                       
                         </div>
                     </div>
                 </div>

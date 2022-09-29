@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>ISAT-U Student's Organization Online Portal</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/ISATULogo.png" type="image/x-icon" />
+    <link rel="icon" href="../img/ISATULogo.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -18,9 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
     />
     <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/mdb.min.css" />
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   
   <body>
@@ -133,11 +133,11 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item me-2">
               <!-- Navbar brand -->
-              <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <a class="navbar-brand mt-2 mt-lg-0" href="../">
                 <img
-                  src="img/ISATULogo.png"
+                  src="../img/ISATULogo.png"
                   height="60"
-                  alt="MDB Logo"
+                  alt="ISAT-U Logo"
                   loading="lazy"
                 />
                 <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization</div>
@@ -151,13 +151,13 @@
             <!-- Right links -->
             <ul class="navbar-nav mb-2 mb-lg-0 main-navbar-right">
               <li class="nav-item px-2">
-                <a class="nav-link nav p-3 active" aria-current="page" href="#">Home</a>
+                <a class="nav-link nav p-3" aria-current="page" href="../">Home</a>
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3" href="./about">About Us</a>
               </li>
               <li class="nav-item ps-2">
-                <a class="nav-link nav p-3" href="./announcements">Announcements</a
+                <a class="nav-link nav active p-3 active" href="./announcements">Announcements</a
                 >
               </li>
             </ul>
@@ -169,102 +169,33 @@
       </nav>
     <!-- Main Navbar -->
 
-    <div class="hero-section-container">
-    <!-- Carousel wrapper -->
-    <div id="carouselMaterialStyle" class="carousel slide carousel-fade intro-carousel" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true"
-            aria-label="Slide 1"></button>
-          <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+    <div class="subhero-section-container">
+    <div class="bg-image">
+      <img
+        src="../img/isat.jpeg"
+        class="img-fluid subhero-image"
+        alt="Sample"
+      />
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <p class="text-white mb-0 subhero-title">Announcements</p>
         </div>
-
-        <!-- Inner -->
-        <div class="carousel-inner rounded-5 shadow-4-strong">
-          <!-- Single item -->
-          <div class="carousel-item active">
-            <img src="img/isatbldg.jpg" class="d-block w-100"
-              alt="Sunset Over the City" />
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);"></div>
-            <div class="carousel-caption d-none d-md-block carousel-intro-caption hero">
-              <h5 class="carousel-title">ISAT-U Student's Organization</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-
-          <!-- Single item -->
-          <div class="carousel-item">
-            <img src="img/isat2.jpg" class="d-block w-100"
-              alt="Canyon at Nigh" />
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)"></div>
-            <div class="carousel-caption d-none d-md-block carousel-intro-caption">
-              <h5 class="carousel-title">ISAT-U Student's Organization</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-
-          <!-- Single item -->
-          <div class="carousel-item">
-            <img src="img/isat3.jpg" class="d-block w-100"
-              alt="Cliff Above a Stormy Sea" />
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)"></div>
-            <div class="carousel-caption d-none d-md-block carousel-intro-caption">
-              <h5 class="carousel-title">ISAT-U Student's Organization</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    <!-- Carousel wrapper -->
     </div>
-
-    <div class="about-us-section-container">
-      <section class="container-fluid about-us-section px-5" id="about">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="about-us-title mb-3">
-            <img
-              src="img/ISATULogo.png"
-              height="50"
-              alt="ISAT-U Logo"
-              loading="lazy"
-              class="me-2"
-            />
-            <span>ISAT-U Student's Organization</span>
-            </div>
-            <div class="about-us-description">About Student's Organization</div>
-          </div>
-          <div class="col-md-8 pt-2 ps-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </div>
-        </div>
-      </section>
     </div>
 
     <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
-      <div class="section-title-container d-flex mb-5">
-        <div class="section-title me-4">
-          <div>Announcements</div>
-          <a class="section-title-see-all" href="./announcements">See all</a>
-        </div>
-        <div class="section-title-divider flex-grow-1"></div>
-      </div>
-      <!-- Announcement History Table -->
+
+    <!-- Breadcrumb -->
+    <nav class="d-flex mb-5">
+      <h6 class="mb-0">
+        <a href="" class="text-reset breadcrumbs-link">Home</a>
+        <span>/</span>
+        <a href="" class="text-reset breadcrumbs-link active">Announcements</a>
+      </h6>
+    </nav>
+    <!-- Breadcrumb -->
+
       <div class="row announcements-grid" id="getHomePageAnnouncementHistoryCard">
         <!--<div class="col-md-4 px-3">
           <div class="card announcements-card">
@@ -497,16 +428,16 @@
     <!-- End your project here-->
 
     <!-- MDB -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery2.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="../js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap2.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="js/mdb2.min.js"></script>
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/mdb2.min.js"></script>
 
     <script type="text/javascript">
       
@@ -515,7 +446,7 @@
     <!-- Announcement History Card -->
     <script type="text/javascript">
       $.ajax({
-        url: "php/getHomePageAnnouncementHistoryCard.php",
+        url: "../php/getHomePageAnnouncementHistoryCard.php",
         type: "GET",
         success: function(response){
           $("#getHomePageAnnouncementHistoryCard").append(response);
