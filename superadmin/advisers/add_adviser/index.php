@@ -34,7 +34,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -165,7 +165,7 @@
                   <input type="text" id="advContact" name="advContact" class="form-control mb-4" placeholder="Enter Phone Number">
                 </div>
 
-                <div class="col-6 mb-2">
+                <!--<div class="col-6 mb-2">
                   <label class="float-left mb-1 field-label">Organization</label>
                   <select class="browser-default custom-select" id="orgList" name="orgList" required>
                   </select>
@@ -174,7 +174,7 @@
                 <div class="col-md-6 mb-2">
                   <label class="float-left mb-1 field-label">Date Joined</label>
                   <input type="datetime" id="advJoinedDate" name="advJoinedDate" class="form-control datepicker mb-4" placeholder="Select Date">
-                </div>
+                </div>-->
 
                 <div class="col-md-12 mb-4" style="border-bottom: 1px solid lightgray;">
                   <div class="pb-2" style="font-size: 18px;">Account Settings</div>
@@ -240,9 +240,9 @@
       })
   </script>
 
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     $('#orgList').load("php/addAdviserDropdownListOrganization.php");
-  </script>
+  </script>-->
   
 
 </body>

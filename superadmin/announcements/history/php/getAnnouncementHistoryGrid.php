@@ -1,5 +1,5 @@
 <?php
-require_once '../../../../../db.php';
+require_once '../../../../db.php';
 ?>
 <?php  
     echo'
@@ -14,10 +14,8 @@ require_once '../../../../../db.php';
       			</thead>
       		<tbody id="dbOrgsTable">
     ';
-
-    $org_id = $_SESSION['org_id'];
-    echo "<script>console.log('org_id: " . $org_id . "' );</script>";
-    $orgDetailsSql = "SELECT oa.id as oa_id, a.title as ann_title, a.publish_date as ann_pub_date, o.id as org_id, o.name as org_name FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id WHERE o.id = '$org_id'";
+    
+    $orgDetailsSql = "SELECT oa.id as oa_id, a.title as ann_title, a.publish_date as ann_pub_date, o.id as org_id, o.name as org_name FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id";
     $orgDetailsResult = mysqli_query($conn, $orgDetailsSql);
     
     if(mysqli_num_rows($orgDetailsResult) > 0){
@@ -32,7 +30,7 @@ require_once '../../../../../db.php';
                     <td>'.$ann_title.'</td>
                     <td>'.$ann_pub_date.'</td>
                     <td>'.$org_name.'</td>
-                    <td><a class="see-contents-link py-1 px-3" onclick="getAnnouncementHistoryModal('.$oa_id.')" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
+                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
                 </tr>
             ';
         }

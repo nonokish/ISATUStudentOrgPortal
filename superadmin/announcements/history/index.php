@@ -62,14 +62,14 @@
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
               </div>
 
-              <div class="mb-2">
+              <!--<div class="mb-2">
                 <label class="field-sub-label">Article Images</label>
               </div>
               <div class="announcement-images">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
-              </div>
+              </div>-->
               
             </div>
           </div>
@@ -92,7 +92,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -200,7 +200,10 @@
               <input class="form-control w-75 mb-4" id="dbOrgsSearch" type="text" placeholder="Type something to search list items">
             </div>
 
-              <table class="table">
+              <!-- Announcement History Table -->
+              <div id="getAnnouncementHistoryGrid"></div>
+
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -240,7 +243,7 @@
                     <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -284,6 +287,17 @@
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
+    });
+  </script>
+
+  <!--Announcement History Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getAnnouncementHistoryGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getAnnouncementHistoryGrid").append(response);
+      }
     });
   </script>
   

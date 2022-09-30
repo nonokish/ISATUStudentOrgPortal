@@ -446,7 +446,7 @@
     <!-- Announcement History Card -->
     <script type="text/javascript">
       $.ajax({
-        url: "../php/getHomePageAnnouncementHistoryCard.php",
+        url: "php/getHomePageAnnouncementHistoryCard.php",
         type: "GET",
         success: function(response){
           $("#getHomePageAnnouncementHistoryCard").append(response);

@@ -31,7 +31,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->

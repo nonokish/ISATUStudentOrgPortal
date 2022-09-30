@@ -31,7 +31,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -159,10 +159,10 @@
                   </div>
                   <input class="upload-btn w-100 mb-4" type="file" id="displayImage" name="files[]" />
 
-                  <div class="mb-2">
+                  <!--<div class="mb-2">
                     <label class="field-sub-label">Article Images</label>
                   </div>
-                  <input class="upload-btn w-100" type="file" id="articleImages" name="files[]" multiple />
+                  <input class="upload-btn w-100" type="file" id="articleImages" name="files[]" multiple />-->
                 </div>
               </div>
 
@@ -279,7 +279,7 @@
     });
   </script>
   
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     $(document).ready(function() {
       if (window.File && window.FileList && window.FileReader) {
         $("#articleImages").on("change", function(e) {
@@ -314,7 +314,7 @@
         alert("Your browser doesn't support to File API")
       }
     });
-  </script>
+  </script>-->
 
   
 

@@ -159,7 +159,7 @@ require_once "./php/getOrganizationDetails.php";
       			<h5 class="card-title mb-4">New Members</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-user-plus"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
+     			 	<span class="float-right" style="color: #f7CA18;">00</span>
      			 </div>
     			</div>
       	</div>

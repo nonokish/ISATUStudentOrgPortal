@@ -1,5 +1,6 @@
 <?php
 require_once "../../../db.php";
+$org_name = $_SESSION['org_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@ require_once "../../../db.php";
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-            Organization Name
+              <?php echo $org_name;?>
             </span></a>
           </div>
         </li>
@@ -149,10 +150,10 @@ require_once "../../../db.php";
                   </div>
                   <input class="upload-btn w-100 mb-4" type="file" id="ann_display_image_id" name="ann_display_image" />
 
-                  <div class="mb-2">
+                  <!--<div class="mb-2">
                     <label class="field-sub-label">Article Images</label>
                   </div>
-                  <input class="upload-btn w-100" type="file" id="ann_article_image_id" name="ann_article_image" multiple />
+                  <input class="upload-btn w-100" type="file" id="ann_article_image_id" name="ann_article_image" multiple />-->
                 </div>
               </div>
 
@@ -269,10 +270,10 @@ require_once "../../../db.php";
     });
   </script>
   
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     $(document).ready(function() {
       if (window.File && window.FileList && window.FileReader) {
-        $("#articleImages").on("change", function(e) {
+        $("#ann_article_image_id").on("change", function(e) {
           var files = e.target.files,
             filesLength = files.length;
           for (var i = 0; i < filesLength; i++) {
@@ -283,7 +284,7 @@ require_once "../../../db.php";
               $("<span class=\"pip\">" +
                 "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
                 "<br/><span class=\"remove\">Remove</span>" +
-                "</span>").insertAfter("#articleImages");
+                "</span>").insertAfter("#ann_article_image_id");
               $(".remove").click(function(){
                 $(this).parent(".pip").remove();
               });
@@ -304,7 +305,7 @@ require_once "../../../db.php";
         alert("Your browser doesn't support to File API")
       }
     });
-  </script>
+  </script>-->
 
   <script type="text/javascript">
     $('#orgList').load("php/postAnnouncementDropdownListOrganization.php");

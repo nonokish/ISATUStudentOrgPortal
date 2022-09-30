@@ -1,5 +1,6 @@
 <?php
 require_once "../../../db.php";
+$org_name = $_SESSION['org_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ require_once "../../../db.php";
       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="">
+        <form class="" action="./php/updateOrganizationIdSession.php" method="POST">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
             <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -44,10 +45,7 @@ require_once "../../../db.php";
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5">
-              <option value="1">Organization Name</option>
-              <option value="2">Organization Name</option>
-              <option value="3">Organization Name</option>
+            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -72,8 +70,8 @@ require_once "../../../db.php";
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body px-5 py-4">
-          <div class="row">
+        <div class="modal-body px-5 py-4" id="getMemberModalDetails">
+          <!--<div class="row">
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Name</label>
               <input type="text" id="" class="form-control mb-4" value="Member Name">
@@ -102,7 +100,7 @@ require_once "../../../db.php";
               <label class="float-left mb-1 field-label">Date Joined</label>
               <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
             </div>
-          </div>
+          </div>-->
           <div class="mx-auto text-center mt-2">
             <a class="delete-btn">Delete Member</a>
           </div>
@@ -126,7 +124,7 @@ require_once "../../../db.php";
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-            Organization Name
+              <?php echo $org_name;?>
             </span></a>
           </div>
         </li>
@@ -359,6 +357,27 @@ require_once "../../../db.php";
         $("#getMembersDetailsGrid").append(response);
       }
     });
+  </script>
+
+  <script type="text/javascript">
+    $('#orgList').load("php/changeOrganizationDropdownList.php");
+  </script>
+
+  <!--Member Details Modal -->
+  <script type="text/javascript">
+    function getMemberDetailsModal(id){
+      $.ajax({
+        url:"php/getMemberModalDetails.php",
+        type: "POST",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          $("#getMemberModalDetails").html("");
+          $("#getMemberModalDetails").append(response);
+        }
+      });
+    }
   </script>
   
 

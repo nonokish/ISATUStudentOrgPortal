@@ -1,5 +1,6 @@
 <?php
   require_once '../../../../db.php';
+  $org_name = $_SESSION['org_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,8 +41,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body py-4 px-5">
-          <label class="float-left mb-1 field-label">Announcement Title</label>
+        <div class="modal-body py-4 px-5" id="getAnnouncementHistoryModalDetails">
+          <!--<label class="float-left mb-1 field-label">Announcement Title</label>
           <input type="text" id="ann_title_detail" class="form-control mb-4" value="Sample Title" disabled>
 
           <label class="float-left mb-1 field-label">Publish Date</label>
@@ -73,7 +74,7 @@
               </div>
               
             </div>
-          </div>
+          </div>-->
 
         </div>
         <div class="modal-footer">
@@ -94,7 +95,7 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-            Organization Name
+              <?php echo $org_name;?>
             </span></a>
           </div>
         </li>
@@ -302,15 +303,16 @@
           "id":id
         },
         success: function(response){
-          var res = response.split(',')
-          //$("#editResultsModalHBS").modal("show");
-          $("#ann_title_detail").val(res[0]);
-          $("#ann_pub_date_detail").val(res[1]);
-          $("#ann_org_detail").val(res[2]);
-          $("#ann_content_detail").val(res[3]);
-          console.log("res", res);
-          $("#ann_display_img_detail").attr("src",'../announcement_uploads/'+res[4]);
-          $("#ann_article_img_detail").attr("src",'../announcement_uploads/'+res[5]);
+          $("#getAnnouncementHistoryModalDetails").html("");
+          $("#getAnnouncementHistoryModalDetails").append(response);
+          //var res = response.split(',')
+          //$("#ann_title_detail").val(res[0]);
+          //$("#ann_pub_date_detail").val(res[1]);
+          //$("#ann_org_detail").val(res[2]);
+          //$("#ann_content_detail").val(res[3]);
+          //console.log("res", res);
+          //$("#ann_display_img_detail").attr("src",'../announcement_uploads/'+res[4]);
+          //$("#ann_article_img_detail").attr("src",'../announcement_uploads/'+res[5]);
         }
       });
     }
