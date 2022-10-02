@@ -154,7 +154,7 @@
                 <a class="nav-link nav p-3" aria-current="page" href="../">Home</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link nav p-3" href="./about">About Us</a>
+                <a class="nav-link nav p-3" href="../about">About Us</a>
               </li>
               <li class="nav-item ps-2">
                 <a class="nav-link nav active p-3 active" href="./announcements">Announcements</a

@@ -247,10 +247,14 @@
             <div class="about-us-description">About Student's Organization</div>
           </div>
           <div class="col-md-8 pt-2 ps-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            ISAT-U Students Organization aims to build relationship, develop students' leadership skills, determines learner's bilities and limitations and enhanced engagement in learning in different aspects. 
+            <br>
+            Students organization allowing students to explore their interests, knowledge and skills to gain real lifelong experiences.
             <br>
             <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="w-100 mt-3">
+              <a type="button" class="btn btn-outline-light about-us-btn" data-mdb-ripple-color="dark" href="./about">See more</a>
+            </div>
           </div>
         </div>
       </section>
@@ -259,8 +263,8 @@
     <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
       <div class="section-title-container d-flex mb-5">
         <div class="section-title me-4">
-          <div>Announcements</div>
-          <a class="section-title-see-all" href="./announcements">See all</a>
+          <div class="mb-1">Announcements</div>
+          <a class="section-title-see-all" href="./announcements">See more</a>
         </div>
         <div class="section-title-divider flex-grow-1"></div>
       </div>

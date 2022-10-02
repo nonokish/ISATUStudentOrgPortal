@@ -137,11 +137,11 @@ $org_name = $_SESSION['org_name'];
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-bullhorn"></i> Announcements<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="#" class="waves-effect">
+                  <li><a href="../announcements" class="waves-effect">
                     <span class="sv-slim"> PA </span>
                     <span class="sv-normal">Post Announcement</span></a>
                   </li>
-                  <li><a href="./history" class="waves-effect">
+                  <li><a href="../announcements/history" class="waves-effect">
                     <span class="sv-slim"> AH </span>
                     <span class="sv-normal">Announcements History</span></a>
                   </li>
