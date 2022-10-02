@@ -1,5 +1,5 @@
 <?php
-require_once "../../../../../db.php";
+require_once '../../../../db.php';
 ?>
 <?php
 	$oa_id = $_POST["id"];
@@ -37,7 +37,7 @@ require_once "../../../../../db.php";
 			<label class="field-sub-label">Display Image</label>
 			</div>
 			<div class="announcement-images mb-4">
-			<img src="../../announcements/announcement_uploads/'.$ann_display_img.'" alt="thumbnail" id="ann_display_img_detail" class="img-thumbnail mb-1" style="width: 150px">
+			<img src="../../../organization/admin/announcements/announcement_uploads/'.$ann_display_img.'" alt="thumbnail" id="ann_display_img_detail" class="img-thumbnail mb-1" style="width: 150px">
 			</div>
 
 			<!--<div class="mb-2">

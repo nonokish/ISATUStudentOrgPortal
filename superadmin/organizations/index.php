@@ -38,8 +38,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body px-5 py-4">
-          <div class="row">
+        <div class="modal-body px-5 py-4" id="getOrganizationDetailsModal">
+          <!--<div class="row">
             <div class="col-md-12 px-2">
               <label class="float-left mb-1 field-label">Organization</label>
               <input type="text" id="" class="form-control mb-4" value="Sample Organization">
@@ -47,11 +47,6 @@
             <div class="col-md-6 px-2">
             <label class="float-left mb-1 field-label">Classification</label>
               <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-                <option disabled>Select Classification</option>
-                <option selected value="0">Major</option>
-                <option value="1">Minor</option>
-                <option value="2">Special Interest or Advocacy Clubs</option>
-                <option value="3">New Organizations</option>
               </select>
             </div>
             <div class="col-md-6 px-2">
@@ -66,7 +61,7 @@
               <label class="float-left mb-1 field-label">Date Created</label>
               <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
             </div>
-          </div>
+          </div>-->
           <div class="mx-auto text-center mt-2">
             <a class="delete-btn">Delete Organization</a>
           </div>
@@ -100,8 +95,9 @@
 
             <div class="row">
               <div class="col-md-12">
-
-                 <table class="table table-bordered table-responsive-md table-striped text-center">
+                <!-- Organization Member Table -->
+                <div id="getOrganizationMembersGrid"></div>
+                 <!--<table class="table table-bordered table-responsive-md table-striped text-center">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -151,7 +147,7 @@
                       <td>Sample Position</td>
                     </tr>
                   </tbody>
-                </table>
+                </table>-->
 
               </div>
             </div>
@@ -422,6 +418,45 @@
       }
     });
   </script>
+
+  <!--Organization Details Modal -->
+  <script type="text/javascript">
+    function getOrganizationDetailsModal(id){
+      $.ajax({
+        url:"php/getOrganizationDetailsModal.php",
+        type: "POST",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          $("#getOrganizationDetailsModal").html("");
+          $("#getOrganizationDetailsModal").append(response);
+          $('#orgClassification').load("php/updateOrganizationClassificationDropdownList.php");
+        }
+      });
+    }
+  </script>
+
+  <!-- Organization Member Grid -->
+  <script type="text/javascript">
+    function getOrganizationMembersModal(id){
+      $.ajax({
+        url: "php/getOrganizationMembersGrid.php",
+        type: "GET",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          $("#getOrganizationMembersGrid").html("");
+          $("#getOrganizationMembersGrid").append(response);
+        }
+      });
+    }
+  </script>
+
+  <!--<script type="text/javascript">
+    $('#orgClassification').load("php/updateOrganizationClassificationDropdownList.php");
+  </script>-->
   
 
 </body>

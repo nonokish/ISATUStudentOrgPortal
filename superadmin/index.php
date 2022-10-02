@@ -132,7 +132,7 @@
       			<h5 class="card-title mb-4">New Organizations</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-user-plus"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
+     			 	<span class="float-right" style="color: #f7CA18;">00</span>
      			 </div>
     			</div>
       	</div>
@@ -142,7 +142,7 @@
       			<h5 class="card-title mb-4">Organizations</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-users"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">04</span>
+     			 	<span class="float-right" style="color: #f7CA18;">00</span>
      			 </div>
     			</div>
       	</div>
@@ -175,7 +175,8 @@
 
             <input class="form-control mb-4" id="dbOrgsSearch" type="text" placeholder="Type something to search list items">
 
-              <table class="table table-hover dashboard-table">
+              <div id="getOrganizationDetailsGrid"></div>
+              <!--<table class="table table-hover dashboard-table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -215,7 +216,7 @@
                     <td>11/01/19</td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -259,6 +260,17 @@
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
+    });
+  </script>
+
+  <!--Organization Details Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getOrganizationDetailsGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getOrganizationDetailsGrid").append(response);
+      }
     });
   </script>
   

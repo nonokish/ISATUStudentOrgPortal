@@ -38,20 +38,15 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body px-5 py-4">
-          <div class="row">
+        <div class="modal-body px-5 py-4" id="getAdviserModalDetails">
+          <!--<div class="row">
             <div class="col-md-6 px-2">
               <label class="float-left mb-1 field-label">Name</label>
               <input type="text" id="" class="form-control mb-4" value="Adviser Name">
             </div>
             <div class="col-md-6 px-2">
             <label class="float-left mb-1 field-label">Organization</label>
-              <select class="browser-default custom-select" id="orgClassification" name="" required>
-                <option disabled>Select Organization</option>
-                <option selected value="0">Organization Name</option>
-                <option value="1">Organization Name</option>
-                <option value="2">Organization Name</option>
-                <option value="3">Organization Name</option>
+              <select class="browser-default custom-select" id="orgList" name="orgList" required>
               </select>
             </div>
             <div class="col-md-6 px-2">
@@ -70,7 +65,7 @@
                   <label class="float-left mb-1 field-label">Date Created</label>
                   <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
                 </div>
-          </div>
+          </div>-->
           <div class="mx-auto text-center mt-2">
             <a class="delete-btn">Delete Adviser</a>
           </div>
@@ -337,6 +332,28 @@
         $("#getAdviserDetailsGrid").append(response);
       }
     });
+  </script>
+
+  <!--<script type="text/javascript">
+    $('#orgList').load("php/updateAdviserDropdownListOrganization.php");
+  </script>-->
+
+  <!--Member Details Modal -->
+  <script type="text/javascript">
+    function getAdviserDetailsModal(id){
+      $.ajax({
+        url:"php/getAdviserModalDetails.php",
+        type: "POST",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          $("#getAdviserModalDetails").html("");
+          $("#getAdviserModalDetails").append(response);
+          $('#orgList').load("php/updateAdviserDropdownListOrganization.php");
+        }
+      });
+    }
   </script>
   
 

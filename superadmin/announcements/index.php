@@ -1,3 +1,6 @@
+<?php
+require_once "../../db.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,27 +131,23 @@
 
       <div class="row mb-5">
       	<div class="col-md-7">
-          <form class="text-center border border-light p-5 post-announcement-form" action="#!">
+          <form class="text-center border border-light p-5 post-announcement-form" action="./php/postAnnouncement.php" method="POST" enctype="multipart/form-data">
 
               <p class="h5 mb-4 font-weight-normal text-left">Fill out announcement details</p>
 
               <label class="float-left mb-1 field-label">Announcement Title</label>
-              <input type="text" id="" class="form-control mb-4" placeholder="Enter Announcement Title">
+              <input type="text" id="annTitle" name="ann_title" class="form-control mb-4" placeholder="Enter Announcement Title">
 
               <label class="float-left mb-1 field-label">Publish Date</label>
-                <input placeholder="Select Date" type="date" id="" class="form-control datepicker mb-4">
+                <input placeholder="Select Date" type="date" id="annDate" name="pub_date" class="form-control datepicker mb-4">
 
               <label class="float-left mb-1 field-label">Organization</label>
-              <select class="browser-default custom-select mb-4">
-                <option selected>Select Organization</option>
-                <option value="1">Organization 1</option>
-                <option value="2">Organization 2</option>
-                <option value="3">Organization 3</option>
+              <select class="browser-default custom-select mb-4" id="orgList" name="org_list">
               </select>
 
               <div class="form-group mb-5">
                  <label class="float-left mb-1 field-label">Content</label>
-                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Write Something..."></textarea>
+                <textarea class="form-control rounded-0" id="annContent" name="ann_content" rows="3" placeholder="Write Something..."></textarea>
               </div>
 
               <div class="form-group mb-5">
@@ -157,7 +156,7 @@
                   <div class="mb-2">
                     <label class="field-sub-label">Display Image</label>
                   </div>
-                  <input class="upload-btn w-100 mb-4" type="file" id="displayImage" name="files[]" />
+                  <input class="upload-btn w-100 mb-4" type="file" id="ann_display_image_id" name="ann_display_image" />
 
                   <!--<div class="mb-2">
                     <label class="field-sub-label">Article Images</label>
@@ -166,7 +165,7 @@
                 </div>
               </div>
 
-              <button class="btn btn-block preview-btn" type="submit">Preview</button>
+              <button class="btn btn-block preview-btn" type="submit">Post</button>
 
           </form>
 
@@ -177,15 +176,15 @@
 
           <div class="card announcements-card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="../../img/mel.jpg" class="img-fluid"/>
+              <img src="../../img/mel.jpg" class="img-fluid" id="card_display_img"/>
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="announcements-date-author mb-3"><label id="card_pub_date"></label><span class="mx-2">/</span><label id="card_org"></div>
+              <h5 class="card-title" id="card_title">Card title</h5>
+              <p class="card-text" id="card_content">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#!" class="btn btn-read-more">Read More</a>
             </div>
           </div>
@@ -315,6 +314,45 @@
       }
     });
   </script>-->
+
+  <script type="text/javascript">
+    $('#orgList').load("php/postAnnouncementDropdownListOrganization.php");
+  </script>
+
+  <script type="text/javascript">
+    $("#annTitle").change(function(){
+      var card_title = $("#annTitle").val();
+      $("#card_title").text(card_title);
+    });
+
+    $("#annDate").change(function(){
+      var card_pub_date = $("#annDate").val();
+      $("#card_pub_date").text(card_pub_date);
+    });
+
+    $("#orgList").change(function(){
+      var card_org = $("#orgList option:selected").text();
+      $("#card_org").text(card_org);
+    });
+
+    $("#annContent").change(function(){
+      var card_content = $("#annContent").val();
+      $("#card_content").text(card_content);
+    });
+
+    $("#ann_display_image_id").change(function(){
+      var file = $("#ann_display_image_id").get(0).files[0];
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#card_display_img").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    });
+  </script>
 
   
 

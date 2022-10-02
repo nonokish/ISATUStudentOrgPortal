@@ -13,6 +13,11 @@ if (!isset($_SESSION['user_id'])){
         
         if(is_null($user_org_data)) {
             //TO DO...
+            $orgId = $session_org_id;
+            $orgName = null;
+            $orgDateCreated = null;
+            $createdBy = null;
+            $orgTotalMember = null;
         }
         else
         {
@@ -24,9 +29,12 @@ if (!isset($_SESSION['user_id'])){
             
             if(is_null($org_data)) {
                 //TO DO...
-            }
-            else
-            {
+                $orgId = $session_org_id;
+                $orgName = null;
+                $orgDateCreated = null;
+                $createdBy = null;
+                $orgTotalMember = null;
+            } else {
                 $sql3 = "SELECT count(*) as total_member FROM user_organization WHERE organization_id = '$orgId'";
                 $result3 = mysqli_query($conn,$sql3);
                 
@@ -34,6 +42,11 @@ if (!isset($_SESSION['user_id'])){
 
                 if(is_null($user_org_total)) {
                     //TO DO...
+                    $orgId = $session_org_id;
+                    $orgName = null;
+                    $orgDateCreated = null;
+                    $createdBy = null;
+                    $orgTotalMember = null;
                 }
                 else
                 {

@@ -30,7 +30,7 @@ require_once '../../../../db.php';
                     <td>'.$ann_title.'</td>
                     <td>'.$ann_pub_date.'</td>
                     <td>'.$org_name.'</td>
-                    <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
+                    <td><a class="see-contents-link py-1 px-3" onclick="getAnnouncementHistoryModal('.$oa_id.')" data-toggle="modal" data-target="#announcementDetailsModal">See Details</a></td>
                 </tr>
             ';
         }

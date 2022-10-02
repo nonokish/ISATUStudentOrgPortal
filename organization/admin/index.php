@@ -1,7 +1,7 @@
 <?php
 require_once "../../db.php";
-require_once "./php/session.php";
-require_once "./php/getOrganizationDetails.php";
+require_once "php/session.php";
+require_once "php/getOrganizationDetails.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,13 @@ require_once "./php/getOrganizationDetails.php";
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-              <?php echo $orgName;?>
+              <?php 
+                if($orgName) {
+                  echo $orgName;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>
@@ -170,7 +176,13 @@ require_once "./php/getOrganizationDetails.php";
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-users"></i>
      			 	<span class="float-right" style="color: #f7CA18;">
-              <?php echo $orgTotalMember;?>
+              <?php 
+                if($orgTotalMember) {
+                  echo $orgTotalMember;
+                } else {
+                  echo "00";
+                }
+              ?>
             </span>
      			 </div>
     			</div>

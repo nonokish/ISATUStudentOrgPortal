@@ -1,3 +1,6 @@
+<?php
+  require_once '../../../db.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +40,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body py-4 px-5">
-          <label class="float-left mb-1 field-label">Announcement Title</label>
+        <div class="modal-body py-4 px-5" id="getAnnouncementHistoryModalDetails">
+          <!--<label class="float-left mb-1 field-label">Announcement Title</label>
           <input type="text" id="" class="form-control mb-4" value="Sample Title" disabled>
 
           <label class="float-left mb-1 field-label">Publish Date</label>
@@ -62,17 +65,17 @@
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
               </div>
 
-              <!--<div class="mb-2">
+              <div class="mb-2">
                 <label class="field-sub-label">Article Images</label>
               </div>
               <div class="announcement-images">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.webp" alt="thumbnail" class="img-thumbnail mb-1" style="width: 150px">
-              </div>-->
+              </div>
               
             </div>
-          </div>
+          </div>-->
 
         </div>
         <div class="modal-footer">
@@ -299,6 +302,31 @@
         $("#getAnnouncementHistoryGrid").append(response);
       }
     });
+  </script>
+
+  <!--Announcement History Modal -->
+  <script type="text/javascript">
+    function getAnnouncementHistoryModal(id){
+      $.ajax({
+        url:"php/getAnnouncementHistoryModalDetails.php",
+        type: "POST",
+        data: {
+          "id":id
+        },
+        success: function(response){
+          $("#getAnnouncementHistoryModalDetails").html("");
+          $("#getAnnouncementHistoryModalDetails").append(response);
+          //var res = response.split(',')
+          //$("#ann_title_detail").val(res[0]);
+          //$("#ann_pub_date_detail").val(res[1]);
+          //$("#ann_org_detail").val(res[2]);
+          //$("#ann_content_detail").val(res[3]);
+          //console.log("res", res);
+          //$("#ann_display_img_detail").attr("src",'../announcement_uploads/'+res[4]);
+          //$("#ann_article_img_detail").attr("src",'../announcement_uploads/'+res[5]);
+        }
+      });
+    }
   </script>
   
 </body>

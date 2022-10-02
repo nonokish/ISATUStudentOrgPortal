@@ -20,6 +20,7 @@ require_once '../../../db.php';
     
     if(mysqli_num_rows($orgDetailsResult) > 0){
         while($row = mysqli_fetch_assoc($orgDetailsResult)){
+            $org_id = $row['org_id'];
             $org_name = $row['org_name'];
             $org_classification = $row['org_classification'];
             $adviser_name = $row['adviser_name'];
@@ -31,8 +32,8 @@ require_once '../../../db.php';
                     <td>'.$adviser_name.'</td>
                     <td>'.$org_date_created.'</td>
                     <td>
-                    <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
-                    <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
+                    <a class="see-contents-link py-1 px-3" onclick="getOrganizationDetailsModal('.$org_id.')" data-toggle="modal" data-target="#orgsDetailsModal">See Details</a>
+                    <a class="see-contents-link py-1 px-3" onclick="getOrganizationMembersModal('.$org_id.')" data-toggle="modal" data-target="#orgsMembersModal">See Members</a>
                     </td>
                 </tr>
             ';
