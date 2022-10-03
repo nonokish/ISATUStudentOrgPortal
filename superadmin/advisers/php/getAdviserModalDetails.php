@@ -36,7 +36,7 @@ require_once "../../../db.php";
             </div>
             <div class="col-md-6 px-2">
                 <label class="float-left mb-1 field-label">Date Joined</label>
-                <input type="text" id="" class="form-control mb-4" value="'.$joined_date.'">
+                <input type="text" id="" class="form-control mb-4" value="'.$joined_date.'" disabled>
             </div>
             <div class="col-md-6">
                 <label class="float-left mb-1 field-label">Date Created</label>

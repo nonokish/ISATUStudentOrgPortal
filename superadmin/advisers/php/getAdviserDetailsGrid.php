@@ -16,7 +16,7 @@ require_once '../../../db.php';
       			</thead>
       		<tbody id="dbAdvisersTable">
     ';
-    $orgDetailsSql = "SELECT u.id as user_id, uo.date_joined as date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as adviser_name, o.name as org_name, u.email as adv_email, u.contact as adv_contact FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.user_type_id = 4";
+    $orgDetailsSql = "SELECT u.id as user_id, uo.date_joined as date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as adviser_name, o.name as org_name, u.email as adv_email, u.contact as adv_contact FROM user u LEFT JOIN user_organization uo ON u.id = uo.user_id LEFT JOIN organization o ON uo.organization_id = o.id WHERE u.user_type_id = 4";
     $orgDetailsResult = mysqli_query($conn, $orgDetailsSql);
     
     if(mysqli_num_rows($orgDetailsResult) > 0){

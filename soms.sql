@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2022 at 01:39 PM
+-- Generation Time: Oct 03, 2022 at 01:02 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -32,12 +32,19 @@ CREATE TABLE `announcement` (
   `title` varchar(250) NOT NULL,
   `content` varchar(250) NOT NULL,
   `display_image` varchar(250) NOT NULL,
-  `publish_date` varchar(250) DEFAULT NULL,
+  `publish_date` date DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `date_created` date NOT NULL DEFAULT current_timestamp(),
   `last_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `announcement`
+--
+
+INSERT INTO `announcement` (`id`, `title`, `content`, `display_image`, `publish_date`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
+(1, 'Education Drive', 'Education Drive Content Test', 'Education Drive-Display-Image-education-6339d2fb4e71e8.01579817.jpg', '2022-10-15', 1, NULL, '2022-10-03', NULL);
 
 -- --------------------------------------------------------
 
@@ -49,12 +56,19 @@ CREATE TABLE `organization` (
   `id` int(11) NOT NULL,
   `org_classification_id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
-  `org_date_created` varchar(250) NOT NULL,
+  `org_date_created` date DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `date_created` date DEFAULT current_timestamp(),
   `last_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `organization`
+--
+
+INSERT INTO `organization` (`id`, `org_classification_id`, `name`, `org_date_created`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
+(2, 1, 'ISAT U Student Council', '2022-10-08', 1, NULL, '2022-10-03', NULL);
 
 -- --------------------------------------------------------
 
@@ -71,6 +85,13 @@ CREATE TABLE `organization_announcement` (
   `date_created` date NOT NULL DEFAULT current_timestamp(),
   `last_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `organization_announcement`
+--
+
+INSERT INTO `organization_announcement` (`id`, `organization_id`, `announcement_id`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
+(1, 2, 1, 1, NULL, '2022-10-03', NULL);
 
 -- --------------------------------------------------------
 
@@ -122,7 +143,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `user_type_id`, `first_name`, `middle_initial`, `last_name`, `email`, `contact`, `course_year`, `department`, `designation`, `password`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
-(1, 5, 'Super Admin First Name', 'Super Admin Middle Name', 'Super Admin Last Name', 'superadmin@gmail.com', '09999999999', '', 'superadmin01', '', '*13D15A370943B788A19C8726ED63C96DE8B09382', NULL, NULL, '2022-09-25', NULL);
+(1, 5, 'Super Admin First Name', 'Super Admin Middle Name', 'Super Admin Last Name', 'superadmin@gmail.com', '09999999999', '', 'superadmin01', '', '*13D15A370943B788A19C8726ED63C96DE8B09382', NULL, NULL, '2022-09-25', NULL),
+(20, 4, 'John', 'D', 'Robert', 'john@gmail.com', '09298575663', '', '', '', '*F56D958B200BBD61D744C0252471FF53D1F25D10', 1, NULL, '2022-10-03', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,12 +156,19 @@ CREATE TABLE `user_organization` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `organization_id` int(11) NOT NULL,
-  `date_joined` varchar(250) NOT NULL,
+  `date_joined` date DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `date_created` date NOT NULL DEFAULT current_timestamp(),
   `last_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_organization`
+--
+
+INSERT INTO `user_organization` (`id`, `user_id`, `organization_id`, `date_joined`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
+(2, 20, 2, '2022-10-03', 1, NULL, '2022-10-03', NULL);
 
 -- --------------------------------------------------------
 
@@ -216,19 +245,19 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `organization`
 --
 ALTER TABLE `organization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `organization_announcement`
 --
 ALTER TABLE `organization_announcement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `organization_classification`
@@ -240,13 +269,13 @@ ALTER TABLE `organization_classification`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user_organization`
 --
 ALTER TABLE `user_organization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_type`

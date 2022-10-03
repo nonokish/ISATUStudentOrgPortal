@@ -13,6 +13,10 @@
     $memberContact = mysqli_real_escape_string($conn, trim($_POST['memberContact']));
     $memberDesignation = mysqli_real_escape_string($conn, trim($_POST['memberDesignation']));
     $memberDateJoined = mysqli_real_escape_string($conn, trim($_POST['memberDateJoined']));
+
+    $new_memberDateJoined = date("Y-m-d", strtotime($memberDateJoined));
+    echo "<script>console.log('new_memberDateJoined: " . $new_memberDateJoined . "' );</script>";
+
     $memberPassword = mysqli_real_escape_string($conn, trim($_POST['memberPassword']));
 
     if($memberDesignation){
@@ -26,7 +30,7 @@
     $addMemberResult = mysqli_query($conn, $addMemberSql);
     $memberId = $conn->insert_id;
     if($addMemberResult){
-        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$memberId','$org_id','$memberDateJoined','$user_id')";
+        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$memberId','$org_id','$new_memberDateJoined','$user_id')";
         $addMemberOrgResult = mysqli_query($conn, $addMemberOrgSql);
 
         if($addMemberOrgResult){

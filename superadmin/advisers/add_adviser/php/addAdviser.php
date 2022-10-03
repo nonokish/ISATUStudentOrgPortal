@@ -9,7 +9,11 @@
     $advEmail = mysqli_real_escape_string($conn, trim($_POST['advEmail']));
     $advContact = mysqli_real_escape_string($conn, trim($_POST['advContact']));
     //$orgList = mysqli_real_escape_string($conn, trim($_POST['orgList']));
-    $advJoinedDate = mysqli_real_escape_string($conn, trim($_POST['advJoinedDate']));
+    //$advJoinedDate = mysqli_real_escape_string($conn, trim($_POST['advJoinedDate']));
+
+    //$new_advJoinedDate = date("Y-m-d", strtotime($advJoinedDate));
+    //echo "<script>console.log('new_advJoinedDate: " . $new_advJoinedDate . "' );</script>";
+
     $advPassword = mysqli_real_escape_string($conn, trim($_POST['advPassword']));
         
     $addAdvSql = "INSERT INTO user (user_type_id,first_name,last_name,middle_initial,email,contact,password,created_by) VALUES (4,'$advFirstName','$advLastName','$advMiddleInitial','$advEmail','$advContact',PASSWORD('$advPassword'),'$userId')";
@@ -18,7 +22,7 @@
     //$advId = $conn->insert_id;
     if($addAdvResult){
         header("location:../../?success=true");
-        /*$addAdvOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$advId','$orgList',STR_TO_DATE('$advJoinedDate','%d-%m-%Y'),'$userId')";
+        /*$addAdvOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$advId','$orgList',STR_TO_DATE('$new_advJoinedDate','%d-%m-%Y'),'$userId')";
         $addAdvOrgResult = mysqli_query($conn, $addAdvOrgSql);
 
         if($addAdvOrgResult){

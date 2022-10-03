@@ -5,6 +5,10 @@
 
     $ann_title = mysqli_real_escape_string($conn, trim($_POST['ann_title']));
     $pub_date = mysqli_real_escape_string($conn, trim($_POST['pub_date']));
+
+    $new_pub_date = date("Y-m-d", strtotime($pub_date));
+    echo "<script>console.log('new_pub_date: " . $new_pub_date . "' );</script>";
+
     $org_list = mysqli_real_escape_string($conn, trim($_POST['org_list']));
     $ann_content = mysqli_real_escape_string($conn, trim($_POST['ann_content']));
 
@@ -45,7 +49,7 @@
         //header("Location: index.php?error=$em");
     }*/
         
-    $addAnnouncementSql = "INSERT INTO announcement (title,content,publish_date,display_image,created_by) VALUES ('$ann_title','$ann_content','$pub_date','$display_new_img_name','$userId')";
+    $addAnnouncementSql = "INSERT INTO announcement (title,content,publish_date,display_image,created_by) VALUES ('$ann_title','$ann_content','$new_pub_date','$display_new_img_name','$userId')";
 
     $addAnnouncementResult = mysqli_query($conn, $addAnnouncementSql);
     $announcementId = $conn->insert_id;
