@@ -31,47 +31,49 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header modal-header-fill mb-2">
-          <h5 class="modal-title" id="">Organization Details</h5>
-  
-          <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body px-5 py-4" id="getOrganizationDetailsModal">
-          <!--<div class="row">
-            <div class="col-md-12 px-2">
-              <label class="float-left mb-1 field-label">Organization</label>
-              <input type="text" id="" class="form-control mb-4" value="Sample Organization">
-            </div>
-            <div class="col-md-6 px-2">
-            <label class="float-left mb-1 field-label">Classification</label>
-              <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
-              </select>
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Adviser</label>
-              <input type="text" id="" class="form-control mb-4" value="Adviser Name">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Date Joined</label>
-              <input type="text" id="" class="form-control mb-4" value="23 September, 2022" disabled>
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Date Created</label>
-              <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
-            </div>
-          </div>-->
-          <div class="mx-auto text-center mt-2">
-            <a class="delete-btn">Delete Organization</a>
+        <form class="" action="./php/updateOrganizationDetails.php" method="POST">
+          <div class="modal-header modal-header-fill mb-2">
+            <h5 class="modal-title" id="">Organization Details</h5>
+    
+            <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <div class="button-container mx-auto">
-            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
-            <button type="button" class="btn save-btn">Save Changes</button>
+          <div class="modal-body px-5 py-4" id="getOrganizationDetailsModal">
+            <!--<div class="row">
+              <div class="col-md-12 px-2">
+                <label class="float-left mb-1 field-label">Organization</label>
+                <input type="text" id="" class="form-control mb-4" value="Sample Organization">
+              </div>
+              <div class="col-md-6 px-2">
+              <label class="float-left mb-1 field-label">Classification</label>
+                <select class="browser-default custom-select" id="orgClassification" name="orgClassification" required>
+                </select>
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Adviser</label>
+                <input type="text" id="" class="form-control mb-4" value="Adviser Name">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Date Joined</label>
+                <input type="text" id="" class="form-control mb-4" value="23 September, 2022" disabled>
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Date Created</label>
+                <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
+              </div>
+            </div>-->
+            <div class="mx-auto text-center mt-2">
+              <a class="delete-btn">Delete Organization</a>
+            </div>
           </div>
-        </div>
+          <div class="modal-footer">
+            <div class="button-container mx-auto">
+              <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn save-btn">Save Changes</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -432,6 +434,7 @@
           $("#getOrganizationDetailsModal").html("");
           $("#getOrganizationDetailsModal").append(response);
           $('#orgClassification').load("php/updateOrganizationClassificationDropdownList.php");
+          $('#orgAdviser').load("php/updateOrganizationAdviserDropdownList.php");
         }
       });
     }

@@ -1,3 +1,7 @@
+<?php
+require_once "../../../db.php";
+$org_name = $_SESSION['org_name'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +53,7 @@
       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="">
+        <form class="" action="./php/updateOrganizationIdSession.php" method="POST">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
             <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -59,10 +63,7 @@
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5">
-              <option value="1">Organization Name</option>
-              <option value="2">Organization Name</option>
-              <option value="3">Organization Name</option>
+            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -84,7 +85,7 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-            Organization Name
+              <?php echo $org_name;?>
             </span></a>
           </div>
         </li>
@@ -156,7 +157,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
             <a class="dropdown-item" href="#">My Account</a>
-            <a class="dropdown-item" href="../php/logout.php">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -283,6 +284,10 @@
       weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       showMonthsShort: true,
       })
+  </script>
+
+  <script type="text/javascript">
+    $('#orgList').load("php/changeOrganizationDropdownList.php");
   </script>
   
 

@@ -146,7 +146,7 @@ require_once "php/getOrganizationDetails.php";
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#switchOrgModal">Switch Organization</a>
             <a class="dropdown-item" href="./my_account">My Account</a>
-            <a class="dropdown-item" href="./php/logout.php">Logout</a>
+            <a class="dropdown-item" href="php/logout.php">Logout</a>
           </div>
         </li>
       </ul>

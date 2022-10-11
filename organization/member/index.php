@@ -1,3 +1,8 @@
+<?php
+require_once "../../db.php";
+require_once "php/session.php";
+require_once "php/getOrganizationDetails.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +36,7 @@
       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="">
+        <form class="" action="./php/updateOrganizationIdSession.php" method="POST">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
             <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -41,10 +46,7 @@
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5">
-              <option value="1">Organization Name</option>
-              <option value="2">Organization Name</option>
-              <option value="3">Organization Name</option>
+            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -66,7 +68,13 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-              Organization Name
+              <?php 
+                if($orgName) {
+                  echo $orgName;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>
@@ -148,7 +156,13 @@
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-users"></i>
      			 	<span class="float-right" style="color: #f7CA18;">
-              00
+              <?php 
+                if($orgTotalMember) {
+                  echo $orgTotalMember;
+                } else {
+                  echo "00";
+                }
+              ?>
             </span>
      			 </div>
     			</div>
@@ -286,6 +300,10 @@
         $("#getOrganizationMemberGrid").append(response);
       }
     });
+  </script>
+
+  <script type="text/javascript">
+    $('#orgList').load("php/changeOrganizationDropdownList.php");
   </script>
   
 </body>

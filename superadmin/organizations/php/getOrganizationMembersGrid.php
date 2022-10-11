@@ -19,7 +19,7 @@ require_once '../../../db.php';
       		<tbody id="dbMembersTable">
     ';
     
-    $memberDetailsSql = "SELECT u.id as user_id, uo.date_joined as date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as member_name, u.course_year as course_year, o.name as org_name, u.email as member_email, u.contact as member_contact, case WHEN u.user_type_id = 4 THEN ut.name ELSE u.designation END as user_designation FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id LEFT JOIN user_type ut ON u.user_type_id = ut.id WHERE uo.organization_id = '$org_id'";
+    $memberDetailsSql = "SELECT u.id as user_id, uo.date_joined as date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as member_name, u.course_year as course_year, o.name as org_name, u.email as member_email, u.contact as member_contact, u.designation as user_designation, u.user_type_id as user_type_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id LEFT JOIN user_type ut ON u.user_type_id = ut.id WHERE uo.organization_id = '$org_id'";
     $memberDetailsResult = mysqli_query($conn, $memberDetailsSql);
     
     if(mysqli_num_rows($memberDetailsResult) > 0){
@@ -30,7 +30,14 @@ require_once '../../../db.php';
             $course_year = $row['course_year'];
             $member_email = $row['member_email'];
             $member_contact = $row['member_contact'];
-            $user_designation = $row['user_designation'];
+            $user_type_id = $row['user_type_id'];
+            if($user_type_id == 4){
+                $user_designation = "Adviser";
+            } else if($user_type_id != 4 && empty($row['user_designation'])){
+                $user_designation = "Member";
+            } else {
+                $user_designation = $row['user_designation'];
+            }
             echo '
                 <tr>
                     <td>'.$date_joined.'</td>

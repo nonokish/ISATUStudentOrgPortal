@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['user_id'])){
-        header("location:../../");
+        header("location:../../../");
     }else{
         $userID = $_SESSION['user_id'];
         $fName = $_SESSION['user_firstName'];

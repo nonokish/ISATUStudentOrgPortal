@@ -63,54 +63,56 @@ $org_name = $_SESSION['org_name'];
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header modal-header-fill mb-2">
-          <h5 class="modal-title" id="">Member Details</h5>
-  
-          <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body px-5 py-4" id="getMemberModalDetails">
-          <!--<div class="row">
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Name</label>
-              <input type="text" id="" class="form-control mb-4" value="Member Name">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Department</label>
-              <input type="text" id="" class="form-control mb-4" value="Department Name">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Course & Year</label>
-              <input type="text" id="" class="form-control mb-4" value="Course & Year">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Email</label>
-              <input type="text" id="" class="form-control mb-4" value="member@gmail.com">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Phone Number</label>
-              <input type="text" id="" class="form-control mb-4" value="09123456789">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Designation</label>
-              <input type="text" id="" class="form-control mb-4" value="Designation Name">
-            </div>
-            <div class="col-md-6 px-2">
-              <label class="float-left mb-1 field-label">Date Joined</label>
-              <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
-            </div>
-          </div>-->
-          <div class="mx-auto text-center mt-2">
-            <a class="delete-btn">Delete Member</a>
+        <form class="" action="./php/updateMemberDetails.php" method="POST">
+          <div class="modal-header modal-header-fill mb-2">
+            <h5 class="modal-title" id="">Member Details</h5>
+    
+            <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <div class="button-container mx-auto">
-            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
-            <button type="button" class="btn save-btn">Save Changes</button>
+          <div class="modal-body px-5 py-4" id="getMemberModalDetails">
+            <!--<div class="row">
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Name</label>
+                <input type="text" id="" class="form-control mb-4" value="Member Name">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Department</label>
+                <input type="text" id="" class="form-control mb-4" value="Department Name">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Course & Year</label>
+                <input type="text" id="" class="form-control mb-4" value="Course & Year">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Email</label>
+                <input type="text" id="" class="form-control mb-4" value="member@gmail.com">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Phone Number</label>
+                <input type="text" id="" class="form-control mb-4" value="09123456789">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Designation</label>
+                <input type="text" id="" class="form-control mb-4" value="Designation Name">
+              </div>
+              <div class="col-md-6 px-2">
+                <label class="float-left mb-1 field-label">Date Joined</label>
+                <input type="date" id="" class="form-control datepicker mb-4" value="1980-08-26">
+              </div>
+            </div>
+            <div class="mx-auto text-center mt-2">
+              <a class="delete-btn">Delete Member</a>
+            </div>-->
           </div>
-        </div>
+          <div class="modal-footer">
+            <div class="button-container mx-auto">
+              <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn save-btn">Save Changes</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

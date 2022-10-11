@@ -45,7 +45,7 @@ $org_name = $_SESSION['org_name'];
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
+            <select class="browser-default custom-select select-organization mb-5" id="switchOrgList" name="switchOrgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -340,7 +340,7 @@ $org_name = $_SESSION['org_name'];
   </script>-->
 
   <script type="text/javascript">
-    $('#orgList').load("php/postAnnouncementDropdownListOrganization.php");
+    $('#switchOrgList').load("php/postAnnouncementDropdownListOrganization.php");
   </script>
 
   <script type="text/javascript">

@@ -1,3 +1,18 @@
+<?php
+  require_once "../../db.php";
+  $announcement_id = $_GET['aid'];
+
+  $sql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE a.id = '$announcement_id'";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+
+	$a_id = $row['a_id'];
+	$display_image = $row['display_image'];
+	$publish_date = $row['publish_date'];
+	$org_name = $row['org_name'];
+	$ann_title = $row['ann_title'];
+	$ann_content = $row['ann_content'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -179,9 +194,17 @@
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="d-flex flex-column">
-            <p class="text-white mb-0 subhero-title">Announcement Title</p>
+            <p class="text-white mb-0 subhero-title">
+              <?php 
+                if($announcement_id) {
+                  echo $ann_title;
+                } else {
+                  echo "Announcement Title";
+                }
+              ?>
+            </p>
             <div class="announcements-date-author text-center text-white mb-2" style="font-size: 16px!important;">
-              <label id="card_pub_date">'.$publish_date.'</label><span class="mx-2">/</span><label id="card_org">'.$org_name.'</label>
+              <label id="card_pub_date"><?php if($announcement_id) { echo $publish_date; } else { echo "Announcement Date"; } ?></label><span class="mx-2">/</span><label id="card_org"><?php if($announcement_id) { echo $org_name; } else { echo "Organization"; } ?></label>
             </div>
           </div>
         </div>
@@ -204,11 +227,11 @@
     <!-- Breadcrumb -->
 
     <div class="full-announcement-img mx-auto mb-5">
-      <img src="../../img/isat2.jpg" class="img-fluid" alt="Announcement Image" />
+      <img src="../../organization/admin/announcements/announcement_uploads/<?php if($announcement_id) { echo $display_image; } else { echo "isat2.jpg"; } ?>" class="img-fluid" alt="Announcement Image" />
     </div>
 
     <div class="full-announcement-content mx-auto">
-      <p>Lorem ipsum dolor sit amet. Ut nihil explicabo sit vitae similique et excepturi saepe? Ut iusto quaerat id omnis voluptas id placeat debitis est porro porro est corporis accusamus. Qui quia dignissimos eos doloremque aliquid ab voluptas rerum et earum explicabo ea porro nihil. Et temporibus quos At ducimus dignissimos in autem deleniti! </p><p>Ea dolorem praesentium ad officia exercitationem in nesciunt inventore ut corporis illo? Vel omnis modi aut perferendis voluptas 33 consequuntur delectus est sint placeat vel soluta iusto? Et galisum quibusdam non esse modi aut quia tenetur et doloremque nemo id voluptatem accusamus. Sed perferendis internos est voluptatem cupiditate sed facilis voluptas. </p><p>Qui voluptates doloribus et  repellendus aut iure voluptatem sit assumenda consectetur non beatae soluta. Et animi adipisci et voluptatem culpa non voluptatem dolor. Est accusamus cumque et eaque voluptas 33 dolorum aperiam in reiciendis nihil est voluptatem similique! Et velit sequi ea repellendus pariatur eum galisum totam sit voluptates optio ab nisi neque et consectetur fugit 33 soluta quisquam? </p>
+      <p><?php if($announcement_id) { echo $ann_content; } else { echo "Announcement Content"; } ?></p>
     </div>
       
     </section>

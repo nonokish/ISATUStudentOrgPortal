@@ -45,7 +45,7 @@
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
+            <select class="browser-default custom-select select-organization mb-5" id="switchOrgList" name="switchOrgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -308,6 +308,10 @@
         });
       });
     });
+  </script>
+
+  <script type="text/javascript">
+    $('#switchOrgList').load("php/announcementHistoryDropdownListOrganization.php");
   </script>
 
   <!--Announcement History Grid -->
