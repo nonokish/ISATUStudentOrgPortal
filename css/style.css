@@ -552,9 +552,10 @@ display: block;
 	font-size: 20px;
 }
 
-.nav-link.active{
+.nav-item-archives .nav-link.active{
 	color: #003366!important;
-	font-weight: 500;
+	font-weight: 600;
+	border:  none!important;
 }
 
 .alert-btn{
@@ -669,7 +670,7 @@ display: block;
 }
 
 .nav-tabs .org-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #1266f1;
+    color: #003366!important;
     border-color: #003366;
     background-color: transparent;
 }

@@ -29,6 +29,24 @@
 
   <!-- Modals -->
 
+  <!-- Delete Alert Modal -->
+  <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content px-3 py-4">
+        <div class="modal-body text-center">
+          <h5 style="font-weight: 500;">Confirm Delete?</h5>
+        </div>
+        <div class="modal-footer" style="border: none!important;">
+          <div class="mx-auto">
+            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#announcementDetailsModal" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Announcement Details Modal -->
   <div class="modal fade" id="announcementDetailsModal" tabindex="-1" role="dialog" aria-labelledby=""
     aria-hidden="true">

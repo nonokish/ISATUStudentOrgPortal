@@ -47,7 +47,11 @@ require_once "../../../../../db.php";
 			<img src="" alt="thumbnail" id="ann_article_img_detail" class="img-thumbnail mb-1" style="width: 150px">
 			</div>-->
 			
+			
 		</div>
+			<div class="mx-auto text-center mt-5">
+              <a class="delete-btn" data-toggle="modal" data-target="#deleteAlert" data-dismiss="modal">Delete Announcement</a>
+            </div>
 		</div>
 	';
 ?>

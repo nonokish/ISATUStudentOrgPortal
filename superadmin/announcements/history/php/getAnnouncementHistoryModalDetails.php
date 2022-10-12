@@ -48,6 +48,9 @@ require_once '../../../../db.php';
 			</div>-->
 			
 		</div>
+			<div class="mx-auto text-center mt-5">
+              <a class="delete-btn" data-toggle="modal" data-target="#deleteAlert" data-dismiss="modal">Delete Announcement</a>
+            </div>
 		</div>
 	';
 ?>
