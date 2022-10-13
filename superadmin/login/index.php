@@ -34,15 +34,15 @@
   <main class="superadmin-login-container" style="width: 100vw; height: 100vh;">
     <div class="superadmin-login-form-wrap">
       <!-- Default form login -->
-      <form class="text-center border border-light px-5 py-5" action="#!">
+      <form class="text-center border border-light px-5 py-5" method="POST" action="./php/login.php">
           <div>ISAT-U Student's Organization</div>
           <p class="h4 mb-5">Superadmin Login</p>
 
           <!-- Email -->
-          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+          <input type="email" id="loginEmail" name="loginEmail" class="form-control mb-4" placeholder="E-mail">
 
           <!-- Password -->
-          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+          <input type="password" id="loginPassword" name="loginPassword" class="form-control mb-4" placeholder="Password">
 
           <!-- Sign in button -->
           <button class="btn btn-sa-login btn-block mt-5" type="submit">Login</button>

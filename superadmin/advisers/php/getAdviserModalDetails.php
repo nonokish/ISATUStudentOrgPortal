@@ -3,19 +3,21 @@ require_once "../../../db.php";
 ?>
 <?php
 	$user_id = $_POST["id"];
-	$user_org_id = $_POST["user_org_id"];
+	//$user_org_id = $_POST["user_org_id"];
 	echo "<script>console.log('user_id: " . $user_id . "' );</script>";
 
-	$sql = "SELECT u.id as u_id, u.first_name as first_name, u.middle_initial as middle_initial, u.last_name as last_name, u.email as user_email, u.contact as user_contact, uo.id as uo_id, uo.date_joined as joined_date, u.date_created as date_created FROM user u INNER JOIN user_type ut ON u.user_type_id = ut.id INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$user_id' and uo.id = '$user_org_id'";
+	$sql = "SELECT u.id as u_id, u.first_name as first_name, u.middle_initial as middle_initial, u.last_name as last_name, u.email as user_email, u.contact as user_contact, uo.id as uo_id, uo.date_joined as joined_date, u.date_created as date_created, o.id as org_id, o.name as org_name FROM user u INNER JOIN user_type ut ON u.user_type_id = ut.id LEFT JOIN user_organization uo ON u.id = uo.user_id LEFT JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$user_id'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 
 	$u_id = $row['u_id'];
 	$uo_id = $row['uo_id'];
+	$org_id = $row['org_id'];
 
 	$first_name = $row['first_name'];
 	$middle_initial = $row['middle_initial'];
 	$last_name = $row['last_name'];
+	$org_name = $row['org_name'];
 	$user_email = $row['user_email'];
 	$user_contact = $row['user_contact'];
 	$joined_date = $row['joined_date'];
