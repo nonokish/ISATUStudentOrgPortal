@@ -19,13 +19,15 @@
 
     $memberPassword = mysqli_real_escape_string($conn, trim($_POST['memberPassword']));
 
-    if($memberDesignation){
+    if($memberDesignation && strtolower($memberDesignation) != "member"){
         $user_type_id = 3;
+        $finalMemberDesignation = $memberDesignation;
     } else {
         $user_type_id = 1;
+        $finalMemberDesignation = "Member";
     }
         
-    $addMemberSql = "INSERT INTO user (user_type_id,first_name,last_name,middle_initial,email,contact,designation,password,created_by,course_year,department) VALUES ('$user_type_id','$memberFirstName','$memberLastName','$memberMiddleInitial','$memberEmail','$memberContact','$memberDesignation',PASSWORD('$memberPassword'),'$user_id','$memberCourseYear','$memberDepartment')";
+    $addMemberSql = "INSERT INTO user (user_type_id,first_name,last_name,middle_initial,email,contact,designation,password,created_by,course_year,department) VALUES ('$user_type_id','$memberFirstName','$memberLastName','$memberMiddleInitial','$memberEmail','$memberContact','$finalMemberDesignation',PASSWORD('$memberPassword'),'$user_id','$memberCourseYear','$memberDepartment')";
 
     $addMemberResult = mysqli_query($conn, $addMemberSql);
     $memberId = $conn->insert_id;

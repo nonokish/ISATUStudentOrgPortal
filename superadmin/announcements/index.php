@@ -136,18 +136,18 @@ require_once "../../db.php";
               <p class="h5 mb-4 font-weight-normal text-left">Fill out announcement details</p>
 
               <label class="float-left mb-1 field-label">Announcement Title</label>
-              <input type="text" id="annTitle" name="ann_title" class="form-control mb-4" placeholder="Enter Announcement Title">
+              <input type="text" id="annTitle" name="ann_title" class="form-control mb-4" placeholder="Enter Announcement Title" required>
 
               <label class="float-left mb-1 field-label">Publish Date</label>
                 <input placeholder="Select Date" type="date" id="annDate" name="pub_date" class="form-control datepicker mb-4">
 
               <label class="float-left mb-1 field-label">Organization</label>
-              <select class="browser-default custom-select mb-4" id="orgList" name="org_list">
+              <select class="browser-default custom-select mb-4" id="orgList" name="org_list" required>
               </select>
 
               <div class="form-group mb-5">
                  <label class="float-left mb-1 field-label">Content</label>
-                <textarea class="form-control rounded-0" id="annContent" name="ann_content" rows="3" placeholder="Write Something..."></textarea>
+                <textarea class="form-control rounded-0" id="annContent" name="ann_content" rows="3" placeholder="Write Something..." required></textarea>
               </div>
 
               <div class="form-group mb-5">
@@ -156,7 +156,7 @@ require_once "../../db.php";
                   <div class="mb-2">
                     <label class="field-sub-label">Display Image</label>
                   </div>
-                  <input class="upload-btn w-100 mb-4" type="file" id="ann_display_image_id" name="ann_display_image" />
+                  <input class="upload-btn w-100 mb-4" type="file" id="ann_display_image_id" name="ann_display_image" required/>
 
                   <!--<div class="mb-2">
                     <label class="field-sub-label">Article Images</label>

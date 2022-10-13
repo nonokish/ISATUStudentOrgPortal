@@ -5,7 +5,7 @@
     
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0){
-        echo'<option selected disabled>Select Adviser</option>';
+        echo'<option selected disabled value="">Select Adviser</option>';
         while($row = mysqli_fetch_assoc($result)){
             $u_id = $row['u_id'];
             $adviser_name = $row['adviser_name'];

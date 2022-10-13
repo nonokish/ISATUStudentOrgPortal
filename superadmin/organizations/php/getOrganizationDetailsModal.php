@@ -23,7 +23,7 @@ require_once "../../../db.php";
         <div class="row">
             <div class="col-md-12 px-2">
                 <label class="float-left mb-1 field-label">Organization</label>
-                <input type="text" id="org_name_for_update" name="org_name_for_update" class="form-control mb-4" value="'.$org_name.'">
+                <input type="text" id="org_name_for_update" name="org_name_for_update" class="form-control mb-4" value="'.$org_name.'" required>
             </div>
             <div class="col-md-6 px-2">
             <label class="float-left mb-1 field-label">Classification</label>

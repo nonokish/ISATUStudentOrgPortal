@@ -5,7 +5,7 @@
     
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0){
-        echo'<option selected disabled>Select Classification</option>';
+        echo'<option selected disabled value="">Select Classification</option>';
         while($row = mysqli_fetch_assoc($result)){
             $oc_id = $row['oc_id'];
             $org_class = $row['org_class'];

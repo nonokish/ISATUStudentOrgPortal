@@ -195,7 +195,7 @@ $org_name = $_SESSION['org_name'];
 
                 <div class="col-md-6 px-2">
                   <label class="float-left mb-1 field-label">Phone Number</label>
-                  <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Phone Number">
+                  <input type="text" id="memberContact" name="memberContact" class="form-control mb-4" placeholder="Enter Phone Number" required>
                 </div>
 
                 <!--<div class="col-6 mb-4">
@@ -225,12 +225,12 @@ $org_name = $_SESSION['org_name'];
 
                 <div class="col-md-6 mb-5">
                   <label class="float-left mb-1 field-label">Password</label>
-                  <input type="password" id="memberPassword" name="memberPassword" class="form-control" placeholder="Set Password" />
+                  <input type="password" id="memberPassword" name="memberPassword" class="form-control" placeholder="Set Password" required/>
                 </div>
 
                 <div class="col-md-6 mb-5">
                   <label class="float-left mb-1 field-label">Confirm Password</label>
-                  <input type="password" id="memberConfirmPassword" name="memberConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                  <input type="password" id="memberConfirmPassword" name="memberConfirmPassword" class="form-control" placeholder="Confirm Password" required/>
                 </div>
                 
                 <div class="button-container mx-auto mt-3">
