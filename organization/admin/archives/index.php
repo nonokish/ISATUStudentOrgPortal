@@ -168,6 +168,20 @@ $org_name = $_SESSION['org_name'];
           <ul class="collapsible collapsible-accordion">
             <li class="sidenav-link-item"><a href="../" class="collapsible-header waves-effect arrow-r"><i class="fas fa-desktop"></i> Dashboard</a>
             </li>
+            <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="far fa-newspaper"></i> Newsfeed<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="../newsfeed" class="waves-effect">
+                    <span class="sv-slim"> PA </span>
+                    <span class="sv-normal">Add a Post</span></a>
+                  </li>
+                  <li><a href="../newsfeed/manage_posts" class="waves-effect">
+                    <span class="sv-slim"> AH </span>
+                    <span class="sv-normal">Manage Posts</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <li class="sidenav-link-item"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-bullhorn"></i> Announcements<i class="fas fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
@@ -277,6 +291,7 @@ $org_name = $_SESSION['org_name'];
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Document Name</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Date Uploaded</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -285,6 +300,7 @@ $org_name = $_SESSION['org_name'];
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -294,6 +310,7 @@ $org_name = $_SESSION['org_name'];
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -303,6 +320,7 @@ $org_name = $_SESSION['org_name'];
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -312,6 +330,7 @@ $org_name = $_SESSION['org_name'];
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>

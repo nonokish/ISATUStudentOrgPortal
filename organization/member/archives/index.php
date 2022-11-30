@@ -252,6 +252,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Document Name</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Date Uploaded</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -260,6 +261,7 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -269,6 +271,7 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -278,6 +281,7 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>
@@ -287,6 +291,7 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>Sample Document</td>
+                    <td>Sample Description</td>
                     <td>11/01/19</td>
                     <td>
                       <a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#docsDownload">Download</a>

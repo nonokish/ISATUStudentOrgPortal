@@ -148,14 +148,14 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item me-2">
               <!-- Navbar brand -->
-              <a class="navbar-brand mt-2 mt-lg-0" href="../">
+              <a class="navbar-brand mt-2 mt-lg-0" href="../../">
                 <img
                   src="../../img/ISATULogo.png"
                   height="60"
                   alt="ISAT-U Logo"
                   loading="lazy"
                 />
-                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization</div>
+                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization Portal</div>
               </a>
               </li>
      
@@ -168,12 +168,12 @@
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3" aria-current="page" href="../../">Home</a>
               </li>
+              <li class="nav-item ps-2">
+                <a class="nav-link nav p-3" href="./organizations">Organizations</a
+                >
+              </li>
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3" href="../../about">About Us</a>
-              </li>
-              <li class="nav-item ps-2">
-                <a class="nav-link nav active p-3 active" href="./announcements">Announcements</a
-                >
               </li>
             </ul>
             <!-- Right links -->
@@ -215,13 +215,19 @@
     <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
 
     <!-- Breadcrumb -->
-    <nav class="d-flex mb-5">
+    <nav class="d-flex my-5">
       <h6 class="mb-0">
-        <a href="../../" class="text-reset breadcrumbs-link">Home</a>
+        <a href="../../#postsContainer" class="text-reset breadcrumbs-link">Home</a>
         <span>/</span>
-        <a href="../" class="text-reset breadcrumbs-link">Announcements</a>
-        <span>/</span>
-        <a href="" class="text-reset breadcrumbs-link active">Announcement Title</a>
+        <a href="" class="text-reset breadcrumbs-link active">
+          <?php 
+            if($announcement_id) {
+              echo $ann_title;
+            } else {
+              echo "Announcement Title";
+            }
+            ?>
+          </a>
       </h6>
     </nav>
     <!-- Breadcrumb -->

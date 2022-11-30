@@ -140,7 +140,7 @@
                   alt="MDB Logo"
                   loading="lazy"
                 />
-                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization</div>
+                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization Portal</div>
               </a>
               </li>
      
@@ -153,13 +153,13 @@
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3 active" aria-current="page" href="#">Home</a>
               </li>
-              <li class="nav-item px-2">
-                <a class="nav-link nav p-3" href="./about">About Us</a>
-              </li>
               <li class="nav-item ps-2">
-                <a class="nav-link nav p-3" href="./announcements">Announcements</a
+                <a class="nav-link nav p-3" href="./organizations">Organizations</a
                 >
               </li>
+              <li class="nav-item px-2">
+                <a class="nav-link nav p-3" href="./about">About Us</a>
+              </li>  
             </ul>
             <!-- Right links -->
           </div>
@@ -260,113 +260,287 @@
       </section>
     </div>
 
-    <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
-      <div class="section-title-container d-flex mb-5">
-        <div class="section-title me-4">
-          <div class="mb-1">Announcements</div>
-          <a class="section-title-see-all" href="./announcements">See more</a>
+    <section class="container-fluid posts-section px-5 mb-5" id="">
+      <div class="section-title-container d-flex mb-3">
+        <div class="section-title me-2">
+          <!-- Tabs navs -->
+            <ul class="nav nav-pills posts-pills-container" id="ex-with-icons" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link posts-pills active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1" role="tab"
+                  aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i class="fas fa-newspaper me-2"></i>Newsfeed</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link posts-pills" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+                  aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fas fa-bullhorn me-2"></i>Announcements</a>
+              </li>
+            </ul>
+            <!-- //Tabs navs -->
+            
         </div>
         <div class="section-title-divider flex-grow-1"></div>
       </div>
-      <!-- Announcement History Table -->
-      <div class="row announcements-grid" id="getHomePageAnnouncementHistoryCard">
-        <!--<div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
+
+      <!-- Tabs content -->
+      <div class="tab-content" id="ex-with-icons-content">
+
+        <!-- Newsfeed -->
+        <div class="tab-pane fade posts-tab-content show active" id="ex-with-icons-tabs-1" role="tabpanel" aria-labelledby="ex-with-icons-tab-1">
+          <div class="posts-container">
+            <div class="row posts-grid mt-5">
+              <div class="col-md-4">
+                <div class="sort-date-container">
+                  <div class="input-group mb-4">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control" />
+                      <label class="form-label" for="form1">Search</label>
+                    </div>
+                    <button type="button" class="btn btn-search">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                  <div class="sort-date">
+                    <h6 class="mb-3">Sort by date</h6>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
+                      <label class="form-check-label" for="allDate"> All </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
+                      <label class="form-check-label" for="todayDate"> Today </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
+                      <label class="form-check-label" for="weekDate"> This Week </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
+                      <label class="form-check-label" for="monthDate"> This Month </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
+                      <label class="form-check-label" for="yearDate"> This Year </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="row newsfeed-grid" id="">
+                  <div class="col-md-12">
+                    <div class="card nf-post-card py-5 px-5">
+                      <div class="nf-post-body mb-4">
+                        <div class="nf-post-org-name">Organization Name</div>
+                          <div class="nf-post-date-author mb-2">Posted 3 mins ago</div>
+                          <div class="nf-post-caption">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                          </div>
+                      </div>
+                      <img src="img/image_icon.png" class="nf-post-img" alt="Post Image"/>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="card nf-post-card py-5 px-5">
+                      <div class="nf-post-body mb-4">
+                        <div class="nf-post-org-name">Organization Name</div>
+                          <div class="nf-post-date-author mb-2">Posted 3 mins ago</div>
+                          <div class="nf-post-caption">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                          </div>
+                      </div>
+                      <img src="img/image_icon.png" class="nf-post-img" alt="Camera"/>
+                    </div>
+                  </div>
+
+                  <!-- If there are no announcements -->
+                  <!-- <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements right now</div> -->
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 px-3">
-          <div class="card announcements-card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="img/mel.jpg" class="img-fluid"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-read-more">Read More</a>
+        <!-- //Newsfeed -->
+
+        <!-- Announcements -->
+        <div class="tab-pane fade show posts-tab-content" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+
+            <div class="posts-container" id="postsContainer">
+
+              <!-- Audience select tabs -->
+              <ul class="nav nav-tabs audience-select-container" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link audience-select active"
+                    id="ex1-tab-1"
+                    data-mdb-toggle="tab"
+                    href="#ex1-tabs-1"
+                    role="tab"
+                    aria-controls="ex1-tabs-1"
+                    aria-selected="true"
+                    >All Organizations</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link audience-select"
+                    id="ex1-tab-2"
+                    data-mdb-toggle="tab"
+                    href="#ex1-tabs-2"
+                    role="tab"
+                    aria-controls="ex1-tabs-2"
+                    aria-selected="false"
+                    >Your Organizations</a
+                  >
+                </li>
+              </ul>
+              <!-- //Audience select tabs -->
+
+              <!-- Audience select content -->
+              <div class="tab-content" id="ex1-content">
+                <div
+                  class="tab-pane fade show active"
+                  id="ex1-tabs-1"
+                  role="tabpanel"
+                  aria-labelledby="ex1-tab-1"
+                >
+                
+                  <div class="row posts-grid">
+                    <div class="col-md-4">
+                      <div class="sort-date-ann-container">
+                        <div class="input-group mb-4">
+                          <div class="form-outline">
+                            <input type="search" id="form1" class="form-control" />
+                            <label class="form-label" for="form1">Search</label>
+                          </div>
+                          <button type="button" class="btn btn-search">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                        <div class="sort-date">
+                          <h6 class="mb-3">Sort by date</h6>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
+                            <label class="form-check-label" for="allDate"> All </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
+                            <label class="form-check-label" for="todayDate"> Today </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
+                            <label class="form-check-label" for="weekDate"> This Week </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
+                            <label class="form-check-label" for="monthDate"> This Month </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
+                            <label class="form-check-label" for="yearDate"> This Year </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                      <div class="col-md-8 px-0">
+                        <div class="row announcements-grid" id="getHomePageAnnouncementHistoryCard">
+                          <!-- <div class="col-md-4 px-3">
+                            <div class="card announcements-card">
+                              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="img/mel.jpg" class="img-fluid"/>
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#!" class="btn btn-read-more">Read More</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 px-3">
+                            <div class="card announcements-card">
+                              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="img/mel.jpg" class="img-fluid"/>
+                                <a href="#!">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <div class="announcements-date-author mb-3">August 29, 2022<span class="mx-2">/</span>Math Club</div>
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#!" class="btn btn-read-more">Read More</a>
+                              </div>
+                            </div>
+                          </div> -->
+
+                          <!-- If there are no announcements -->
+                          <!-- <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements right now</div> -->
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                  <div class="row posts-grid">
+                    <div class="col-md-4">
+                      <div class="input-group mb-4">
+                        <div class="form-outline">
+                          <input type="search" id="form1" class="form-control" />
+                          <label class="form-label" for="form1">Search</label>
+                        </div>
+                        <button type="button" class="btn btn-search">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                      <div class="sort-date">
+                        <h6 class="mb-3">Sort by date</h6>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
+                          <label class="form-check-label" for="allDate"> All </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
+                          <label class="form-check-label" for="todayDate"> Today </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
+                          <label class="form-check-label" for="weekDate"> This Week </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
+                          <label class="form-check-label" for="monthDate"> This Month </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
+                          <label class="form-check-label" for="yearDate"> This Year </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-8 px-0">
+                      <!-- If there are no announcements -->
+                      <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements yet</div>
+                    </div>
+                  </div>
+                    
+                </div>
+              <!-- //Audience select content -->
             </div>
           </div>
-        </div>-->
+     
+          
+        </div>
+        <!-- //Announcements -->
+
       </div>
+      <!-- //Tabs content -->
+
+      
     </section>
 
     <!-- Footer -->

@@ -140,7 +140,7 @@
                   alt="ISAT-U Logo"
                   loading="lazy"
                 />
-                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization</div>
+                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization Portal</div>
               </a>
               </li>
      

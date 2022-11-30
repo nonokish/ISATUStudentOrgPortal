@@ -140,7 +140,7 @@
                   alt="ISAT-U Logo"
                   loading="lazy"
                 />
-                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization</div>
+                <div class="ms-2 main-navbar-title" style="color: #003366;">ISAT-U Student's Organization Portal</div>
               </a>
               </li>
      
@@ -153,12 +153,12 @@
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3" aria-current="page" href="../">Home</a>
               </li>
+              <li class="nav-item ps-2">
+                <a class="nav-link nav p-3" href="../organizations">Organizations</a
+                >
+              </li>
               <li class="nav-item px-2">
                 <a class="nav-link nav p-3 active" href="#">About Us</a>
-              </li>
-              <li class="nav-item ps-2">
-                <a class="nav-link nav p-3" href="../announcements">Announcements</a
-                >
               </li>
             </ul>
             <!-- Right links -->
@@ -169,7 +169,7 @@
       </nav>
     <!-- Main Navbar -->
 
-    <div class="subhero-section-container">
+    <div class="subhero-section-container mb-5">
     <div class="bg-image">
       <img
         src="../img/isat.jpeg"
@@ -184,7 +184,7 @@
     </div>
     </div>
 
-    <section class="container-fluid announcements-section px-5 mb-5" id="announcements">
+    <section class="container-fluid announcements-section px-5" id="announcements">
 
     <div class="row px-5" style="margin-bottom: 100px;">
       <div class="col-md-6 px-4">

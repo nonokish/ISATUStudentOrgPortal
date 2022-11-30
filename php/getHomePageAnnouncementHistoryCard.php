@@ -15,7 +15,7 @@ require_once '../db.php';
             $ann_title = $row['ann_title'];
             $ann_content = $row['ann_content'];
             echo '
-                <div class="col-md-4 px-3">
+                <div class="col-md-6 px-3">
                     <div class="card d-flex align-content-stretch announcements-card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <input type="hidden" id="announcement_id" name="announcement_id" value="'.$a_id.'">
@@ -29,7 +29,7 @@ require_once '../db.php';
                             <h5 class="card-title mb-2">'.$ann_title.'</h5>
                             <p class="card-text multiline mb-3" title="multiline text with ellipsis">'.$ann_content.'</p>
                         
-                            <a href="./announcements/announcement_details?aid='.$a_id.'" class="btn btn-read-more">Read More</a>
+                            <a href="./announcements/announcement_details?aid='.$a_id.'" class="btn btn-read-more" target=”_blank”>Read More</a>
                         </div>
                     </div>
                 </div>

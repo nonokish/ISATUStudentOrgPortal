@@ -21,6 +21,14 @@ require_once "../../../db.php";
         <input type="hidden" id="org_id_for_update" name="org_id_for_update" class="form-control mb-4" value="'.$org_id_for_update.'">
         <input type="hidden" id="uo_id_for_update" name="uo_id_for_update" class="form-control mb-4" value="'.$uo_id.'">
         <div class="row">
+            <div class="col-md-12 px-2 text-center mb-4">
+            <img
+                src="../../img/image_icon.png"
+                class="img-fluid rounded-circle upload-img mb-3"
+                alt="Organization Logo"
+              />
+              <input type="file" class="form-control mx-auto" id="customFile" style="width: 400px;" />
+            </div>
             <div class="col-md-12 px-2">
                 <label class="float-left mb-1 field-label">Organization</label>
                 <input type="text" id="org_name_for_update" name="org_name_for_update" class="form-control mb-4" value="'.$org_name.'" required>
