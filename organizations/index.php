@@ -33,7 +33,7 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form class="" method="POST" action="./login.php">
+          <form class="" method="POST" action="../login.php">
             <div class="modal-header modal-header-fill mb-2">
               <h5 class="modal-title login-modal-title" id="loginModal">Login</h5>
               <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -200,9 +200,9 @@
       <input type="search" id="form1" class="form-control" placeholder="Search an organization" aria-label="Search" />
     </div>
 
-     <div class="row organizations-grid" id="">
+     <div class="row organizations-grid" id="getOrganizationsPageOrgCard">
 
-      <div class="col-md-3 mb-4">
+      <!--<div class="col-md-3 mb-4">
         <a href="organization_home" target="_blank">
          <div class="card text-center organization-card">
           <div class="card-header organization-counter">10+ new posts</div>
@@ -260,7 +260,7 @@
           <div class="card-footer text-muted org-classification">Major Organization</div>
           </div>
         </a>
-      </div>
+      </div> -->
 
 
 
@@ -414,6 +414,17 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../js/mdb.min.js"></script>
     <script type="text/javascript" src="../js/mdb2.min.js"></script>
+
+    <!-- Organization Card -->
+    <script type="text/javascript">
+      $.ajax({
+        url: "php/getOrganizationsPageOrgCard.php",
+        type: "GET",
+        success: function(response){
+          $("#getOrganizationsPageOrgCard").append(response);
+        }
+      });
+    </script>
 
     <script type="text/javascript">
       

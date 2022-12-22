@@ -1,3 +1,27 @@
+<?php
+  require_once "../../db.php";
+  $organization_id = $_GET['oid'];
+
+  $sql = "SELECT o.id as o_id, o.org_image as org_image, oc.name as org_classification, o.name as org_name, o.org_date_created as org_date_created FROM organization o INNER JOIN organization_classification oc ON o.org_classification_id = oc.id INNER JOIN user_organization uo ON o.id = uo.organization_id WHERE o.id = '$organization_id'";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+
+  $adviserSql = "SELECT uo.organization_id as org_id, CONCAT(u.first_name, ' ', u.middle_initial, '. ', u.last_name) as adv_name FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id WHERE u.user_type_id = 4 AND uo.organization_id = '$organization_id'";
+	$adviserResult = mysqli_query($conn, $adviserSql);
+	$adviserRow = mysqli_fetch_assoc($adviserResult);
+
+	$o_id = $row['o_id'];
+	$org_image = $row['org_image'];
+  if($row['org_image']){
+      $src = '../../superadmin/organizations/add_organization/organization_uploads/'.$org_image.'';
+  } else {
+      $src = "../../img/ISATULogo.png";
+  }
+	$org_classification = $row['org_classification'];
+	$org_name = $row['org_name'];
+	$org_date_created = $row['org_date_created'];
+	$adv_name = $adviserRow['adv_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,7 +57,7 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form class="" method="POST" action="./login.php">
+          <form class="" method="POST" action="../../login.php">
             <div class="modal-header modal-header-fill mb-2">
               <h5 class="modal-title login-modal-title" id="loginModal">Login</h5>
               <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -193,21 +217,21 @@
           <div class="row">
             <div class="col-md-4 d-flex flex-row align-items-center">
               <img
-                src="../../img/image_icon.png"
+                src="<?php echo $src; ?>"
                 class="img-fluid rounded-circle org-details-logo me-4"
                 alt="Organization Logo"
               />
-              <div class="org-details-name">Student Republic Republic Republic</div>
+              <div class="org-details-name"><?php if($organization_id) { echo $org_name; } else { echo "Organization name"; } ?></div>
             </div>
             <div class="col-md-8 d-flex align-items-center">
               <div class="row" style="margin-left: 20%;">
                 <div class="col-md-6 mb-1">
                   <label class="org-details-label me-2">Classification: </label>
-                  <span>Major</span>
+                  <span><?php if($organization_id) { echo $org_classification; } else { echo "Organization classification"; } ?></span>
                 </div>
                 <div class="col-md-6 mb-1">
                   <label class="org-details-label me-2">Adviser: </label>
-                  <span>Adviser Name</span>
+                  <span><?php if($organization_id) { echo $adv_name; } else { echo "Adviser name"; } ?></span>
                 </div>
                 <div class="col-md-6 mb-1">
                   <label class="org-details-label me-2">Date Joined: </label>
@@ -215,7 +239,7 @@
                 </div>
                 <div class="col-md-6 mb-1">
                   <label class="org-details-label me-2">Date Created: </label>
-                  <span>January 1, 2020</span>
+                  <span><?php if($organization_id) { echo $org_date_created; } else { echo "-----"; } ?></span>
                 </div>
               </div>
             </div>
@@ -291,8 +315,9 @@
               </div>
 
               <div class="col-md-8">
-                <div class="row newsfeed-grid" id="">
-                  <div class="col-md-12">
+                <div class="row newsfeed-grid" id="getHomePageNewsfeedHistoryCard">
+                  <input type="hidden" id="org_id" name="org_id" value="<?php if($organization_id) { echo $organization_id; } else { echo "0"; } ?>">
+                  <!--<div class="col-md-12">
                     <div class="card nf-post-card py-4 px-5">
                       <div class="nf-post-body mb-4">
                         <div class="nf-post-org-name">Organization Name</div>
@@ -315,7 +340,7 @@
                       </div>
                       <img src="../../img/image_icon.png" class="nf-post-img" alt="Post Image"/>
                     </div>
-                  </div>
+                  </div>-->
 
                   <!-- If there are no announcements -->
                   <!-- <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements right now</div> -->
@@ -651,6 +676,36 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../../js/mdb.min.js"></script>
     <script type="text/javascript" src="../../js/mdb2.min.js"></script>
+
+    <!-- Announcement History Card -->
+    <script type="text/javascript">
+      var org_id = $("#org_id").val();
+      $.ajax({
+        url: "php/getHomePageAnnouncementHistoryCard.php",
+        type: "GET",
+        data: {
+          "oid":org_id
+        },
+        success: function(response){
+          $("#getHomePageAnnouncementHistoryCard").append(response);
+        }
+      });
+    </script>
+
+    <!-- Newsfeed History Card -->
+    <script type="text/javascript">
+      var org_id = $("#org_id").val();
+      $.ajax({
+        url: "php/getHomePageNewsfeedHistoryCard.php",
+        type: "GET",
+        data: {
+          "oid":org_id
+        },
+        success: function(response){
+          $("#getHomePageNewsfeedHistoryCard").append(response);
+        }
+      });
+    </script>
 
     <script type="text/javascript">
       

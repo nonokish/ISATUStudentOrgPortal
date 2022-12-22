@@ -325,8 +325,8 @@
               </div>
 
               <div class="col-md-8">
-                <div class="row newsfeed-grid" id="">
-                  <div class="col-md-12">
+                <div class="row newsfeed-grid" id="getHomePageNewsfeedHistoryCard">
+                  <!--<div class="col-md-12">
                     <div class="card nf-post-card py-5 px-5">
                       <div class="nf-post-body mb-4">
                         <div class="nf-post-org-name">Organization Name</div>
@@ -349,7 +349,7 @@
                       </div>
                       <img src="img/image_icon.png" class="nf-post-img" alt="Camera"/>
                     </div>
-                  </div>
+                  </div> -->
 
                   <!-- If there are no announcements -->
                   <!-- <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements right now</div> -->
@@ -697,6 +697,17 @@
         type: "GET",
         success: function(response){
           $("#getHomePageAnnouncementHistoryCard").append(response);
+        }
+      });
+    </script>
+
+    <!-- Newsfeed History Card -->
+    <script type="text/javascript">
+      $.ajax({
+        url: "php/getHomePageNewsfeedHistoryCard.php",
+        type: "GET",
+        success: function(response){
+          $("#getHomePageNewsfeedHistoryCard").append(response);
         }
       });
     </script>

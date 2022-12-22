@@ -137,12 +137,12 @@ $org_name = $_SESSION['org_name'];
 
       <div class="row mb-5">
         <div class="col-md-7">
-          <form class="text-center border border-light p-5 post-announcement-form" action="./php/postAnnouncement.php" method="POST" enctype="multipart/form-data">
+          <form class="text-center border border-light p-5 post-announcement-form" action="./php/postNewsfeed.php" method="POST" enctype="multipart/form-data">
 
               <p class="h5 mb-4 font-weight-normal text-left">Fill out post details</p>
 
               <label class="float-left mb-1 field-label">Publish Date</label>
-                <input placeholder="Select Date" type="date" id="annDate" name="pub_date" class="form-control datepicker mb-4">
+                <input placeholder="Select Date" type="date" id="newsfeedDate" name="pub_date" class="form-control datepicker mb-4">
 
               <label class="float-left mb-1 field-label">Organization</label>
               <select class="browser-default custom-select mb-4" id="orgList" name="org_list" required>
@@ -150,7 +150,7 @@ $org_name = $_SESSION['org_name'];
 
               <div class="form-group mb-5">
                  <label class="float-left mb-1 field-label">Caption</label>
-                <textarea class="form-control rounded-0" id="annContent" name="ann_content" rows="3" placeholder="Write Something..." required></textarea>
+                <textarea class="form-control rounded-0" id="newsfeedContent" name="newsfeed_caption" rows="3" placeholder="Write Something..." required></textarea>
               </div>
 
               <div class="form-group mb-5">
@@ -159,7 +159,7 @@ $org_name = $_SESSION['org_name'];
                   <div class="mb-2">
                     <label class="field-sub-label">Post Image</label>
                   </div>
-                  <input class="upload-btn w-100 mb-4" type="file" id="ann_display_image_id" name="ann_display_image" required/>
+                  <input class="upload-btn w-100 mb-4" type="file" id="newsfeed_display_image_id" name="newsfeed_display_image" required/>
 
                   <!--<div class="mb-2">
                     <label class="field-sub-label">Article Images</label>
@@ -179,13 +179,13 @@ $org_name = $_SESSION['org_name'];
 
           <div class="card prev-nf-post-card py-4 px-4">
             <div class="nf-post-body mb-4">
-              <div class="nf-post-org-name">Organization Name</div>
+              <div class="nf-post-org-name" id="card_org">Organization Name</div>
                 <div class="nf-post-date-author mb-2">Posted 3 mins ago</div>
-                <div class="nf-post-caption">
+                <div class="nf-post-caption" id="card_content">
                   Some quick example text to build on the card title and make up the bulk of the card's content.
                 </div>
             </div>
-            <img src="../../../img/image_icon.png" class="prev-nf-post-img" alt="Post Image"/>
+            <img src="../../../img/image_icon.png" class="prev-nf-post-img" id="card_display_img" alt="Post Image"/>
           </div>
 
         </div>
@@ -313,6 +313,40 @@ $org_name = $_SESSION['org_name'];
       }
     });
   </script>-->
+
+  <script type="text/javascript">
+    $('#orgList').load("php/postNewsfeedDropdownListOrganization.php");
+  </script>
+
+  <script type="text/javascript">
+    $("#newsfeedDate").change(function(){
+      var card_pub_date = $("#newsfeedDate").val();
+      $("#card_pub_date").text(card_pub_date);
+    });
+
+    $("#orgList").change(function(){
+      var card_org = $("#orgList option:selected").text();
+      $("#card_org").text(card_org);
+    });
+
+    $("#newsfeedContent").change(function(){
+      var card_content = $("#newsfeedContent").val();
+      $("#card_content").text(card_content);
+    });
+
+    $("#newsfeed_display_image_id").change(function(){
+      var file = $("#newsfeed_display_image_id").get(0).files[0];
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#card_display_img").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    });
+  </script>
 
   
 

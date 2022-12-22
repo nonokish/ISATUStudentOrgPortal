@@ -147,7 +147,7 @@
       <div class="row mb-5">
         <div class="col-md-12">
           <div class="card p-4">
-            <form class="text-center form-row" action="./php/addOrganization.php" method="POST">
+            <form class="text-center form-row" action="./php/addOrganization.php" method="POST" enctype="multipart/form-data">
                 <input type="text" name="val" value="SA" hidden/>
 
                 <div class="col-12 mb-4 text-center">
@@ -155,8 +155,9 @@
                     src="../../../img/image_icon.png"
                     class="img-fluid rounded-circle upload-img mb-3"
                     alt="Organization Logo"
+                    id="org_display_img"
                   />
-                  <input type="file" class="form-control mx-auto" id="customFile" style="width: 400px;" />
+                  <input type="file" class="form-control mx-auto" style="width: 400px;" id="orgImage_id" name="orgImage" required/>
                 </div>
 
                 <div class="col-12 mb-4">
@@ -240,6 +241,21 @@
   <script type="text/javascript">
     $('#adviserlist').load("php/dropdownListAdvisers.php");
     $('#orgClassification').load("php/dropdownListOrgClassification.php");
+  </script>
+
+  <script type="text/javascript">
+    $("#orgImage_id").change(function(){
+      var file = $("#orgImage_id").get(0).files[0];
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#org_display_img").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    });
   </script>
   
 </body>

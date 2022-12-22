@@ -87,9 +87,9 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body py-4 px-5" id="">
+        <div class="modal-body py-4 px-5" id="getNewsfeedHistoryModalDetails">
 
-          <label class="float-left mb-1 field-label">Publish Date</label>
+          <!--<label class="float-left mb-1 field-label">Publish Date</label>
           <input type="text" id="ann_pub_date_detail" class="form-control mb-4" value="23 September, 2022" disabled>
 
           <label class="float-left mb-1 field-label">Organization</label>
@@ -118,7 +118,7 @@
               </div>
               
             </div>
-          </div>
+          </div>-->
 
         </div>
         <div class="modal-footer">
@@ -251,9 +251,9 @@
             </div>
 
               <!-- Manage Posts Table -->
-              <div id=""></div>
+              <div id="getNewsfeedHistoryGrid"></div>
 
-              <table class="table">
+              <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -288,7 +288,7 @@
                     <td><a class="see-contents-link py-1 px-3" data-toggle="modal" data-target="#postsDetailsModal">See Details</a></td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
            </div>
         </div>
       </div>
@@ -336,32 +336,32 @@
   </script>
 
   <script type="text/javascript">
-    $('#switchOrgList').load("php/announcementHistoryDropdownListOrganization.php");
+    $('#switchOrgList').load("php/postNewsfeedDropdownListOrganization.php");
   </script>
 
-  <!--Announcement History Grid -->
+  <!--Newsfeed History Grid -->
   <script type="text/javascript">
     $.ajax({
-      url: "php/getAnnouncementHistoryGrid.php",
+      url: "php/getNewsfeedHistoryGrid.php",
       type: "GET",
       success: function(response){
-        $("#getAnnouncementHistoryGrid").append(response);
+        $("#getNewsfeedHistoryGrid").append(response);
       }
     });
   </script>
 
-  <!--Announcement History Modal -->
+  <!--Newsfeed History Modal -->
   <script type="text/javascript">
-    function getAnnouncementHistoryModal(id){
+    function getNewsfeedHistoryModal(id){
       $.ajax({
-        url:"php/getAnnouncementHistoryModalDetails.php",
+        url:"php/getNewsfeedHistoryModalDetails.php",
         type: "POST",
         data: {
           "id":id
         },
         success: function(response){
-          $("#getAnnouncementHistoryModalDetails").html("");
-          $("#getAnnouncementHistoryModalDetails").append(response);
+          $("#getNewsfeedHistoryModalDetails").html("");
+          $("#getNewsfeedHistoryModalDetails").append(response);
           //var res = response.split(',')
           //$("#ann_title_detail").val(res[0]);
           //$("#ann_pub_date_detail").val(res[1]);

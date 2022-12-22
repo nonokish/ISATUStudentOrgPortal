@@ -33,7 +33,7 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form class="" method="POST" action="./login.php">
+          <form class="" method="POST" action="../login.php">
             <div class="modal-header modal-header-fill mb-2">
               <h5 class="modal-title login-modal-title" id="loginModal">Login</h5>
               <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">

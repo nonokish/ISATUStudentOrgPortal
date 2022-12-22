@@ -31,7 +31,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <form class="" action="./php/updateOrganizationDetails.php" method="POST">
+        <form class="" action="./php/updateOrganizationDetails.php" method="POST" enctype="multipart/form-data">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title" id="">Organization Details</h5>
     
@@ -449,6 +449,19 @@
           $("#getOrganizationDetailsModal").append(response);
           $('#orgClassification').load("php/updateOrganizationClassificationDropdownList.php");
           $('#orgAdviser').load("php/updateOrganizationAdviserDropdownList.php");
+    
+          $("#orgImage_id_for_update").change(function(){
+            var file = $("#orgImage_id_for_update").get(0).files[0];
+              if(file){
+                  var reader = new FileReader();
+      
+                  reader.onload = function(){
+                      $("#org_display_img").attr("src", reader.result);
+                  }
+      
+                  reader.readAsDataURL(file);
+              }
+          });
         }
       });
     }
