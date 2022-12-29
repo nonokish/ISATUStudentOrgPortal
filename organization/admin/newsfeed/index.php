@@ -141,8 +141,16 @@ $org_name = $_SESSION['org_name'];
 
               <p class="h5 mb-4 font-weight-normal text-left">Fill out post details</p>
 
-              <label class="float-left mb-1 field-label">Publish Date</label>
-                <input placeholder="Select Date" type="date" id="newsfeedDate" name="pub_date" class="form-control datepicker mb-4">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label class="float-left mb-1 field-label">Publish Date</label>
+                    <input placeholder="Select Date" type="date" id="annDate" name="pub_date" class="form-control datepicker mb-4">
+                </div>
+                <div class="col-md-6">
+                  <label class="float-left mb-1 field-label">Publish Time</label>
+                    <input placeholder="Select Time" type="time" id="annTime" name="pub_time" class="form-control timepicker mb-4">
+                </div>
+              </div>
 
               <label class="float-left mb-1 field-label">Organization</label>
               <select class="browser-default custom-select mb-4" id="orgList" name="org_list" required>
