@@ -4,6 +4,7 @@
     $userId = $_SESSION['user_id'];
 
     $pub_date = mysqli_real_escape_string($conn, trim($_POST['pub_date']));
+    $pub_time = mysqli_real_escape_string($conn, trim($_POST['pub_time']));
 
     $new_pub_date = date("Y-m-d", strtotime($pub_date));
     echo "<script>console.log('new_pub_date: " . $new_pub_date . "' );</script>";
@@ -48,7 +49,7 @@
         //header("Location: index.php?error=$em");
     }*/
         
-    $addNewsfeedSql = "INSERT INTO newsfeed (caption,publish_date,display_image,created_by) VALUES ('$newsfeed_caption','$new_pub_date','$display_new_img_name','$userId')";
+    $addNewsfeedSql = "INSERT INTO newsfeed (caption,publish_date,publish_time,display_image,created_by) VALUES ('$newsfeed_caption','$new_pub_date','$pub_time','$display_new_img_name','$userId')";
 
     $addNewsfeedResult = mysqli_query($conn, $addNewsfeedSql);
     $newsfeedId = $conn->insert_id;

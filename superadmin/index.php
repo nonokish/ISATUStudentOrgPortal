@@ -1,3 +1,6 @@
+<?php
+require_once "../db.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,7 +149,19 @@
       			<h5 class="card-title mb-4">New Organizations</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-user-plus"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                $countNewOrgSql = "SELECT COUNT(*) as total_new_org FROM organization o WHERE (DATEDIFF(CURDATE(),o.org_date_created)) <= 31";
+                $countNewOrgResult = mysqli_query($conn, $countNewOrgSql);
+                $row = mysqli_fetch_assoc($countNewOrgResult);
+                $new_org_total_count = $row['total_new_org'];
+                if($new_org_total_count) {
+                  echo $new_org_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>
@@ -156,7 +171,19 @@
       			<h5 class="card-title mb-4">Organizations</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-users"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                $countOrgSql = "SELECT COUNT(*) as total_org FROM organization o";
+                $countOrgResult = mysqli_query($conn, $countOrgSql);
+                $row = mysqli_fetch_assoc($countOrgResult);
+                $org_total_count = $row['total_org'];
+                if($org_total_count) {
+                  echo $org_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>
@@ -166,7 +193,19 @@
       			<h5 class="card-title mb-4">Announcements</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-bullhorn"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                $countAnnSql = "SELECT count(*) as total_announcement FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id";
+                $countAnnResult = mysqli_query($conn, $countAnnSql);
+                $row = mysqli_fetch_assoc($countAnnResult);
+                $ann_total_count = $row['total_announcement'];
+                if($ann_total_count) {
+                  echo $ann_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>

@@ -291,34 +291,34 @@
                 <div class="sort-date-container">
                   <div class="input-group mb-4">
                     <div class="form-outline">
-                      <input type="search" id="form1" class="form-control" />
-                      <label class="form-label" for="form1">Search</label>
+                      <input type="search" id="newsfeedInputFilter" class="form-control" />
+                      <label class="form-label" for="newsfeedInputFilter">Search</label>
                     </div>
-                    <button type="button" class="btn btn-search">
+                    <button type="button" class="btn btn-search btn-search-newsfeed">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                   <div class="sort-date">
                     <h6 class="mb-3">Sort by date</h6>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
-                      <label class="form-check-label" for="allDate"> All </label>
+                      <input class="form-check-input" type="radio" name="sortDate" id="newsfeedAllDate" checked/>
+                      <label class="form-check-label" for="newsfeedAllDate"> All </label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
-                      <label class="form-check-label" for="todayDate"> Today </label>
+                      <input class="form-check-input" type="radio" name="sortDate" id="newsfeedTodayDate"/>
+                      <label class="form-check-label" for="newsfeedTodayDate"> Today </label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
-                      <label class="form-check-label" for="weekDate"> This Week </label>
+                      <input class="form-check-input" type="radio" name="sortDate" id="newsfeedWeekDate"/>
+                      <label class="form-check-label" for="newsfeedWeekDate"> This Week </label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
-                      <label class="form-check-label" for="monthDate"> This Month </label>
+                      <input class="form-check-input" type="radio" name="sortDate" id="newsfeedMonthDate"/>
+                      <label class="form-check-label" for="newsfeedMonthDate"> This Month </label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
-                      <label class="form-check-label" for="yearDate"> This Year </label>
+                      <input class="form-check-input" type="radio" name="sortDate" id="newsfeedYearDate"/>
+                      <label class="form-check-label" for="newsfeedYearDate"> This Year </label>
                     </div>
                   </div>
                 </div>
@@ -409,34 +409,34 @@
                       <div class="sort-date-ann-container">
                         <div class="input-group mb-4">
                           <div class="form-outline">
-                            <input type="search" id="form1" class="form-control" />
-                            <label class="form-label" for="form1">Search</label>
+                            <input type="search" id="annInputFilter" class="form-control" />
+                            <label class="form-label" for="annInputFilter">Search</label>
                           </div>
-                          <button type="button" class="btn btn-search">
+                          <button type="button" class="btn btn-search btn-search-ann">
                             <i class="fas fa-search"></i>
                           </button>
                         </div>
                         <div class="sort-date">
                           <h6 class="mb-3">Sort by date</h6>
                           <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
-                            <label class="form-check-label" for="allDate"> All </label>
+                            <input class="form-check-input" type="radio" name="sortDate" id="annAllDate" checked/>
+                            <label class="form-check-label" for="annAllDate"> All </label>
                           </div>
                           <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
-                            <label class="form-check-label" for="todayDate"> Today </label>
+                            <input class="form-check-input" type="radio" name="sortDate" id="annTodayDate"/>
+                            <label class="form-check-label" for="annTodayDate"> Today </label>
                           </div>
                           <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
-                            <label class="form-check-label" for="weekDate"> This Week </label>
+                            <input class="form-check-input" type="radio" name="sortDate" id="annWeekDate"/>
+                            <label class="form-check-label" for="annWeekDate"> This Week </label>
                           </div>
                           <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
-                            <label class="form-check-label" for="monthDate"> This Month </label>
+                            <input class="form-check-input" type="radio" name="sortDate" id="annMonthDate"/>
+                            <label class="form-check-label" for="annMonthDate"> This Month </label>
                           </div>
                           <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
-                            <label class="form-check-label" for="yearDate"> This Year </label>
+                            <input class="form-check-input" type="radio" name="sortDate" id="annYearDate"/>
+                            <label class="form-check-label" for="annYearDate"> This Year </label>
                           </div>
                         </div>
                       </div>
@@ -490,41 +490,45 @@
                     <div class="col-md-4">
                       <div class="input-group mb-4">
                         <div class="form-outline">
-                          <input type="search" id="form1" class="form-control" />
-                          <label class="form-label" for="form1">Search</label>
+                          <input type="search" id="yourOrgAnnInputFilter" class="form-control" />
+                          <label class="form-label" for="yourOrgAnnInputFilter">Search</label>
                         </div>
-                        <button type="button" class="btn btn-search">
+                        <button type="button" class="btn btn-search btn-search-yourOrgAnn">
                           <i class="fas fa-search"></i>
                         </button>
                       </div>
                       <div class="sort-date">
                         <h6 class="mb-3">Sort by date</h6>
                         <div class="form-check mb-2">
-                          <input class="form-check-input" type="radio" name="sortDate" id="allDate" checked/>
-                          <label class="form-check-label" for="allDate"> All </label>
+                          <input class="form-check-input" type="radio" name="sortDate" id="yourOrgAnnAllDate" checked/>
+                          <label class="form-check-label" for="yourOrgAnnAllDate"> All </label>
                         </div>
                         <div class="form-check mb-2">
-                          <input class="form-check-input" type="radio" name="sortDate" id="todayDate"/>
-                          <label class="form-check-label" for="todayDate"> Today </label>
+                          <input class="form-check-input" type="radio" name="sortDate" id="yourOrgAnnTodayDate"/>
+                          <label class="form-check-label" for="yourOrgAnnTodayDate"> Today </label>
                         </div>
                         <div class="form-check mb-2">
-                          <input class="form-check-input" type="radio" name="sortDate" id="weekDate"/>
-                          <label class="form-check-label" for="weekDate"> This Week </label>
+                          <input class="form-check-input" type="radio" name="sortDate" id="yourOrgAnnWeekDate"/>
+                          <label class="form-check-label" for="yourOrgAnnWeekDate"> This Week </label>
                         </div>
                         <div class="form-check mb-2">
-                          <input class="form-check-input" type="radio" name="sortDate" id="monthDate"/>
-                          <label class="form-check-label" for="monthDate"> This Month </label>
+                          <input class="form-check-input" type="radio" name="sortDate" id="yourOrgAnnMonthDate"/>
+                          <label class="form-check-label" for="yourOrgAnnMonthDate"> This Month </label>
                         </div>
                         <div class="form-check mb-2">
-                          <input class="form-check-input" type="radio" name="sortDate" id="yearDate"/>
-                          <label class="form-check-label" for="yearDate"> This Year </label>
+                          <input class="form-check-input" type="radio" name="sortDate" id="yourOrgAnnYearDate"/>
+                          <label class="form-check-label" for="yourOrgAnnYearDate"> This Year </label>
                         </div>
                       </div>
                     </div>
 
                     <div class="col-md-8 px-0">
+                      <div class="row announcements-grid" id="getHomePageYourOrgAnnouncementHistoryCard">
+
+                      </div>
                       <!-- If there are no announcements -->
-                      <div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements yet</div>
+                      
+                      <!--<div class="text-center mt-3" style="font-size: 24px; font-weight: bold; color: grey;">There are no announcements yet</div>-->
                     </div>
                   </div>
                     
@@ -692,23 +696,427 @@
 
     <!-- Announcement History Card -->
     <script type="text/javascript">
+      var filter_input = "";
+      var filter_radio = "";
       $.ajax({
         url: "php/getHomePageAnnouncementHistoryCard.php",
         type: "GET",
+        data: {
+          "filter_input":"",
+          "filter":"all"
+        },
         success: function(response){
+          $("#getHomePageAnnouncementHistoryCard").html("");
           $("#getHomePageAnnouncementHistoryCard").append(response);
         }
+      });
+
+      $("#annInputFilter").click(function () {
+        var input_filter_value = $("#annInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $(".btn-search-ann").click(function () {
+        var input_filter_value = $("#annInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#annAllDate").click(function () {
+        filter_radio = "all";
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#annTodayDate").click(function () {
+        filter_radio = "today";
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#annWeekDate").click(function () {
+        filter_radio = "this_week";
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#annMonthDate").click(function () {
+        filter_radio = "this_month";
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#annYearDate").click(function () {
+        filter_radio = "this_year";
+        $.ajax({
+          url: "php/getHomePageAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageAnnouncementHistoryCard").html("");
+            $("#getHomePageAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+    </script>
+
+    <!-- Your Org Announcement History Card -->
+    <script type="text/javascript">
+      var filter_input = "";
+      var filter_radio = "";
+      $.ajax({
+        url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+        type: "GET",
+        data: {
+          "filter_input":"",
+          "filter":"all"
+        },
+        success: function(response){
+          $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+          $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+        }
+      });
+
+      $("#yourOrgAnnInputFilter").click(function () {
+        var input_filter_value = $("#yourOrgAnnInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $(".btn-search-yourOrgAnn").click(function () {
+        var input_filter_value = $("#yourOrgAnnInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#yourOrgAnnAllDate").click(function () {
+        filter_radio = "all";
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#yourOrgAnnTodayDate").click(function () {
+        filter_radio = "today";
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#yourOrgAnnWeekDate").click(function () {
+        filter_radio = "this_week";
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#yourOrgAnnMonthDate").click(function () {
+        filter_radio = "this_month";
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#yourOrgAnnYearDate").click(function () {
+        filter_radio = "this_year";
+        $.ajax({
+          url: "php/getHomePageYourOrgAnnouncementHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageYourOrgAnnouncementHistoryCard").html("");
+            $("#getHomePageYourOrgAnnouncementHistoryCard").append(response);
+          }
+        });
       });
     </script>
 
     <!-- Newsfeed History Card -->
     <script type="text/javascript">
+      var filter_input = "";
+      var filter_radio = "";
       $.ajax({
         url: "php/getHomePageNewsfeedHistoryCard.php",
         type: "GET",
+        data: {
+          "filter_input":"",
+          "filter":"all"
+        },
         success: function(response){
+          $("#getHomePageNewsfeedHistoryCard").html("");
           $("#getHomePageNewsfeedHistoryCard").append(response);
         }
+      });
+
+      $("#newsfeedInputFilter").click(function () {
+        var input_filter_value = $("#newsfeedInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $(".btn-search-newsfeed").click(function () {
+        var input_filter_value = $("#newsfeedInputFilter").val();
+        filter_input = input_filter_value;
+        if(filter_radio == ""){
+          filter_radio = "all";
+        } else {
+          filter_radio = filter_radio;
+        }
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#newsfeedAllDate").click(function () {
+        filter_radio = "all";
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#newsfeedTodayDate").click(function () {
+        filter_radio = "today";
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#newsfeedWeekDate").click(function () {
+        filter_radio = "this_week";
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#newsfeedMonthDate").click(function () {
+        filter_radio = "this_month";
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
+      });
+
+      $("#newsfeedYearDate").click(function () {
+        filter_radio = "this_year";
+        $.ajax({
+          url: "php/getHomePageNewsfeedHistoryCard.php",
+          type: "GET",
+          data: {
+            "filter_input":filter_input,
+            "filter":filter_radio
+          },
+          success: function(response){
+            $("#getHomePageNewsfeedHistoryCard").html("");
+            $("#getHomePageNewsfeedHistoryCard").append(response);
+          }
+        });
       });
     </script>
 

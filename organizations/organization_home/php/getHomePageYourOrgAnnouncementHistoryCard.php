@@ -1,7 +1,9 @@
 <?php
-require_once '../db.php';
+require_once '../../../db.php';
 ?>
 <?php
+    $organization_id = $_GET['oid'];
+
     $filter_input = $_GET['filter_input'];
     $filter = $_GET['filter'];
     $where_clause_input_filter = "LOWER(a.content) LIKE '%%'";
@@ -24,7 +26,7 @@ require_once '../db.php';
         $where_clause_input_filter = "LOWER(a.content) LIKE '%$filter_input%'";
     }
 
-    $announcementSql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE $where_clause_input_filter AND $where_clause";
+    $announcementSql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE o.id = '$organization_id' AND $where_clause_input_filter AND $where_clause";
     $announcementResult = mysqli_query($conn, $announcementSql);
     
     if(mysqli_num_rows($announcementResult) > 0){
@@ -41,7 +43,7 @@ require_once '../db.php';
                     <div class="card d-flex align-content-stretch announcements-card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <input type="hidden" id="announcement_id" name="announcement_id" value="'.$a_id.'">
-                            <img src="organization/admin/announcements/announcement_uploads/'.$display_image.'" class="img-fluid"/>
+                            <img src="../../organization/admin/announcements/announcement_uploads/'.$display_image.'" class="img-fluid"/>
                             <a href="#!">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>

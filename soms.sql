@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2022 at 12:30 PM
+-- Generation Time: Jan 11, 2023 at 11:36 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -44,7 +44,8 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `title`, `content`, `display_image`, `publish_date`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
-(1, 'Orientation Program College of Education', 'An Orientation Program for COE First Year Students', 'Orientation Program College of Education-Display-Image-education-63975a2e73ca51.01924695.jpg', '2022-12-15', 31, NULL, '2022-12-13', NULL);
+(1, 'Orientation Program College of Education', 'An Orientation Program for COE First Year Students', 'Orientation Program College of Education-Display-Image-education-63975a2e73ca51.01924695.jpg', '2022-12-15', 31, NULL, '2022-12-13', NULL),
+(2, 'test 1', 'test 2', 'test 1-Display-Image-membershipdrive-63bc6f90334309.26136418.jpg', '2023-01-12', 31, NULL, '2023-01-10', NULL);
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,8 @@ CREATE TABLE `newsfeed` (
   `id` int(11) NOT NULL,
   `caption` varchar(250) NOT NULL,
   `display_image` varchar(250) NOT NULL,
-  `publish_date` datetime DEFAULT NULL,
+  `publish_date` date DEFAULT NULL,
+  `publish_time` time DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `date_created` date NOT NULL DEFAULT current_timestamp(),
@@ -67,15 +69,16 @@ CREATE TABLE `newsfeed` (
 -- Dumping data for table `newsfeed`
 --
 
-INSERT INTO `newsfeed` (`id`, `caption`, `display_image`, `publish_date`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
-(1, 'Test Test 1 - Caption - Membership Drive', 'Test Test 1 - Caption - Membership Drive-Display-Image-membershipdrive-63a0b8b00b3e40.79121972.jpg', '2022-12-16 00:00:00', 33, NULL, '2022-12-20', NULL),
-(2, 'test 1', 'test 1-Display-Image-education-63a0b978b9ccb1.03450613.jpg', '2022-12-24 00:00:00', 33, NULL, '2022-12-20', NULL),
-(3, 'test 2', 'test 2-Display-Image-pic1-63a0b9bf1ea704.37137598.jpg', '2022-12-15 00:00:00', 33, NULL, '2022-12-20', NULL),
-(4, 'test 3', 'test 3-Display-Image-test01-63a0ba4f935d43.16933874.jpg', '2022-12-31 00:00:00', 33, NULL, '2022-12-20', NULL),
-(5, 'test', 'test-Display-Image-education-63a0c144d7c4c3.03992215.jpg', '2022-12-28 00:00:00', 33, NULL, '2022-12-20', NULL),
-(6, 'test', 'test-Display-Image-membershipdrive-63a0c1c10011a5.11598020.jpg', '2022-12-24 00:00:00', 33, NULL, '2022-12-20', NULL),
-(7, 'test 6', 'test 6-Display-Image-pic1-63a0c2176451a8.83879444.jpg', '2022-01-05 00:00:00', 33, NULL, '2022-12-20', NULL),
-(8, 'test 7', 'test 7-Display-Image-test01-63a0c22d9224e5.11203159.jpg', '2022-02-10 00:00:00', 33, NULL, '2022-12-20', NULL);
+INSERT INTO `newsfeed` (`id`, `caption`, `display_image`, `publish_date`, `publish_time`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
+(1, 'Test Test 1 - Caption - Membership Drive', 'Test Test 1 - Caption - Membership Drive-Display-Image-membershipdrive-63a0b8b00b3e40.79121972.jpg', '2022-12-16', NULL, 33, NULL, '2022-12-20', NULL),
+(2, 'test 1', 'test 1-Display-Image-education-63a0b978b9ccb1.03450613.jpg', '2022-12-24', NULL, 33, NULL, '2022-12-20', NULL),
+(3, 'test 2', 'test 2-Display-Image-pic1-63a0b9bf1ea704.37137598.jpg', '2022-12-15', NULL, 33, NULL, '2022-12-20', NULL),
+(4, 'test 3', 'test 3-Display-Image-test01-63a0ba4f935d43.16933874.jpg', '2022-12-31', NULL, 33, NULL, '2022-12-20', NULL),
+(5, 'test', 'test-Display-Image-education-63a0c144d7c4c3.03992215.jpg', '2022-12-28', NULL, 33, NULL, '2022-12-20', NULL),
+(6, 'test', 'test-Display-Image-membershipdrive-63a0c1c10011a5.11598020.jpg', '2022-12-24', NULL, 33, NULL, '2022-12-20', NULL),
+(7, 'test 6', 'test 6-Display-Image-pic1-63a0c2176451a8.83879444.jpg', '2023-01-05', NULL, 33, NULL, '2022-12-20', NULL),
+(8, 'test 7', 'test 7-Display-Image-test01-63a0c22d9224e5.11203159.jpg', '2022-02-10', NULL, 33, NULL, '2022-12-20', NULL),
+(9, 'test time only', 'test time only-Display-Image-pic1-63bb0dd30a0bf7.89809501.jpg', '2023-01-11', '18:43:00', 33, NULL, '2023-01-09', NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,7 @@ INSERT INTO `organization` (`id`, `org_classification_id`, `name`, `org_image`, 
 (3, 2, 'test', '', '2022-12-10', 1, NULL, '2022-12-21', NULL),
 (4, 2, 'test 2', '', '2022-12-03', 1, NULL, '2022-12-21', NULL),
 (5, 2, 'test 3', '', '2022-12-03', 1, NULL, '2022-12-21', NULL),
-(6, 2, 'test 3', '', '2022-12-03', 1, NULL, '2022-12-21', NULL),
+(6, 2, 'test 3', '', '2022-12-24', 1, NULL, '2022-12-21', NULL),
 (7, 2, 'test 5', '', '2022-12-02', 1, NULL, '2022-12-21', NULL),
 (8, 2, 'Education Org 2', 'Display-Image-education-63a1fa886e5990.40299236.jpg', '2022-04-28', 1, NULL, '2022-12-21', NULL),
 (9, 2, 'Member Org', 'Display-Image-membershipdrive-63a1fab5a03b57.17964037.jpg', '2022-03-12', 1, NULL, '2022-12-21', NULL),
@@ -132,7 +135,8 @@ CREATE TABLE `organization_announcement` (
 --
 
 INSERT INTO `organization_announcement` (`id`, `organization_id`, `announcement_id`, `created_by`, `updated_by`, `date_created`, `last_updated`) VALUES
-(1, 1, 1, 31, NULL, '2022-12-13', NULL);
+(1, 1, 1, 31, NULL, '2022-12-13', NULL),
+(2, 1, 2, 31, NULL, '2023-01-10', NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +187,8 @@ INSERT INTO `organization_newsfeed` (`id`, `organization_id`, `newsfeed_id`, `cr
 (5, 1, 5, 33, NULL, '2022-12-20', NULL),
 (6, 1, 6, 33, NULL, '2022-12-20', NULL),
 (7, 1, 7, 33, NULL, '2022-12-20', NULL),
-(8, 1, 8, 33, NULL, '2022-12-20', NULL);
+(8, 1, 8, 33, NULL, '2022-12-20', NULL),
+(9, 1, 9, 33, NULL, '2023-01-09', NULL);
 
 -- --------------------------------------------------------
 
@@ -341,13 +346,13 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `newsfeed`
 --
 ALTER TABLE `newsfeed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `organization`
@@ -359,7 +364,7 @@ ALTER TABLE `organization`
 -- AUTO_INCREMENT for table `organization_announcement`
 --
 ALTER TABLE `organization_announcement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `organization_classification`
@@ -371,7 +376,7 @@ ALTER TABLE `organization_classification`
 -- AUTO_INCREMENT for table `organization_newsfeed`
 --
 ALTER TABLE `organization_newsfeed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
