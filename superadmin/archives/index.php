@@ -117,7 +117,65 @@
     </div>
   </div>
 
-  <!--Double navigation-->
+  <!-- Add Document Modal -->
+  <div class="modal fade" id="addDocumentModal" tabindex="-1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-header-fill mb-2">
+          <h5 class="modal-title" id="">Add Document</h5>
+          <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body py-4 px-5" id="">
+          <label class="float-left mb-1 field-label">Document Name</label>
+          <input type="text" id="" class="form-control mb-4" value="">
+          <div class="form-group mb-4">
+             <label class="float-left mb-1 field-label">Description</label>
+            <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+          </div>
+          <div class="file-upload-wrapper">
+            <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="button-container mx-auto">
+            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn save-btn">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Media Modal -->
+  <div class="modal fade" id="uploadMediaModal" tabindex="-1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-header-fill mb-2">
+          <h5 class="modal-title" id="">Upload Media File</h5>
+          <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body py-4 px-5" id="">
+          <div class="file-upload-wrapper">
+            <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="button-container mx-auto">
+            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn save-btn">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Double navigation -->
   <header>
     <!-- Sidebar navigation -->
     <div id="slide-out" class="side-nav fixed wide org-side-nav">
@@ -125,7 +183,7 @@
         <!-- Logo -->
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
-            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Organization Name</span></a>
+            <a href="#"><img src="../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">Super Admin</span></a>
           </div>
         </li>
         <!--/. Logo -->
@@ -199,6 +257,11 @@
         </li>
         <!--/. Side navigation links -->
       </ul>
+
+      <div class="text-center p-3">
+        <a type="button" href="../../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
+      </div>
+
       <div class="sidenav-bg"></div>
     </div>
     <!--/. Sidebar navigation -->
@@ -252,7 +315,7 @@
               <div class="tab-pane fade show active" id="documents" role="tabpanel" aria-labelledby="documents-tab">
 
                 <div class="add-btn-container text-right mb-3">
-                  <button class="btn add-btn py-2 px-3"><i class="fas fa-plus mr-2"></i>Add Document</button>
+                  <button class="btn add-btn py-2 px-3" data-toggle="modal" data-target="#addDocumentModal"><i class="fas fa-plus mr-2"></i>Add Document</button>
                 </div>
 
                 <div class="archives-filter-search">
@@ -319,7 +382,7 @@
               </div>
               <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
                 <div class="add-btn-container text-right mb-3">
-                  <button class="btn add-btn py-2 px-3"><i class="fas fa-plus mr-2"></i>Upload Media</button>
+                  <button class="btn add-btn py-2 px-3" data-toggle="modal" data-target="#uploadMediaModal"><i class="fas fa-plus mr-2"></i>Upload Media</button>
                 </div>
                 <div class="row">
                   <div class="col-md-4 px-2 mb-3">
@@ -447,6 +510,10 @@
       })
   </script>
   
+  <script type="text/javascript">
+    $('.file-upload').file_upload();
+  </script>
+
 
 </body>
 </html>

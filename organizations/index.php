@@ -95,6 +95,8 @@
           <!-- Left links -->
 
           <!-- Right elements -->
+          <a type="button" href="#" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>
+
           <div class="d-flex align-items-center top-navbar-right px-4">
             <!-- Icon -->
             <a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">

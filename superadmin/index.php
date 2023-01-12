@@ -108,6 +108,11 @@ require_once "../db.php";
         </li>
         <!--/. Side navigation links -->
       </ul>
+
+      <div class="text-center p-3">
+        <a type="button" href="../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
+      </div>
+      
       <div class="sidenav-bg"></div>
     </div>
     <!--/. Sidebar navigation -->

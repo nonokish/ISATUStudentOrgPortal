@@ -99,6 +99,11 @@ $org_name = $_SESSION['org_name'];
         </li>
         <!--/. Side navigation links -->
       </ul>
+
+      <div class="text-center p-3">
+        <a type="button" href="../../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
+      </div>
+
       <div class="sidenav-bg"></div>
     </div>
     <!--/. Sidebar navigation -->
@@ -137,7 +142,7 @@ $org_name = $_SESSION['org_name'];
 
       <div class="row mb-5">
         <div class="col-md-7">
-          <form class="text-center border border-light p-5 post-announcement-form" action="./php/postNewsfeed.php" method="POST" enctype="multipart/form-data">
+          <form class="text-center border border-light p-5 post-announcement-form" action="./php/postNewsfeed.php" method="POST" enctypeg="multipart/form-data">
 
               <p class="h5 mb-4 font-weight-normal text-left">Fill out post details</p>
 
