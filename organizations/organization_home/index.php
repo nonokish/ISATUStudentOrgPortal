@@ -1,5 +1,8 @@
 <?php
   require_once "../../db.php";
+  if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+  }
   $organization_id = $_GET['oid'];
 
   $sql = "SELECT o.id as o_id, o.org_image as org_image, oc.name as org_classification, o.name as org_name, o.org_date_created as org_date_created FROM organization o INNER JOIN organization_classification oc ON o.org_classification_id = oc.id INNER JOIN user_organization uo ON o.id = uo.organization_id WHERE o.id = '$organization_id'";
@@ -119,12 +122,26 @@
           <!-- Left links -->
 
           <!-- Right elements -->
-          <div class="d-flex align-items-center top-navbar-right px-4">
+          <?php
+            if($user_id){
+              echo '';
+            } else {
+              echo '
+                <div class="d-flex align-items-center top-navbar-right px-4">
+                  <!-- Icon -->
+                  <a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
+                    <i class="fas fa-sign-in-alt pe-2"></i>Login
+                  </a>
+                </div>
+              ';
+            }
+          ?>
+          <!--<div class="d-flex align-items-center top-navbar-right px-4">-->
             <!-- Icon -->
-            <a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
+            <!--<a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
               <i class="fas fa-sign-in-alt pe-2"></i>Login
-            </a>
-          </div>
+            </a>-->
+          <!--</div>-->
           <!-- Right elements -->
         </div>
         <!-- Container wrapper -->

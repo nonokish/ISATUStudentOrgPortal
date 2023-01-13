@@ -1,3 +1,9 @@
+<?php
+  require_once '../db.php';
+  if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,14 +101,28 @@
           <!-- Left links -->
 
           <!-- Right elements -->
-          <a type="button" href="#" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>
+          <?php
+            if($user_id){
+              echo '<a type="button" href="../organization/admin" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>';
+            } else {
+              echo '
+                <div class="d-flex align-items-center top-navbar-right px-4">
+                  <!-- Icon -->
+                  <a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
+                    <i class="fas fa-sign-in-alt pe-2"></i>Login
+                  </a>
+                </div>
+              ';
+            }
+          ?>
+          <!--<a type="button" href="#" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>-->
 
-          <div class="d-flex align-items-center top-navbar-right px-4">
+          <!--<div class="d-flex align-items-center top-navbar-right px-4">-->
             <!-- Icon -->
-            <a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
+            <!--<a type="button" class="text-reset" data-toggle="modal" data-target="#loginModal">
               <i class="fas fa-sign-in-alt pe-2"></i>Login
             </a>
-          </div>
+          </div>-->
           <!-- Right elements -->
         </div>
         <!-- Container wrapper -->
