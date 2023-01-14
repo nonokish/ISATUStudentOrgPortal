@@ -161,22 +161,24 @@ $org_name = $_SESSION['org_name'];
           </button>
         </div>
         <div class="modal-body py-4 px-5" id="">
-          <label class="float-left mb-1 field-label">Document Name</label>
-          <input type="text" id="" class="form-control mb-4" value="">
-          <div class="form-group mb-4">
-             <label class="float-left mb-1 field-label">Description</label>
-            <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+          <form>
+            <label class="float-left mb-1 field-label">Document Name</label>
+            <input type="text" id="" class="form-control mb-4" value="">
+            <div class="form-group mb-4">
+               <label class="float-left mb-1 field-label">Description</label>
+              <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+            </div>
+            <div class="file-upload-wrapper">
+              <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+            </div>
           </div>
-          <div class="file-upload-wrapper">
-            <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+          <div class="modal-footer">
+            <div class="button-container mx-auto">
+              <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn save-btn">Upload</button>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <div class="button-container mx-auto">
-            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn save-btn">Upload</button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -193,16 +195,18 @@ $org_name = $_SESSION['org_name'];
           </button>
         </div>
         <div class="modal-body py-4 px-5" id="">
-          <div class="file-upload-wrapper">
-            <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+          <form>
+            <div class="file-upload-wrapper">
+              <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <div class="button-container mx-auto">
-            <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn save-btn">Upload</button>
+          <div class="modal-footer">
+            <div class="button-container mx-auto">
+              <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn save-btn">Upload</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
