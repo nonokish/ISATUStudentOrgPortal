@@ -50,7 +50,7 @@ require_once "../../../../../db.php";
 			
 		</div>
 			<div class="mx-auto text-center mt-5">
-              <a class="delete-btn" data-toggle="modal" data-target="#deleteAlert" data-dismiss="modal">Delete Announcement</a>
+              <a class="delete-btn" onclick="deleteOrgAnn('.$oa_id.')" data-toggle="modal" data-target="#deleteAlert" data-dismiss="modal">Delete Announcement</a>
             </div>
 		</div>
 	';

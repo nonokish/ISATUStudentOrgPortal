@@ -5,7 +5,7 @@ require_once "../../../../db.php";
 	$user_id = $_POST["id"];
 	echo "<script>console.log('user_id: " . $user_id . "' );</script>";
 
-	$sql = "SELECT u.id as u_id, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as member_name, u.department as user_department, u.course_year as course_year, u.email as user_email, u.contact as user_contact, u.designation as user_designation, uo.date_joined as joined_date, u.user_type_id as user_type_id FROM user u INNER JOIN user_type ut ON u.user_type_id = ut.id INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$user_id'";
+	$sql = "SELECT u.id as u_id, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as member_name, u.department as user_department, u.course_year as course_year, u.email as user_email, u.contact as user_contact, u.designation as user_designation, uo.date_joined as joined_date, u.user_type_id as user_type_id FROM user u INNER JOIN user_type ut ON u.user_type_id = ut.id INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$user_id' AND uo.is_active = 1";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 

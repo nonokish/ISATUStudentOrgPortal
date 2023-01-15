@@ -2,7 +2,7 @@
   require_once "../../db.php";
   $announcement_id = $_GET['aid'];
 
-  $sql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE a.id = '$announcement_id'";
+  $sql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE a.id = '$announcement_id' AND oa.is_active = 1";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 

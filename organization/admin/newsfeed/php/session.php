@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])){
         $email = $_SESSION['user_email'];
         $userType = $_SESSION['user_type'];
 
-        $sql = "SELECT uo.id as user_org_id, o.id as org_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$userID'";
+        $sql = "SELECT uo.id as user_org_id, o.id as org_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$userID' and uo.is_active = 1";
 
         $result = mysqli_query($conn, $sql);
 

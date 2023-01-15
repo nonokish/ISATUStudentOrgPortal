@@ -139,7 +139,13 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-              <?php echo $org_name;?>
+              <?php 
+                if($org_name) {
+                  echo $org_name;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>

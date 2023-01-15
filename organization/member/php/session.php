@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])){
             $sql = "SELECT uo.id as user_org_id, o.id as org_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$userID' AND o.id = '$org_id'";
         } else {
             echo "<script>console.log('org_id not new session: " . $userID . "');</script>";
-            $sql = "SELECT uo.id as user_org_id, o.id as org_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$userID' LIMIT 1";
+            $sql = "SELECT uo.id as user_org_id, o.id as org_id FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id INNER JOIN organization o ON uo.organization_id = o.id WHERE u.id = '$userID' and uo.is_active = 1 LIMIT 1";
         }
 
         $result = mysqli_query($conn, $sql);

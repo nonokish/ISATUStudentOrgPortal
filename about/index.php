@@ -2,6 +2,10 @@
   require_once '../db.php';
   if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
+    $userType = $_SESSION['user_type'];
+  } else {
+    $user_id = "";
+    $userType = "";
   }
 ?>
 <!DOCTYPE html>
@@ -103,7 +107,13 @@
           <!-- Right elements -->
           <?php
             if($user_id){
-              echo '<a type="button" href="../organization/admin" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>';
+              if($userType == 1){
+                echo '<a type="button" href="../organization/member" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>';
+              } else if($userType == 3 || $userType == 4){
+                echo '<a type="button" href="../organization/admin" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Admin</a>';
+              } else if($userType == 5){
+                echo '<a type="button" href="../superadmin" class="btn admin-link-btn btn-outline-primary waves-effect">Go to Super Admin</a>';
+              }
             } else {
               echo '
                 <div class="d-flex align-items-center top-navbar-right px-4">

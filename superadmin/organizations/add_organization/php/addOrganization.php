@@ -37,7 +37,7 @@
     $addOrgResult = mysqli_query($conn, $addOrgSql);
     $orgId = $conn->insert_id;
     if($addOrgResult){
-        $addUserOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$adviserlist','$orgId','$new_joined_date','$userId')";
+        $addUserOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,is_active,created_by) VALUES ('$adviserlist','$orgId','$new_joined_date',1,'$userId')";
         $addUserOrgResult = mysqli_query($conn, $addUserOrgSql);
 
         if($addUserOrgResult){

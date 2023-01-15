@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])){
     }else{
         $userId = $_SESSION['user_id'];
         $session_org_id = $_SESSION['org_id'];
-        $sql = "SELECT * FROM user_organization WHERE user_id = '$userId' and organization_id = '$session_org_id'";
+        $sql = "SELECT * FROM user_organization WHERE user_id = '$userId' and organization_id = '$session_org_id' AND is_active = 1";
         $result = mysqli_query($conn,$sql);
         
         $user_org_data = mysqli_fetch_array($result);
@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_id'])){
                 $createdBy = null;
                 $orgTotalMember = null;
             } else {
-                $sql3 = "SELECT count(*) as total_member FROM user_organization WHERE organization_id = '$orgId'";
+                $sql3 = "SELECT count(*) as total_member FROM user_organization WHERE organization_id = '$orgId' AND is_active = 1";
                 $result3 = mysqli_query($conn,$sql3);
                 
                 $user_org_total = mysqli_fetch_array($result3);

@@ -18,7 +18,7 @@ require_once '../../../db.php';
       			</thead>
       		<tbody id="dbMembersTable">
     ';
-    $sql = "SELECT uo.date_joined as user_date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as student_name, u.course_year as course_year, u.email as user_email, u.contact as user_contact FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE o.id = '$organization_id'";
+    $sql = "SELECT uo.date_joined as user_date_joined, CONCAT(u.first_name, ' ', u.middle_initial, ' ', u.last_name) as student_name, u.course_year as course_year, u.email as user_email, u.contact as user_contact FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE o.id = '$organization_id' AND uo.is_active = 1";
     $result = mysqli_query($conn, $sql);
     
     if(mysqli_num_rows($result) > 0){

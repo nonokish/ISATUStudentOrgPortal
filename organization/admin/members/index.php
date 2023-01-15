@@ -30,6 +30,27 @@ $org_name = $_SESSION['org_name'];
 
   <!-- Modals -->
 
+  <!-- Delete Alert Modal -->
+  <div class="modal fade" id="deleteAlert" tabindex="1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content px-3 py-4">
+        <div class="modal-body text-center">
+          <h5 style="font-weight: 500;">Confirm Delete?</h5>
+        </div>
+        <form method="POST" action="php/delete_user_org.php">
+          <input type="hidden" id="user_org_id" name="user_org_id"/>
+          <div class="modal-footer" style="border: none!important;">
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-success alert-btn btn-sm">Yes</button>
+              <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#announcementDetailsModal" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Switch Organization Modal -->
   <div class="modal fade" id="switchOrgModal" tabindex="-1" role="dialog" aria-labelledby=""
       aria-hidden="true">
@@ -126,7 +147,13 @@ $org_name = $_SESSION['org_name'];
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-              <?php echo $org_name;?>
+              <?php
+                if($org_name) {
+                  echo $org_name;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>
@@ -398,6 +425,10 @@ $org_name = $_SESSION['org_name'];
           $("#getMemberModalDetails").append(response);
         }
       });
+    }
+
+    function deleteMember(res){
+      $('#user_org_id').val(res);
     }
   </script>
   

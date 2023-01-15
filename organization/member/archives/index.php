@@ -1,3 +1,7 @@
+<?php
+  require_once '../../../db.php';
+  $org_name = $_SESSION['org_name'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +35,7 @@
       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="">
+        <form class="" action="./php/updateOrganizationIdSession.php" method="POST">
           <div class="modal-header modal-header-fill mb-2">
             <h5 class="modal-title login-modal-title" id="loginModal">Select Organization</h5>
             <button type="button" class="close login-modal-close" data-dismiss="modal" aria-label="Close">
@@ -41,10 +45,7 @@
           <div class="modal-body py-4 px-5">
             
             <label style="font-weight: 500!important">Your organizations:</label>
-            <select class="browser-default custom-select select-organization mb-5">
-              <option value="1">Organization Name</option>
-              <option value="2">Organization Name</option>
-              <option value="3">Organization Name</option>
+            <select class="browser-default custom-select select-organization mb-5" id="orgList" name="orgList">
             </select>
 
             <div class="mx-auto text-center">
@@ -157,7 +158,13 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-            Organization Name
+              <?php 
+                if($org_name) {
+                  echo $org_name;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>
@@ -252,7 +259,9 @@
                   <input class="form-control w-75 mb-4" id="dbDocumentsSearch" type="text" placeholder="Type something to search list items">
                 </div>
 
-                <table class="table">
+                <!-- Document Table -->
+                <div id="getDocumentGrid"></div>
+                <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -304,11 +313,11 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
               </div>
               <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
-                <div class="row mt-2">
-                  <div class="col-md-4 px-2 mb-3">
+                <div class="row mt-2" id="getMediaCard">
+                  <!--<div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
                       <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
                       <a>
@@ -361,7 +370,7 @@
                       <source src="movie.ogg" type="video/ogg">
                       Your browser does not support the video tag.
                     </video>
-                  </div>
+                  </div>-->
 
                 </div>
 
@@ -431,6 +440,33 @@
       weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       showMonthsShort: true,
       })
+  </script>
+
+  <script type="text/javascript">
+    $('#orgList').load("php/changeOrganizationDropdownList.php");
+  </script>
+
+  <!-- Document Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getDocumentGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getDocumentGrid").append(response);
+      }
+    });
+  </script>
+
+  <!-- Media Card -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getMedia.php",
+      type: "GET",
+      success: function(response){
+        $("#getMediaCard").html("");
+        $("#getMediaCard").append(response);
+      }
+    });
   </script>
   
 

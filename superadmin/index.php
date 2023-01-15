@@ -110,7 +110,7 @@ require_once "../db.php";
       </ul>
 
       <div class="text-center p-3">
-        <a type="button" href="../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
+        <a type="button" href="../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
       </div>
       
       <div class="sidenav-bg"></div>
@@ -200,7 +200,7 @@ require_once "../db.php";
      			 	<i class="fas fa-bullhorn"></i>
      			 	<span class="float-right" style="color: #f7CA18;">
               <?php 
-                $countAnnSql = "SELECT count(*) as total_announcement FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id";
+                $countAnnSql = "SELECT count(*) as total_announcement FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id AND oa.is_active = 1";
                 $countAnnResult = mysqli_query($conn, $countAnnSql);
                 $row = mysqli_fetch_assoc($countAnnResult);
                 $ann_total_count = $row['total_announcement'];
@@ -220,7 +220,19 @@ require_once "../db.php";
       			<h5 class="card-title mb-4">Docs & Files</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-copy"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                $countOrgDocMediaSql = "SELECT COUNT(*) as total_doc_media FROM organization o INNER JOIN document d ON o.id = d.organization_id INNER JOIN media m ON o.id = m.organization_id WHERE d.is_active = 1";
+                $countOrgDocMediaResult = mysqli_query($conn, $countOrgDocMediaSql);
+                $row = mysqli_fetch_assoc($countOrgDocMediaResult);
+                $doc_media_total_count = $row['total_doc_media'];
+                if($doc_media_total_count) {
+                  echo $doc_media_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>

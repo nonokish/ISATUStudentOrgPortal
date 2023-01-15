@@ -32,7 +32,7 @@
     $addMemberResult = mysqli_query($conn, $addMemberSql);
     $memberId = $conn->insert_id;
     if($addMemberResult){
-        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,created_by) VALUES ('$memberId','$org_id','$new_memberDateJoined','$user_id')";
+        $addMemberOrgSql = "INSERT INTO user_organization (user_id,organization_id,date_joined,is_active,created_by) VALUES ('$memberId','$org_id','$new_memberDateJoined',1,'$user_id')";
         $addMemberOrgResult = mysqli_query($conn, $addMemberOrgSql);
 
         if($addMemberOrgResult){

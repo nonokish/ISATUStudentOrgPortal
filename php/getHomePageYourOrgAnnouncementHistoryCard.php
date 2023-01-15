@@ -29,7 +29,7 @@ require_once '../db.php';
 
         $orgId_array = array();
         
-        $orgSql = "SELECT o.id as org_id FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE u.id = '$userId'";
+        $orgSql = "SELECT o.id as org_id FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id INNER JOIN user u ON uo.user_id = u.id WHERE u.id = '$userId' AND uo.is_active = 1";
         $orgResult = mysqli_query($conn, $orgSql);
         if(mysqli_num_rows($orgResult) > 0){
             while($orgRow = mysqli_fetch_array($orgResult)){
@@ -39,7 +39,7 @@ require_once '../db.php';
 
         $orgArrayData = implode(',',$orgId_array);
 
-        $announcementSql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE o.id IN ($orgArrayData) AND $where_clause_input_filter AND $where_clause";
+        $announcementSql = "SELECT a.id as a_id, a.display_image as display_image, a.publish_date as publish_date, o.name as org_name, a.title as ann_title, a.content as ann_content FROM announcement a INNER JOIN organization_announcement oa ON a.id = oa.announcement_id INNER JOIN organization o ON oa.organization_id = o.id WHERE oa.is_active = 1 AND o.id IN ($orgArrayData) AND $where_clause_input_filter AND $where_clause";
         $announcementResult = mysqli_query($conn, $announcementSql);
         
         if(mysqli_num_rows($announcementResult) > 0){

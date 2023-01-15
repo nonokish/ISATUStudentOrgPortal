@@ -150,7 +150,19 @@ require_once "php/getOrganizationDetails.php";
       			<h5 class="card-title mb-4">New Members</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-user-plus"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                if($orgId) {
+                  $countOrgNewMemberSql = "SELECT COUNT(*) as total_new_member FROM organization o INNER JOIN user_organization uo ON o.id = uo.organization_id WHERE uo.is_active = 1 AND o.id = '$orgId' AND (DATEDIFF(CURDATE(),uo.date_joined)) <= 31";
+                  $countOrgNewMemberResult = mysqli_query($conn, $countOrgNewMemberSql);
+                  $row = mysqli_fetch_assoc($countOrgNewMemberResult);
+                  $new_member_total_count = $row['total_new_member'];
+                  echo $new_member_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>
@@ -178,7 +190,19 @@ require_once "php/getOrganizationDetails.php";
       			<h5 class="card-title mb-4">Announcements</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-bullhorn"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                if($orgId) {
+                  $countOrgAnnSql = "SELECT count(*) as total_announcement FROM organization o INNER JOIN organization_announcement oa ON o.id = oa.organization_id INNER JOIN announcement a ON oa.announcement_id = a.id WHERE o.id = '$orgId' AND oa.is_active = 1";
+                  $countOrgAnnResult = mysqli_query($conn, $countOrgAnnSql);
+                  $row = mysqli_fetch_assoc($countOrgAnnResult);
+                  $ann_total_count = $row['total_announcement'];
+                  echo $ann_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>
@@ -188,7 +212,19 @@ require_once "php/getOrganizationDetails.php";
       			<h5 class="card-title mb-4">Docs & Files</h5>
      			 <div class="dashboard-stat">
      			 	<i class="fas fa-copy"></i>
-     			 	<span class="float-right" style="color: #f7CA18;">00</span>
+     			 	<span class="float-right" style="color: #f7CA18;">
+              <?php 
+                if($orgId) {
+                  $countOrgDocMediaSql = "SELECT COUNT(*) as total_doc_media FROM organization o INNER JOIN document d ON o.id = d.organization_id INNER JOIN media m ON o.id = m.organization_id WHERE o.id = '$orgId' AND d.is_active = 1";
+                  $countOrgDocMediaResult = mysqli_query($conn, $countOrgDocMediaSql);
+                  $row = mysqli_fetch_assoc($countOrgDocMediaResult);
+                  $doc_media_total_count = $row['total_doc_media'];
+                  echo $doc_media_total_count;
+                } else {
+                  echo "00";
+                }
+              ?>
+            </span>
      			 </div>
     			</div>
       	</div>

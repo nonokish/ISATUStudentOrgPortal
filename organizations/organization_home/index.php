@@ -2,6 +2,10 @@
   require_once "../../db.php";
   if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
+    $userType = $_SESSION['user_type'];
+  } else {
+    $user_id = "";
+    $userType = "";
   }
   $organization_id = $_GET['oid'];
 
@@ -9,7 +13,7 @@
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 
-  $adviserSql = "SELECT uo.organization_id as org_id, CONCAT(u.first_name, ' ', u.middle_initial, '. ', u.last_name) as adv_name FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id WHERE u.user_type_id = 4 AND uo.organization_id = '$organization_id'";
+  $adviserSql = "SELECT uo.organization_id as org_id, CONCAT(u.first_name, ' ', u.middle_initial, '. ', u.last_name) as adv_name FROM user u INNER JOIN user_organization uo ON u.id = uo.user_id WHERE u.user_type_id = 4 AND uo.organization_id = '$organization_id' AND uo.is_active = 1";
 	$adviserResult = mysqli_query($conn, $adviserSql);
 	$adviserRow = mysqli_fetch_assoc($adviserResult);
 

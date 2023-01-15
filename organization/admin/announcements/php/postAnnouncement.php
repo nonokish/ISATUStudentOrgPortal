@@ -53,7 +53,7 @@
     $addAnnouncementResult = mysqli_query($conn, $addAnnouncementSql);
     $announcementId = $conn->insert_id;
     if($addAnnouncementResult){
-        $addOrgAnnouncementSql = "INSERT INTO organization_announcement (organization_id,announcement_id,created_by) VALUES ('$org_list','$announcementId','$userId')";
+        $addOrgAnnouncementSql = "INSERT INTO organization_announcement (organization_id,announcement_id,is_active,created_by) VALUES ('$org_list','$announcementId',1,'$userId')";
         $addOrgAnnouncementResult = mysqli_query($conn, $addOrgAnnouncementSql);
 
         if($addOrgAnnouncementResult){

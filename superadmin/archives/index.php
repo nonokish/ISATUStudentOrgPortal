@@ -34,12 +34,15 @@
         <div class="modal-body text-center">
           <h5 style="font-weight: 500;">Confirm Delete?</h5>
         </div>
-        <div class="modal-footer" style="border: none!important;">
-          <div class="mx-auto">
-            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#viewImageModal" data-dismiss="modal">No</button>
+        <form method="POST" action="php/delete_org_document.php">
+          <input type="hidden" id="org_doc_id" name="org_doc_id"/>
+          <div class="modal-footer" style="border: none!important;">
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-success alert-btn btn-sm">Yes</button>
+              <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#viewImageModal" data-dismiss="modal">No</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -129,15 +132,15 @@
           </button>
         </div>
         <div class="modal-body py-4 px-5" id="">
-          <form>
+          <form method="POST" action="php/add_document.php" enctype="multipart/form-data">
             <label class="float-left mb-1 field-label">Document Name</label>
-            <input type="text" id="" class="form-control mb-4" value="">
+            <input type="text" id="" class="form-control mb-4" name="document_name" value="" required>
             <div class="form-group mb-4">
                <label class="float-left mb-1 field-label">Description</label>
-              <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+              <textarea class="form-control rounded-0" id="" name="document_description" rows="3"></textarea>
             </div>
             <div class="file-upload-wrapper">
-              <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+              <input type="file" id="input-file-max-fs" class="file-upload" name="document_file" data-max-file-size="2M" required/>
             </div>
           </div>
           <div class="modal-footer">
@@ -163,9 +166,9 @@
           </button>
         </div>
         <div class="modal-body py-4 px-5" id="">
-          <form>
+          <form method="POST" action="php/add_media.php" enctype="multipart/form-data">
             <div class="file-upload-wrapper">
-              <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" />
+              <input type="file" id="input-file-max-fs" class="file-upload" name="media_file" data-max-file-size="2M" required/>
             </div>
           </div>
           <div class="modal-footer">
@@ -263,7 +266,7 @@
       </ul>
 
       <div class="text-center p-3">
-        <a type="button" href="../../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
+        <a type="button" href="../../" role="button" class="btn text-center home-link-btn text-center">Go to home</a>
       </div>
 
       <div class="sidenav-bg"></div>
@@ -330,7 +333,9 @@
                   <input class="form-control w-75 mb-4" id="dbDocumentsSearch" type="text" placeholder="Type something to search list items">
                 </div>
 
-                <table class="table">
+                <!-- Document Table -->
+                <div id="getDocumentGrid"></div>
+                <!--<table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -382,14 +387,14 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
               </div>
               <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
                 <div class="add-btn-container text-right mb-3">
                   <button class="btn add-btn py-2 px-3" data-toggle="modal" data-target="#uploadMediaModal"><i class="fas fa-plus mr-2"></i>Upload Media</button>
                 </div>
-                <div class="row">
-                  <div class="col-md-4 px-2 mb-3">
+                <div class="row" id="getMediaCard">
+                  <!--<div class="col-md-4 px-2 mb-3">
                     <div class="view overlay" data-toggle="modal" data-target="#viewImageModal">
                       <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(7).webp" class="img-fluid" alt="Sample image with waves effect.">
                       <a>
@@ -442,7 +447,7 @@
                       <source src="movie.ogg" type="video/ogg">
                       Your browser does not support the video tag.
                     </video>
-                  </div>
+                  </div>-->
 
                 </div>
 
@@ -516,6 +521,33 @@
   
   <script type="text/javascript">
     $('.file-upload').file_upload();
+  </script>
+
+  <!-- Document Grid -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getDocumentGrid.php",
+      type: "GET",
+      success: function(response){
+        $("#getDocumentGrid").append(response);
+      }
+    });
+
+    function deleteOrgDocument(res){
+      $('#org_doc_id').val(res);
+    }
+  </script>
+
+  <!-- Media Card -->
+  <script type="text/javascript">
+    $.ajax({
+      url: "php/getMedia.php",
+      type: "GET",
+      success: function(response){
+        $("#getMediaCard").html("");
+        $("#getMediaCard").append(response);
+      }
+    });
   </script>
 
 

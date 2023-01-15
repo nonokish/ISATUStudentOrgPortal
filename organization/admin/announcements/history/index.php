@@ -38,12 +38,15 @@
         <div class="modal-body text-center">
           <h5 style="font-weight: 500;">Confirm Delete?</h5>
         </div>
-        <div class="modal-footer" style="border: none!important;">
-          <div class="mx-auto">
-            <button type="button" class="btn btn-success alert-btn btn-sm" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#announcementDetailsModal" data-dismiss="modal">No</button>
+        <form method="POST" action="php/delete_org_announcement.php">
+          <input type="hidden" id="org_ann_id" name="org_ann_id"/>
+          <div class="modal-footer" style="border: none!important;">
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-success alert-btn btn-sm">Yes</button>
+              <button type="button" class="btn btn-danger alert-btn btn-sm" data-toggle="modal" data-target="#announcementDetailsModal" data-dismiss="modal">No</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -141,7 +144,13 @@
         <li>
           <div class="logo-wrapper sn-ad-avatar-wrapper p-2">
             <a href="#"><img src="../../../../img/ISATULogo.png" class="rounded-circle"><span class="sidenav-org-name">
-              <?php echo $org_name;?>
+              <?php 
+                if($org_name) {
+                  echo $org_name;
+                } else {
+                  echo "No Organization";
+                }
+              ?>
             </span></a>
           </div>
         </li>
@@ -384,6 +393,10 @@
           //$("#ann_article_img_detail").attr("src",'../announcement_uploads/'+res[5]);
         }
       });
+    }
+
+    function deleteOrgAnn(res){
+      $('#org_ann_id').val(res);
     }
   </script>
 
